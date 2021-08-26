@@ -3,9 +3,21 @@ import itertools
 import math
 
 import trueskill
+import colorama
+
+colorama.init()
 
 env = trueskill.TrueSkill(draw_probability=0)
 env.make_as_global()
+
+TIER_DICT = {
+    'X': 0,
+    'S': 1,
+    'A': 2,
+    'B': 3,
+    'P': 4,
+    'U': 5,
+}
 
 
 class Fighter:
@@ -13,6 +25,7 @@ class Fighter:
     def __init__(self, name, tier):
         self.name = name
         self.tier = tier
+        self.tier_list = {}
         self.rating = trueskill.Rating()
         self.win = 0
         self.loss = 0
@@ -42,7 +55,7 @@ class Compendium:
         else:
             fighter.loss += 1
             win = False
-        fighter.win_rate = fighter.win / (fighter.win + fighter.loss)
+        fighter.win_rate = round(fighter.win / (fighter.win + fighter.loss), 2)
         if other_fighter in fighter.record:
             if win:
                 fighter.record[other_fighter][0] += 1
@@ -53,6 +66,11 @@ class Compendium:
                 fighter.record[other_fighter] = [1, 0]
             else:
                 fighter.record[other_fighter] = [0, 1]
+        if line[5] != 'U':
+            if line[5] not in fighter.tier_list:
+                fighter.tier_list[line[5]] = 1
+            else:
+                fighter.tier_list[line[5]] += 1
 
     def get_tier(self, fighter1, fighter2, pos, untiered_dict, manual=False):
         if manual:
@@ -95,19 +113,25 @@ class Compendium:
                     else:
                         tier = stripped_line[5]
                     self.fighters[fighter1] = Fighter(fighter1, tier)
+                    if self.fighters[fighter1].tier != 'U':
+                        self.fighters[fighter1].tier_list[tier] = 1
                 if fighter2 not in self.fighters:
                     if stripped_line[5] == 'U':
                         tier = self.get_tier(fighter1, fighter2, 1, untiered_dict)
                     else:
                         tier = stripped_line[5]
                     self.fighters[fighter2] = Fighter(fighter2, tier)
+                    if self.fighters[fighter2].tier != 'U':
+                        self.fighters[fighter2].tier_list[tier] = 1
                 if stripped_line[5] != 'U':
                     if fighter1 in untiered_dict or fighter2 in untiered_dict:
                         if fighter1 in untiered_dict:
                             self.fighters[fighter1].tier = stripped_line[5]
+                            self.fighters[fighter1].tier_list[stripped_line[5]] = 1
                             del untiered_dict[fighter1]
                         else:
                             self.fighters[fighter2].tier = stripped_line[5]
+                            self.fighters[fighter2].tier_list[stripped_line[5]] = 1
                             del untiered_dict[fighter2]
                 rating1, rating2 = trueskill.rate_1vs1(self.fighters[winner].rating, self.fighters[loser].rating)
                 if winner == fighter1:
@@ -127,13 +151,34 @@ class Compendium:
         ts = trueskill.global_env()
         return ts.cdf(delta_mu / denom)
 
-    def provide_recommendation(self, fighter1, fighter2):
-        previous_record = "No Data"
+    def provide_recommendation(self, fighter1, fighter2, tier=False):
+        previous_record = "NONE"
         player1 = self.fighters[fighter1]
+        player2 = self.fighters[fighter2]
         if fighter2 in player1.record:
             previous_record = player1.record[fighter2]
-        trueskill_rating = self.win_probability([self.fighters[fighter1].rating], [self.fighters[fighter2].rating])
-        print(f"Previous fight record: {previous_record}. Fighter 1 win chance: {trueskill_rating}.")
+        trueskill_rating = round(self.win_probability([player1.rating], [player2.rating]) * 100, 2)
+        print(self.get_stats(fighter1))
+        print(self.get_stats(fighter2))
+        print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous match record: {previous_record}\n{colorama.Fore.GREEN}{fighter1} win chance: {trueskill_rating}%")
+        if tier:
+            higher_lower = 'a lower tier -'
+            if len(player1.tier_list) > 1:
+                filtered = list(filter(lambda t: t != tier, player1.tier_list))[0]
+                if not player1.tier_list[filtered] < 4:
+                    if TIER_DICT[filtered] < TIER_DICT[tier]:
+                        higher_lower = 'a higher tier -'
+                    print(colorama.Fore.RED + f"Warning: {fighter1} has been in {higher_lower} {filtered} tier!")
+            if len(player2.tier_list) > 1:
+                filtered = list(filter(lambda t: t != tier, player2.tier_list))[0]
+                if not player2.tier_list[filtered] < 4:
+                    if TIER_DICT[filtered] < TIER_DICT[tier]:
+                        higher_lower = 'a higher tier -'
+                    print(colorama.Fore.RED + f"Warning: {fighter2} has been in {higher_lower} {filtered} tier!")
+
+    def get_stats(self, fighter):
+        fighter = self.fighters[fighter]
+        return f"{fighter.name}: Tier History: {fighter.tier_list}. Win Rate: {fighter.win_rate}. Rating: {round(fighter.rating.mu, 3)}."
 
 
 if __name__ == "__main__":
@@ -143,7 +188,4 @@ if __name__ == "__main__":
         compendium = Compendium()
         compendium.import_data()
         pickle.dump(compendium, open("save.p", "wb"))
-    print(compendium.fighters['Gliz'].win_rate)
-    print(compendium.fighters['Gliz'].rating)
-    print(compendium.fighters['Gliz'].record)
-    compendium.provide_recommendation("Hamusu ix", "Vixen ex")
+    compendium.provide_recommendation("Phantomsheet", "Lycee fgo", "A")
