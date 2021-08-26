@@ -1,6 +1,7 @@
 import pickle
 import itertools
 import math
+import time
 
 import trueskill
 import colorama
@@ -151,6 +152,38 @@ class Compendium:
         ts = trueskill.global_env()
         return ts.cdf(delta_mu / denom)
 
+    def tier_adjust(self, player1, player2, tier):
+        tier_adjustments = [0, 0]
+        if len(player1.tier_list) > 1:
+            higher_lower = 'a lower tier -'
+            filtered = list(filter(lambda t: t != tier, player1.tier_list))[0]
+            if not player1.tier_list[filtered] < 4:
+                if TIER_DICT[filtered] < TIER_DICT[tier]:
+                    higher_lower = 'a higher tier -'
+                print(colorama.Fore.RED + f"Warning: {player1.name} has been in {higher_lower} {filtered} tier!")
+                alternate_tier_percentage = player1.tier_list[filtered] / (player1.tier_list[filtered] + player1.tier_list[tier]) * 100
+                if alternate_tier_percentage > 20:
+                    if 'higher' in higher_lower:
+                        tier_adjustments[0] = round(alternate_tier_percentage * .10, 2)
+                    else:
+                        tier_adjustments[0] = round(alternate_tier_percentage * -.10, 2)
+
+        if len(player2.tier_list) > 1:
+            higher_lower = 'a lower tier -'
+            filtered = list(filter(lambda t: t != tier, player2.tier_list))[0]
+            if not player2.tier_list[filtered] < 4:
+                if TIER_DICT[filtered] < TIER_DICT[tier]:
+                    higher_lower = 'a higher tier -'
+                print(colorama.Fore.RED + f"Warning: {player2.name} has been in {higher_lower} {filtered} tier!")
+                alternate_tier_percentage = player2.tier_list[filtered] / (player2.tier_list[filtered] + player2.tier_list[tier]) * 100
+                if alternate_tier_percentage > 20:
+                    if 'higher' in higher_lower:
+                        tier_adjustments[1] = round(alternate_tier_percentage * .10, 2)
+                    else:
+                        tier_adjustments[1] = round(alternate_tier_percentage * -.10, 2)
+        print(tier_adjustments)
+        return tier_adjustments
+
     def provide_recommendation(self, fighter1, fighter2, tier=False):
         previous_record = "NONE"
         player1 = self.fighters[fighter1]
@@ -162,24 +195,46 @@ class Compendium:
         print(self.get_stats(fighter2))
         print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous match record: {previous_record}\n{colorama.Fore.GREEN}{fighter1} win chance: {trueskill_rating}%")
         if tier:
-            if len(player1.tier_list) > 1:
-                higher_lower = 'a lower tier -'
-                filtered = list(filter(lambda t: t != tier, player1.tier_list))[0]
-                if not player1.tier_list[filtered] < 4:
-                    if TIER_DICT[filtered] < TIER_DICT[tier]:
-                        higher_lower = 'a higher tier -'
-                    print(colorama.Fore.RED + f"Warning: {fighter1} has been in {higher_lower} {filtered} tier!")
-            if len(player2.tier_list) > 1:
-                higher_lower = 'a lower tier -'
-                filtered = list(filter(lambda t: t != tier, player2.tier_list))[0]
-                if not player2.tier_list[filtered] < 4:
-                    if TIER_DICT[filtered] < TIER_DICT[tier]:
-                        higher_lower = 'a higher tier -'
-                    print(colorama.Fore.RED + f"Warning: {fighter2} has been in {higher_lower} {filtered} tier!")
+            tier_adjust = self.tier_adjust(player1, player2, tier)
+        if sum(tier_adjust) != 0 or sum(previous_record) != 0:
+            if previous_record != "NONE":
+                print('testing record adjustment!!!!!!!!!!!')
+                player_one_record = (previous_record[0] - previous_record[1]) * 100
+                adjustment = .05 * player_one_record
+                print(f"adjustment equals {adjustment}")
+                trueskill_rating += adjustment
+            trueskill_rating += tier_adjust[0]
+            trueskill_rating -= tier_adjust[1]
+            print(f"{colorama.Fore.CYAN}Weighted win chance: {trueskill_rating}%")
+
+
 
     def get_stats(self, fighter):
         fighter = self.fighters[fighter]
         return f"{fighter.name}: Tier History: {fighter.tier_list}. Win Rate: {fighter.win_rate}. Rating: {round(fighter.rating.mu, 3)}."
+
+#
+# def main_loop():
+#     """Function that runs on startup that allows you to choose which function to run."""
+#     if initial == 0:
+#         print("MTC Scraper by TSolo315")
+#         print("The date is: " + current_date + "\n")
+#         print("Type 'help' to see a list of possible actions.\n")
+#     response = input("What do you want to do?")
+#     if response.lower() == 'help' or response == '0':
+#         print("\nPossible Actions:\n 1. scrape - Scrape a thread. \n 2. report - Generate a report. \n 3. exit - Exit the program.\n")
+#         return
+#     if response.lower() == 'scrape' or response == '1':
+#         thread_scrape_input()
+#         return
+#     if response.lower() == 'report' or response == '2':
+#         generate_report_input()
+#         return
+#     if response.lower() == 'exit' or response == '3':
+#         sys.exit()
+#     else:
+#         print("\nCommand not recognized, type 'help' for a list of possible commands.\n")
+#         return
 
 
 if __name__ == "__main__":
@@ -189,5 +244,5 @@ if __name__ == "__main__":
         compendium = Compendium()
         compendium.import_data()
         pickle.dump(compendium, open("save.p", "wb"))
-    compendium.provide_recommendation("Izumi konata", "Nine the phantom", "S")
-    print(compendium.fighters['Nine the phantom'].record)
+    compendium.provide_recommendation("Ryoko(fhd)", "Baikinman", "A")
+    # print(compendium.fighters['Nine the phantom'].record)
