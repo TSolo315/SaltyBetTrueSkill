@@ -162,14 +162,15 @@ class Compendium:
         print(self.get_stats(fighter2))
         print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous match record: {previous_record}\n{colorama.Fore.GREEN}{fighter1} win chance: {trueskill_rating}%")
         if tier:
-            higher_lower = 'a lower tier -'
             if len(player1.tier_list) > 1:
+                higher_lower = 'a lower tier -'
                 filtered = list(filter(lambda t: t != tier, player1.tier_list))[0]
                 if not player1.tier_list[filtered] < 4:
                     if TIER_DICT[filtered] < TIER_DICT[tier]:
                         higher_lower = 'a higher tier -'
                     print(colorama.Fore.RED + f"Warning: {fighter1} has been in {higher_lower} {filtered} tier!")
             if len(player2.tier_list) > 1:
+                higher_lower = 'a lower tier -'
                 filtered = list(filter(lambda t: t != tier, player2.tier_list))[0]
                 if not player2.tier_list[filtered] < 4:
                     if TIER_DICT[filtered] < TIER_DICT[tier]:
@@ -188,4 +189,5 @@ if __name__ == "__main__":
         compendium = Compendium()
         compendium.import_data()
         pickle.dump(compendium, open("save.p", "wb"))
-    compendium.provide_recommendation("Phantomsheet", "Lycee fgo", "A")
+    compendium.provide_recommendation("Izumi konata", "Nine the phantom", "S")
+    print(compendium.fighters['Nine the phantom'].record)
