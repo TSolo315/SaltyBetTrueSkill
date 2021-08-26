@@ -83,7 +83,7 @@ class Compendium:
                 stripped_line = line.strip().split(',')
                 fighter1 = stripped_line[0]
                 fighter2 = stripped_line[1]
-                if stripped_line[2] == 0:
+                if stripped_line[2] == '0':
                     winner = fighter1
                     loser = fighter2
                 else:
@@ -127,6 +127,14 @@ class Compendium:
         ts = trueskill.global_env()
         return ts.cdf(delta_mu / denom)
 
+    def provide_recommendation(self, fighter1, fighter2):
+        previous_record = "No Data"
+        player1 = self.fighters[fighter1]
+        if fighter2 in player1.record:
+            previous_record = player1.record[fighter2]
+        trueskill_rating = self.win_probability([self.fighters[fighter1].rating], [self.fighters[fighter2].rating])
+        print(f"Previous fight record: {previous_record}. Fighter 1 win chance: {trueskill_rating}.")
+
 
 if __name__ == "__main__":
     try:
@@ -135,6 +143,7 @@ if __name__ == "__main__":
         compendium = Compendium()
         compendium.import_data()
         pickle.dump(compendium, open("save.p", "wb"))
-    print(compendium.fighters['A-agito'].rating)
-    print(compendium.fighters['A-agito'].record)
-    print(compendium.win_probability([compendium.fighters['Dom'].rating], [compendium.fighters['Medamaoyaji'].rating]))
+    print(compendium.fighters['Gliz'].win_rate)
+    print(compendium.fighters['Gliz'].rating)
+    print(compendium.fighters['Gliz'].record)
+    compendium.provide_recommendation("Hamusu ix", "Vixen ex")
