@@ -2,6 +2,7 @@ import pickle
 import itertools
 import math
 import time
+import sys
 
 import trueskill
 import colorama
@@ -37,11 +38,19 @@ class Fighter:
     def update_win_percentage(self, rate):
         self.win_percentage = rate
 
+    def update_tier(self, tier):
+        self.tier = tier
+        if tier not in self.tier_list:
+            self.tier_list[tier] = 0
+
 
 class Compendium:
 
     def __init__(self):
         self.fighters = {}
+        self.last_fighter_one = False
+        self.last_fighter_two = False
+        self.last_tier = False
 
     def update_record(self, line, rating, position):
         if position == 0:
@@ -172,12 +181,13 @@ class Compendium:
                 if TIER_DICT[filtered] < TIER_DICT[tier]:
                     higher_lower = 'a higher tier -'
                 print(colorama.Fore.RED + f"Warning: {player.name} has been in {higher_lower} {filtered} tier!")
+                print(colorama.Style.RESET_ALL)
                 alternate_tier_percentage = player.tier_list[filtered] / (player.tier_list[filtered] + player.tier_list[tier]) * 100
                 if alternate_tier_percentage > 10:
                     if 'higher' in higher_lower:
-                        tier_adjustment = round(alternate_tier_percentage * .10, 2)
+                        tier_adjustment = round(alternate_tier_percentage * .12, 2)
                     else:
-                        tier_adjustment = round(alternate_tier_percentage * -.10, 2)
+                        tier_adjustment = round(alternate_tier_percentage * -.12, 2)
         return tier_adjustment
 
     def tier_adjust(self, player1, player2, tier):
@@ -185,28 +195,82 @@ class Compendium:
 
     def provide_recommendation(self, fighter1, fighter2, tier=False):
         previous_record = [0, 0]
-        player1 = self.fighters[fighter1]
-        player2 = self.fighters[fighter2]
+        try:
+            player1 = self.fighters[fighter1]
+        except KeyError:
+            print(f"{fighter1} does not exist in database.")  # add to database?
+            return
+        try:
+            player2 = self.fighters[fighter2]
+        except KeyError:
+            print(f"{fighter2} does not exist in database.")
+            return
+        self.last_fighter_one = player1
+        self.last_fighter_two = player2
+        self.last_tier = tier
         if fighter2 in player1.record:
             previous_record = player1.record[fighter2]
         trueskill_rating = round(self.win_probability([player1.rating], [player2.rating]) * 100, 2)
         print(self.get_stats(fighter1))
         print(self.get_stats(fighter2))
-        print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous Match Record: {previous_record}\n{colorama.Fore.GREEN}{fighter1} Win Chance: {trueskill_rating}%")
+        print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous Match Record: {previous_record}\n{colorama.Fore.CYAN}{fighter1} Win Chance: {trueskill_rating}%")
+        print(colorama.Style.RESET_ALL)
         if tier:
             tier_adjust = self.tier_adjust(player1, player2, tier)
         if sum(tier_adjust) != 0 or sum(previous_record) != 0:
-            if sum(previous_record) != 0:
-                player_one_record = (previous_record[0] - previous_record[1]) * 100
-                adjustment = .05 * player_one_record
-                trueskill_rating += adjustment
+            player_one_record = (previous_record[0] - previous_record[1]) * 100
+            trueskill_rating += .05 * player_one_record
             trueskill_rating += tier_adjust[0]
             trueskill_rating -= tier_adjust[1]
-            print(f"{colorama.Fore.CYAN}{fighter1} Weighted Win Chance: {trueskill_rating}%")
+            print(f"{colorama.Fore.GREEN}{fighter1} Weighted Win Chance: {round(trueskill_rating, 2)}%")
+            print(colorama.Style.RESET_ALL)
 
     def get_stats(self, fighter):
         fighter = self.fighters[fighter]
         return f"{fighter.name}: Tier History: {fighter.tier_list}. Win Rate: {str(fighter.win_rate * 100) + '%'}. Rating: {round(fighter.rating.mu, 3)}."
+
+
+class Interface:
+
+    def __init__(self, compendium):
+        self.compendium = compendium
+
+    def waifu4u_match_text_interpreter(self, text):
+        text = text.replace('Bets are OPEN for ', '')
+        string_end = text.find(' vs ')
+        fighter1 = text[0:string_end].strip()
+        text = text.replace(fighter1 + ' vs ', '')
+        string_end = text.find('! (')
+        fighter2 = text[0:string_end].strip()
+        text = text.replace(fighter2 + '! (', '')
+        string_end = text.find(')')
+        tier = text[0:string_end].strip().replace(' Tier', "")
+        return [fighter1, fighter2, tier]
+
+    def main_loop(self):
+        """Function that runs on startup that allows you to choose which function to run."""
+        response = input("What do you want to do?")
+        # if response.lower() == 'help' or response == '0' or response == '':
+        #     print("\nPossible Actions:\n 1. Enter WAIFU4u match chat for bet recommendation. \n 2. xxxxx. \n 3. xxxxx.\n")
+        #     return
+        if "are open for" in response.lower():
+            compendium.provide_recommendation(*self.waifu4u_match_text_interpreter(response))
+            return
+        if response.lower() in ['stats', 'stat', 'get stats']:
+            response = input("What fighter do you want stats on?")
+            try:
+                print(self.compendium.get_stats(response))
+                return
+            except KeyError:
+                print('No such fighter exists in database.')
+                return
+        if response.lower() == 'update' or response == '2':
+            pass
+        if response.lower() == 'exit' or response == '3':
+            sys.exit()
+        else:
+            print("\nCommand not recognized, type 'help' for a list of possible commands.\n")
+            return
 
 
 if __name__ == "__main__":
@@ -216,5 +280,9 @@ if __name__ == "__main__":
         compendium = Compendium()
         compendium.import_data()
         pickle.dump(compendium, open("save.p", "wb"))
-    compendium.provide_recommendation("Parakarry", "Shikamaru nara", "B")
-    # print(compendium.fighters['Nine the phantom'].record)
+    interface = Interface(compendium)
+
+    while True:
+        interface.main_loop()
+
+
