@@ -222,8 +222,17 @@ class Compendium:
             trueskill_rating += .05 * player_one_record
             trueskill_rating += tier_adjust[0]
             trueskill_rating -= tier_adjust[1]
-            print(f"{colorama.Fore.GREEN}{fighter1} Weighted Win Chance: {round(trueskill_rating, 2)}%")
+            trueskill_rating = round(trueskill_rating, 2)
+            print(f"{colorama.Fore.GREEN}{fighter1} Weighted Win Chance: {trueskill_rating}%")
             print(colorama.Style.RESET_ALL)
+        if trueskill_rating <= 40:
+            print(f"Bet BLUE - {fighter2}: ${int((trueskill_rating + 50) * 1000)}")
+        elif 40 < trueskill_rating <= 50:
+            print(f"Bet RED - {fighter1}: ${'25000'}")
+        elif 50 < trueskill_rating <= 60:
+            print(f"Bet BLUE - {fighter2}: ${'25000'}")
+        else:
+            print(f"Bet RED - {fighter1}: ${int(trueskill_rating * 1000)}")
 
     def get_stats(self, fighter):
         fighter = self.fighters[fighter]
@@ -232,8 +241,8 @@ class Compendium:
 
 class Interface:
 
-    def __init__(self, compendium):
-        self.compendium = compendium
+    def __init__(self, comp):
+        self.compendium = comp
 
     def waifu4u_match_text_interpreter(self, text):
         text = text.replace('Bets are OPEN for ', '')
@@ -260,12 +269,32 @@ class Interface:
             response = input("What fighter do you want stats on?")
             try:
                 print(self.compendium.get_stats(response))
-                return
+            except KeyError:
+                print('No such fighter exists in database.')
+            return
+        if response.lower() in ['update', 'updates', 'update fighter']:
+            response = input("What fighter do you want to update?")
+            try:
+                fighter = self.compendium.fighters[response]
             except KeyError:
                 print('No such fighter exists in database.')
                 return
-        if response.lower() == 'update' or response == '2':
-            pass
+            response = input("Do you want to update 1. tier, 2. win percentage ?")
+            if response.lower() in ['1', 'tier']:
+                response = input("Enter new tier value")
+                if response in TIER_DICT:
+                    fighter.tier = response
+                else:
+                    print('That tier level does not exist. Options are X, S, A, B, P, U.')
+            if response.lower() in ['2', 'win percentage']:
+                response = input("Enter new win percentage value")
+                try:
+                    response = int(response)
+                except:
+                    print('Win percentage must be an integer.')
+                    return
+                fighter.win_percentage = response
+            return
         if response.lower() == 'exit' or response == '3':
             sys.exit()
         else:
