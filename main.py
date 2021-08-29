@@ -1,8 +1,8 @@
 import pickle
 import itertools
 import math
-import time
 import sys
+from datetime import date
 
 import trueskill
 import colorama
@@ -34,6 +34,7 @@ class Fighter:
         self.win_rate = 0
         self.win_percentage = False
         self.record = {}
+        self.notes = []
 
     def update_win_percentage(self, rate):
         self.win_percentage = rate
@@ -48,9 +49,11 @@ class Compendium:
 
     def __init__(self):
         self.fighters = {}
+        self.bet_multiplier = 1
         self.last_fighter_one = False
         self.last_fighter_two = False
         self.last_tier = False
+        self.last_rating = False
 
     def update_record(self, line, rating, position):
         if position == 0:
@@ -153,6 +156,41 @@ class Compendium:
                 print(stripped_line)
         print(untiered_dict)
 
+    def update_with_last_match(self, winning_player):
+        if not self.last_fighter_one:
+            print("No previous match recommendation found.")
+            return
+        if self.last_tier:
+            tier = self.last_tier
+            if self.last_fighter_one.tier != tier:
+                self.last_fighter_one.tier = tier
+            if self.last_fighter_two.tier != tier:
+                self.last_fighter_two.tier = tier
+        else:
+            tier = 'U'
+        match_stats = [self.last_fighter_one.name, self.last_fighter_two.name, winning_player, self.last_rating, "F", tier, date.today().strftime("%d-%m-%Y")]
+        if winning_player == '0':
+            winner = self.last_fighter_one
+            loser = self.last_fighter_two
+        else:
+            winner = self.last_fighter_two
+            loser = self.last_fighter_one
+        print(winner.name + "'s win has been saved!")
+        rating1, rating2 = trueskill.rate_1vs1(winner.rating, loser.rating)
+        if winning_player == '0':
+            self.update_record(match_stats, rating1, 0)
+            self.update_record(match_stats, rating2, 1)
+        else:
+            self.update_record(match_stats, rating2, 0)
+            self.update_record(match_stats, rating1, 1)
+        with open("new-record-data.txt", 'a') as file:
+            file.write("\n")
+            file.write(str(match_stats)[1:-1])
+        self.last_fighter_one = False
+        self.last_fighter_two = False
+        self.last_tier = False
+        self.last_rating = False
+
     def win_probability(self, team1, team2):
         delta_mu = sum(r.mu for r in team1) - sum(r.mu for r in team2)
         sum_sigma = sum(r.sigma ** 2 for r in itertools.chain(team1, team2))
@@ -226,13 +264,15 @@ class Compendium:
             print(f"{colorama.Fore.GREEN}{fighter1} Weighted Win Chance: {trueskill_rating}%")
             print(colorama.Style.RESET_ALL)
         if trueskill_rating <= 40:
-            print(f"Bet BLUE - {fighter2}: ${int((trueskill_rating + 50) * 1000)}")
+            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {int(((50 - trueskill_rating) + 50) * 1000)}")
         elif 40 < trueskill_rating <= 50:
-            print(f"Bet RED - {fighter1}: ${'25000'}")
+            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {'25000'}")
         elif 50 < trueskill_rating <= 60:
-            print(f"Bet BLUE - {fighter2}: ${'25000'}")
+            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {'25000'}")
         else:
-            print(f"Bet RED - {fighter1}: ${int(trueskill_rating * 1000)}")
+            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {int(trueskill_rating * 1000)}")
+        print(colorama.Style.RESET_ALL)
+        self.last_rating = trueskill_rating
 
     def get_stats(self, fighter):
         fighter = self.fighters[fighter]
@@ -295,7 +335,14 @@ class Interface:
                     return
                 fighter.win_percentage = response
             return
+        if response.lower() in ['0', '1']:
+            compendium.update_with_last_match(response)
+            return
+        if response.lower() in ['save']:
+            pickle.dump(compendium, open("save.p", "wb"))
+            return
         if response.lower() == 'exit' or response == '3':
+            pickle.dump(compendium, open("save.p", "wb"))
             sys.exit()
         else:
             print("\nCommand not recognized, type 'help' for a list of possible commands.\n")
@@ -310,6 +357,7 @@ if __name__ == "__main__":
         compendium.import_data()
         pickle.dump(compendium, open("save.p", "wb"))
     interface = Interface(compendium)
+    print(date.today().strftime("%d-%m-%Y"))
 
     while True:
         interface.main_loop()
