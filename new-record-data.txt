@@ -1,2 +1,17 @@
-'Rosemary', 'Vallah', '0', 80.77, 'F', 'B', '28-08-2021'
-'Piccolo sb', 'Diana kof', '0', 65.71, 'F', 'S', '28-08-2021'
+Rosemary,Vallah,0,80.77,F,B,28-08-2021
+Piccolo sb,Diana kof,0,65.71,F,S,28-08-2021
+Nami mvc,Wong_fei_h,0,26.31,F,S,28-08-2021
+Master fuuma,Piplup's 7th evolution,1,44.03,F,S,28-08-2021
+Aulbath,Iori yagami-kofm,1,37.42,F,S,28-08-2021
+Yuna,Nucrear cirno EX,0,96.15,F,S,28-08-2021
+Giant d!,Nightmare geese,1,47.08,F,S,28-08-2021
+Alien mefilas,Zeeky h. bomb,1,71.02,F,S,28-08-2021
+Toguro 101%,Piccolo sb,1,42.47,F,S,28-08-2021
+Nami mvc,Piplup's 7th evolution,0,19.01,F,S,28-08-2021
+Iori yagami-kofm,Yuna,1,35.11,F,S,28-08-2021
+Nightmare geese,Zeeky h. bomb,0,68.61,F,S,28-08-2021
+Piccolo sb,Nami mvc,0,95.88,F,S,28-08-2021
+Yuna,Nightmare geese,0,76.96,F,S,28-08-2021
+Piccolo sb,Yuna,1,36.15,F,S,28-08-2021
+Yuri,Yuri EX2,1,71.43,F,B,28-08-2021
+Cliff-tsunade-godaime,Alicephia,1,27.54,F,S,28-08-2021

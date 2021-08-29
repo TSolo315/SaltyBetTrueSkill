@@ -154,9 +154,20 @@ class Compendium:
                     self.update_record(stripped_line, rating2, 0)
                     self.update_record(stripped_line, rating1, 1)
                 print(stripped_line)
+        with open("new-record-data.txt") as file:
+            for line in file:
+                stripped_line = line.strip().split(',')
+                self.update_with_last_match(3, stripped_line)
+                print(stripped_line)
         print(untiered_dict)
 
-    def update_with_last_match(self, winning_player):
+    def update_with_last_match(self, winning_player, match_record=False):
+        if match_record:
+            self.last_fighter_one = self.fighters[match_record[0]]
+            self.last_fighter_two = self.fighters[match_record[1]]
+            self.last_tier = match_record[5]
+            self.last_rating = match_record[3]
+            winning_player = match_record[2]
         if not self.last_fighter_one:
             print("No previous match recommendation found.")
             return
@@ -183,9 +194,10 @@ class Compendium:
         else:
             self.update_record(match_stats, rating2, 0)
             self.update_record(match_stats, rating1, 1)
-        with open("new-record-data.txt", 'a') as file:
-            file.write("\n")
-            file.write(str(match_stats)[1:-1])
+        if not match_record:
+            with open("new-record-data.txt", 'a') as file:
+                file.write("\n")
+                file.write(','.join(str(i) for i in match_stats).strip("'"))
         self.last_fighter_one = False
         self.last_fighter_two = False
         self.last_tier = False
@@ -335,7 +347,11 @@ class Interface:
                     return
                 fighter.win_percentage = response
             return
-        if response.lower() in ['0', '1']:
+        if response.lower() in ['0', '1', 'red', 'blue']:
+            if response.lower() == 'red':
+                response = '0'
+            elif response.lower() == 'blue':
+                response = '1'
             compendium.update_with_last_match(response)
             return
         if response.lower() in ['save']:
