@@ -44,6 +44,12 @@ class Fighter:
         if tier not in self.tier_list:
             self.tier_list[tier] = 0
 
+    def add_note(self, note):
+        self.notes.append(note)
+
+    def clear_notes(self):
+        self.notes.clear()
+
 
 class Compendium:
 
@@ -276,19 +282,21 @@ class Compendium:
             print(f"{colorama.Fore.GREEN}{fighter1} Weighted Win Chance: {trueskill_rating}%")
             print(colorama.Style.RESET_ALL)
         if trueskill_rating <= 40:
-            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {int(((50 - trueskill_rating) + 50) * 1000)}")
+            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)}")
         elif 40 < trueskill_rating <= 50:
-            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {'25000'}")
+            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {25000 * self.bet_multiplier}")
         elif 50 < trueskill_rating <= 60:
-            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {'25000'}")
+            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {25000 * self.bet_multiplier}")
         else:
-            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {int(trueskill_rating * 1000)}")
+            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {int((trueskill_rating * 1000) * self.bet_multiplier)}")
         print(colorama.Style.RESET_ALL)
         self.last_rating = trueskill_rating
 
-    def get_stats(self, fighter):
+    def get_stats(self, fighter, record=False):
         fighter = self.fighters[fighter]
-        return f"{fighter.name}: Tier History: {fighter.tier_list}. Win Rate: {str(fighter.win_rate * 100) + '%'}. Rating: {round(fighter.rating.mu, 3)}."
+        record = fighter.record if record else ""
+        notes = "\n".join(fighter.notes) if fighter.notes else ""
+        return f"{fighter.name}: Tier History: {fighter.tier_list}. Win Rate: {str(fighter.win_rate * 100) + '%'}. Rating: {round(fighter.rating.mu, 3)}.\n{record}{notes}"
 
 
 class Interface:
@@ -324,6 +332,31 @@ class Interface:
             except KeyError:
                 print('No such fighter exists in database.')
             return
+        if response.lower() in ['note', 'notes']:
+            response = input("What fighter do you want to add a note to? Write a name or enter 0 for last red fighter or 1 for last blue fighter.")
+            if response == '0' and self.compendium.last_fighter_one:
+                fighter = self.compendium.last_fighter_one
+            elif response == '1' and self.compendium.last_fighter_two:
+                fighter = self.compendium.last_fighter_two
+            else:
+                try:
+                    fighter = self.compendium.fighters[response]
+                except KeyError:
+                    print('No such fighter exists in database (or no previous match history recorded if using a shortcut.)')
+                    return
+            response = input(f"What note would you like to add to {fighter.name}? Enter 0 to clear all notes.")
+            if response == '0':
+                fighter.clear_notes()
+            else:
+                fighter.add_note(response)
+            return
+        if response.lower() in ['record', 'records']:
+            response = input("What fighter do you want stats and record data on?")
+            try:
+                print(self.compendium.get_stats(response, record=True))
+            except KeyError:
+                print('No such fighter exists in database.')
+            return
         if response.lower() in ['update', 'updates', 'update fighter']:
             response = input("What fighter do you want to update?")
             try:
@@ -335,7 +368,7 @@ class Interface:
             if response.lower() in ['1', 'tier']:
                 response = input("Enter new tier value")
                 if response in TIER_DICT:
-                    fighter.tier = response
+                    fighter.update_tier(response)
                 else:
                     print('That tier level does not exist. Options are X, S, A, B, P, U.')
             if response.lower() in ['2', 'win percentage']:
