@@ -170,3 +170,54 @@ Moriah the thief,Judge,0,83.59,F,A,29-08-2021
 Domino bertha,Ryougi_shiki,0,62.95,F,S,29-08-2021
 Taideo EX,Miranda,1,68.86,F,A,29-08-2021
 Masamichi oyama,Pocket batman,1,41.61,F,A,29-08-2021
+Arisa,Megamami EX2,0,87.89,F,A,29-08-2021
+Kim EX,Alfred airhawk rb2,1,24.01,F,A,29-08-2021
+Hashi EX3,Smash bros. link,0,24.29,F,A,29-08-2021
+Trevor spacey,Clawbear,0,50.6,F,A,29-08-2021
+New rubber soul,Serika_os,1,70.71,F,S,29-08-2021
+Gen-an shiranui,Brunestud arcueid,1,60.06,F,A,29-08-2021
+Kumao +q,Anastasia,1,9.5,F,S,29-08-2021
+Duo lon pp,Hsien-ko,0,41.23,F,A,29-08-2021
+Nineball-seraph,Ren-kun,1,42.86,F,S,29-08-2021
+Maverick hunter x,Abore,1,39.1,F,S,29-08-2021
+Oichi EX5,Yagumo og,1,73.46,F,A,29-08-2021
+Ted broiler,Another unknown,0,96.27,F,S,29-08-2021
+Vegeta,Jaguar,0,18.28,F,B,29-08-2021
+Killa and ren EX,Dr. baldhead,0,67.68,F,A,29-08-2021
+Byakuren UliL,Mb-01,0,79.87,F,A,29-08-2021
+Gato ex,Cream the rabbit,0,40.71,F,A,29-08-2021
+Leon EX,Kon,1,76.77,F,B,29-08-2021
+Nappa mvc,Chun-li ssf2x,0,46.92,F,A,29-08-2021
+Akane inuwaka,Wei,1,50.17,F,A,29-08-2021
+Desperado+,Bobby drake,1,25.8,F,S,29-08-2021
+Shadow mario,Quick silver,1,16.11,F,S,29-08-2021
+Pheus_mor,Psylocke EX2,1,27.66,F,S,29-08-2021
+Usa-godzilla,Chara ge,1,89.97,F,S,29-08-2021
+Inner hollow ichigo,Lady bow,1,31.83,F,B,29-08-2021
+Misuzu,Ingrid,0,83.95,F,A,29-08-2021
+Young_rugal,Sasuke kun,1,34.59,F,S,29-08-2021
+Violent ryu,Kung lao mk2,1,14.68,F,B,29-08-2021
+Ernie the giant chicken,Yashiro EX6,1,56.77,F,A,29-08-2021
+Tamao mitsurugi,Blackjack,1,44.43,F,B,29-08-2021
+Aoko 7thmoonstyle,Barbarccia,1,67.7,F,A,29-08-2021
+Admiral kizaru,Bk_s.y,1,53.55,F,X,29-08-2021
+Kim EX,Daimon 98,0,18.98,F,A,29-08-2021
+Panter-flauclaws,Chinese doge,0,65.08,F,S,29-08-2021
+Takuma xiii,Asterix EX9,0,83.12,F,A,29-08-2021
+Pocket tylor,A Bison,1,49.13,F,B,29-08-2021
+Overcoat kars,Beautiful shermie qyc,1,53.53,F,A,29-08-2021
+The hero of time,Mahvel ken,1,20.56,F,S,29-08-2021
+Mvc2 megaman,Ness sumin,0,7.27,F,S,29-08-2021
+Samus mvc,Ryu EX3,1,52.02,F,S,29-08-2021
+Super better mario,D4kirby_r,1,57.12,F,S,29-08-2021
+Richter belmont(hd),Sonic mvc,1,68.34,F,S,29-08-2021
+Pikachu g&s,Human kazuya,0,1.39,F,S,29-08-2021
+Roy fe,Ridley other m,0,63.39,F,S,29-08-2021
+Bowser,Terry bogard-kofm,1,36.3,F,S,29-08-2021
+Mahvel ken,Mvc2 megaman,0,89.94,F,S,29-08-2021
+Ryu EX3,D4kirby_r,0,63.79,F,S,29-08-2021
+Sonic mvc,Pikachu g&s,1,98.22,F,S,29-08-2021
+Roy fe,Terry bogard-kofm,1,68.07,F,S,29-08-2021
+Mahvel ken,Ryu EX3,0,77.69,F,S,29-08-2021
+Pikachu g&s,Terry bogard-kofm,1,4.73,F,S,29-08-2021
+Mahvel ken,Terry bogard-kofm,0,73.8,F,S,29-08-2021

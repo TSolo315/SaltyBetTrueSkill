@@ -357,6 +357,35 @@ class Interface:
             except KeyError:
                 print('No such fighter exists in database.')
             return
+        if response.lower() in ['new fighter', 'input fighter', 'add fighter', 'add']:
+            name = input("What fighter do you want to add?")
+            if name in self.compendium.fighters:
+                print('This fighter already exists.')
+                return
+            tier = input("What tier is this fighter in?")
+            if tier not in TIER_DICT:
+                print('That tier level does not exist. Options are X, S, A, B, P, U.')
+                return
+            try:
+                matches = int(input("Total matches played? Enter 0 if not sure."))
+            except ValueError:
+                print('Invalid input, response must be an integer.')
+                return
+            try:
+                won = int(input("Total matches won? Enter 0 if not sure."))
+            except ValueError:
+                print('Invalid input, response must be an integer.')
+                return
+            if matches != 0 and won != 0:
+                lost = matches - won
+                win_rate = round(won / matches, 2)
+            self.compendium.fighters[name] = Fighter(name, tier)
+            self.compendium.fighters[name].update_tier(tier)
+            if matches != 0 and won != 0:
+                self.compendium.fighters[name].win = won
+                self.compendium.fighters[name].loss = lost
+                self.compendium.fighters[name].win_rate = win_rate
+            return
         if response.lower() in ['update', 'updates', 'update fighter']:
             response = input("What fighter do you want to update?")
             try:
@@ -375,7 +404,7 @@ class Interface:
                 response = input("Enter new win percentage value")
                 try:
                     response = int(response)
-                except:
+                except ValueError:
                     print('Win percentage must be an integer.')
                     return
                 fighter.win_percentage = response
