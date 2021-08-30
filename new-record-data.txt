@@ -221,3 +221,57 @@ Roy fe,Terry bogard-kofm,1,68.07,F,S,29-08-2021
 Mahvel ken,Ryu EX3,0,77.69,F,S,29-08-2021
 Pikachu g&s,Terry bogard-kofm,1,4.73,F,S,29-08-2021
 Mahvel ken,Terry bogard-kofm,0,73.8,F,S,29-08-2021
+Setsuna,Chonshu ex,1,24.84,F,B,30-08-2021
+Breloom,Catwoman EX,0,81.87,F,B,30-08-2021
+Bowser jr.,Chrysalis EX,1,28.88,F,A,30-08-2021
+Cci kim kaphwan,Hugo EX,0,43.87,F,S,30-08-2021
+Sarashina,R-haoumaru,1,49.19,F,S,30-08-2021
+Mami,Anita msh,1,34.13,F,S,30-08-2021
+Takuan_osho,Jack krauser,0,26.8,F,B,30-08-2021
+Takumi hattori,Killer plaster,1,19.98,F,A,30-08-2021
+Nocturne,Cream the rabbit,0,43.05,F,A,30-08-2021
+Voltage zero,Kanae mkt,0,95.02,F,S,30-08-2021
+Yumel,Mokou fujiwara,0,53.18,F,B,30-08-2021
+Ss6 renfa,Sensei karate kenji,0,51.17,F,S,30-08-2021
+Umvc_redarcueid,Crawdo,0,38.93,F,S,30-08-2021
+Seba-nyan,Ogichi inner hollow,1,25.43,F,P,30-08-2021
+Red arremer svc chaos,Turbo ryu,1,25.06,F,S,30-08-2021
+Keiji,Masked rider agito EX3,0,52.57,F,B,30-08-2021
+Kurokami medaka,Popeye,0,92.69,F,B,30-08-2021
+Chocobo,Lightning bd,0,25.81,F,A,30-08-2021
+Dante2,Kubiwatuki_kemono,1,48.64,F,A,30-08-2021
+Riyoh_nagasaki EX6,Hina bardy,0,51.38,F,A,30-08-2021
+Diablo,Buttercup DG,1,21.79,F,A,30-08-2021
+Diablo_skeleton,Maxima 13,1,18.65,F,A,30-08-2021
+Spy-dama-man,Dee bee kaw,1,27.65,F,A,30-08-2021
+Anthony hawk,Morgiana EX2,1,30.74,F,A,30-08-2021
+C. viper,Luffy's rose,0,69.94,F,A,30-08-2021
+Ranma-kun,Orochi k',1,69.14,F,A,30-08-2021
+Blanka 0d,Gunvolt,0,56.03,F,A,30-08-2021
+Riyoh_nagasaki EX6,Buttercup DG,1,35.43,F,A,30-08-2021
+Maxima 13,Dee bee kaw,0,78.47,F,A,30-08-2021
+Morgiana EX2,C. viper,1,11.52,F,A,30-08-2021
+Orochi k',Blanka 0d,1,65.6,F,A,30-08-2021
+Buttercup DG,Maxima 13,0,43.52,F,A,30-08-2021
+C. viper,Blanka 0d,0,81.72,F,A,30-08-2021
+Buttercup DG,C. viper,0,43.12,F,A,30-08-2021
+Rambo,Moorhunn,1,78.88,F,B,30-08-2021
+Yuka,Hisui EX,0,61.84,F,S,30-08-2021
+Cecilia,Furudo erika,1,35.82,F,S,30-08-2021
+Kung fu keiji thomas,Cyber shredder,0,82.46,F,A,30-08-2021
+Master morrigan,Miyako arima iqs,1,39.97,F,S,30-08-2021
+White len k,Primeus,1,18.8,F,S,30-08-2021
+Vela sherry,Gang-plank galleon,1,4.13,F,X,30-08-2021
+Homura akemi,Hatsune miku mmd l,1,56.87,F,A,30-08-2021
+Zenia valov,Asuras,0,91.53,F,S,30-08-2021
+Arctic_avenger,Reika murasame EX,1,28.17,F,B,30-08-2021
+Master moriya,Magic dunker EX,0,84.58,F,S,30-08-2021
+Flawless specter,Power lyzer,0,85.05,F,S,30-08-2021
+Zangoose EX2,Miss tron,1,16.89,F,A,30-08-2021
+Dr. fessenden,Midoriko,1,74.8,F,A,30-08-2021
+Lady ignis,Wonder momo EX,0,46.94,F,B,30-08-2021
+Theskiver,Gyakutai-ojisan,1,55.15,F,S,30-08-2021
+Anna frozen,Mion sonozaki,1,19.37,F,S,30-08-2021
+Terry EX3,Hol horse EX,1,29.73,F,A,30-08-2021
+George goodlake,James jerkenson,1,47.05,F,P,30-08-2021
+Mike Tyson IWBTG,Applejack m,0,39.83,F,S,30-08-2021

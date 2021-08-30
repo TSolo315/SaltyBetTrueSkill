@@ -350,6 +350,27 @@ class Interface:
             else:
                 fighter.add_note(response)
             return
+        if response.lower() in ['match', 'fight', 'vs']:
+            response = input("Input fighter one (RED)")
+            try:
+                fighter1 = self.compendium.fighters[response]
+            except KeyError:
+                print('This fighter does not exist in the database.')
+                return
+            response = input("Input fighter two (BLUE)")
+            try:
+                fighter2 = self.compendium.fighters[response]
+            except KeyError:
+                print('This fighter does not exist in the database.')
+                return
+            tier = input("What tier is this match in? Enter 0 if none.")
+            if tier == '0':
+                tier = False
+            elif tier not in TIER_DICT:
+                print('That tier level does not exist. Options are X, S, A, B, P, U.')
+                return
+            self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
+            return
         if response.lower() in ['record', 'records']:
             response = input("What fighter do you want stats and record data on?")
             try:
