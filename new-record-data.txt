@@ -275,3 +275,29 @@ Anna frozen,Mion sonozaki,1,19.37,F,S,30-08-2021
 Terry EX3,Hol horse EX,1,29.73,F,A,30-08-2021
 George goodlake,James jerkenson,1,47.05,F,P,30-08-2021
 Mike Tyson IWBTG,Applejack m,0,39.83,F,S,30-08-2021
+Trish una,Captain kidd,1,41.03,F,A,30-08-2021
+Lf2 - firzen,Puss in boots,0,45.87,F,A,30-08-2021
+Vanessa-kofm,Dhaos ND3,1,62.82,F,A,30-08-2021
+Captain atlantis,Nero DMC4,1,37.54,F,A,30-08-2021
+Kongou-s,Hyper neo-kamek,1,68.62,F,S,30-08-2021
+Tengu gou hibiki,Mr. buu,1,65.18,F,P,30-08-2021
+Nega peach EX3,Lumine,0,69.93,F,S,30-08-2021
+Es,Shin meep140,1,49.53,F,S,30-08-2021
+Detton,Axl x7,0,79.56,F,A,30-08-2021
+Scopedog-rsc,Umvc_youmu,0,76.58,F,S,30-08-2021
+Sonya kmb,Cf-len,0,84.87,F,A,30-08-2021
+Roa,Overlord,0,66.37,F,B,30-08-2021
+Sergeant r-a,Medamaoyaji,0,89.04,F,S,30-08-2021
+Meta jade,Destoroyah ex,1,27.01,F,S,30-08-2021
+Sunflower fairy,Kaguya houraisan,0,66.03,F,A,30-08-2021
+Bombman,Tsugumi,1,42.44,F,B,30-08-2021
+Leo bradlay,Yutosine,0,88.65,F,B,30-08-2021
+The master,Ar-chan,0,23.71,F,A,30-08-2021
+Abyss EX,Shin EX,0,68.25,F,S,30-08-2021
+Daisy dw,Harman,1,40.35,F,A,30-08-2021
+Goku iadora,Imit ultraseven,0,37.45,F,A,30-08-2021
+Ni_san,Roppen heimer EX FF,0,70.1,F,S,30-08-2021
+Majin boo EX3,Fake kaede,1,17.32,F,A,30-08-2021
+Honoka,Saki,0,81.75,F,A,30-08-2021
+Asura,Kawaiman,0,75.42,F,S,30-08-2021
+Darkness-of-red,Ryu mvc1,1,49.29,F,S,30-08-2021

@@ -319,7 +319,7 @@ class Interface:
     def main_loop(self):
         """Function that runs on startup that allows you to choose which function to run."""
         response = input("What do you want to do?")
-        # if response.lower() == 'help' or response == '0' or response == '':
+        # if response.lower() == 'help' or response == '':
         #     print("\nPossible Actions:\n 1. Enter WAIFU4u match chat for bet recommendation. \n 2. xxxxx. \n 3. xxxxx.\n")
         #     return
         if "are open for" in response.lower():
@@ -436,6 +436,16 @@ class Interface:
             elif response.lower() == 'blue':
                 response = '1'
             compendium.update_with_last_match(response)
+            return
+        if response.lower() in ['multiplier', 'mult', 'bet multiplier']:
+            response = input("What do you want your bet multiplier to be? Input integer between 1-10.")
+            try:
+                self.compendium.bet_multiplier = int(response)
+            except ValueError:
+                print('Bet multiplier must be an integer.')
+                return
+            if int(response) > 10:
+                print('WARNING: Your bet multiplier is too high and will result in very high bets.')
             return
         if response.lower() in ['save']:
             pickle.dump(compendium, open("save.p", "wb"))
