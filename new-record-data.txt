@@ -510,3 +510,11 @@ Sanada ani,Makoto sawatari,0,55.98,F,A,31-08-2021
 King of heroes EX7,Rugals und panzer,0,60.1,F,X,31-08-2021
 Kurusugawa ayaka,Blitztank-n,0,76.75,F,A,31-08-2021
 Pietro,Neva,1,24.95,F,A,31-08-2021
+Mint,Death-stuff,1,59.17,F,S,31-08-2021
+Shunsui kyouraku,Master taekuk,0,40.87,F,B,31-08-2021
+R_ed,Kasumi EX3,0,94.61,F,B,31-08-2021
+Senna_ai,Liquid snake,1,36.4,F,A,31-08-2021
+Bison trooper x,Crescent silvan,1,31.82,F,A,31-08-2021
+Lee,Daigo hotta,1,27.52,F,B,31-08-2021
+Prizm-star,Deluxe tetsu yatogi,0,59.53,F,B,31-08-2021
+Sparq,Kim hoon EX,0,37.2,F,A,31-08-2021

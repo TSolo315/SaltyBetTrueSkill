@@ -269,7 +269,7 @@ class Compendium:
                     bet = 30000 * self.bet_multiplier
                 else:
                     bet = 25000 * self.bet_multiplier
-                    fighter = 'player1'
+                fighter = 'player1'
                 print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         elif 50 < trueskill_rating <= 60:
             if adjusted:
