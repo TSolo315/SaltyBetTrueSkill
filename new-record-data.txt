@@ -301,3 +301,44 @@ Majin boo EX3,Fake kaede,1,17.32,F,A,30-08-2021
 Honoka,Saki,0,81.75,F,A,30-08-2021
 Asura,Kawaiman,0,75.42,F,S,30-08-2021
 Darkness-of-red,Ryu mvc1,1,49.29,F,S,30-08-2021
+Wu-ling,Andromeda shun,1,41.35,F,A,30-08-2021
+Ibuki beast-max,Supermario64,1,39.54,F,S,30-08-2021
+Mr.ganon,Ness EX3,0,39.65,F,S,30-08-2021
+White glint,Snk aya,0,73.3,F,A,30-08-2021
+Rockbomb,Majin boo EX3,1,64.07,F,A,30-08-2021
+Walkyrie,Pizza,1,41.27,F,P,30-08-2021
+Mami tomoe ai,Zero Hotaru,0,72.5,F,B,30-08-2021
+Reggie skatore,Seiya de pegasus,1,26.08,F,A,30-08-2021
+Samus mvc,Baiken(ac),1,33.8,F,S,30-08-2021
+Celsius,Eko,0,14.57,F,A,30-08-2021
+Fubuki,Blanka 0d,0,55.59,F,A,30-08-2021
+Mu 12,Clayface,0,75.29,F,B,30-08-2021
+Xaphan,Hawkeye sd,1,42.02,F,A,30-08-2021
+Rai ex,Enegori,1,56.82,F,A,30-08-2021
+Omega flowey,Pikachu g&s,0,85.35,F,S,30-08-2021
+Miyako yoshika,W.krauser,1,20.59,F,A,30-08-2021
+S.sinclair,Sachiel type-l,0,64.04,F,S,30-08-2021
+Nanaya_s,Chinese terminator,0,39.16,F,S,30-08-2021
+Lomias,Sengoku manjimaru,1,27.75,F,S,30-08-2021
+Dianus,Shinobi,0,86.49,F,A,30-08-2021
+Op.element kyo,Another gloria,1,43.95,F,X,30-08-2021
+Worm,Otane oume,1,44.99,F,B,30-08-2021
+Awaken satsuki,Vergil umvc3,0,54.54,F,S,30-08-2021
+Black witch eva,Super3 goku EX3,0,57.69,F,S,30-08-2021
+Gale,Kon-el EX9,0,94.55,F,A,30-08-2021
+Vp frey,Cf-len,1,57.9,F,A,30-08-2021
+Lexaeus,Godzilla2014,1,10.84,F,B,30-08-2021
+Imouto,Disc,0,62.62,F,A,30-08-2021
+Colynse,Tony Chopper,0,87.18,F,B,30-08-2021
+Kungfumithra,Nero claudius,1,49.71,F,A,30-08-2021
+Squall JP,Billy lee,0,17.4,F,B,30-08-2021
+Ahya,Shen EX2,1,94.04,F,A,30-08-2021
+Seruzad,Clawbear,1,76.83,F,A,30-08-2021
+Achi cirno,Alucard RAI,0,83.94,F,A,30-08-2021
+Masked rider 1st,Ryona,0,35.76,F,S,30-08-2021
+Existence-less,Cammy EX3,1,81.7,F,S,30-08-2021
+Hunk,Gi gi,1,88.62,F,A,30-08-2021
+Haku-len,Elisabeth xiii,1,40.08,F,A,30-08-2021
+Wooden_doll,Remilia scarlet,0,40.58,F,A,30-08-2021
+Cvs sagat,Diana kof,1,54.26,F,S,30-08-2021
+Hawk,Shampoo,0,54.14,F,A,30-08-2021

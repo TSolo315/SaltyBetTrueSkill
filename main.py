@@ -3,9 +3,14 @@ import itertools
 import math
 import sys
 from datetime import date
+import time
 
 import trueskill
 import colorama
+
+import website
+import authenticate
+
 
 colorama.init()
 
@@ -282,15 +287,24 @@ class Compendium:
             print(f"{colorama.Fore.GREEN}{fighter1} Weighted Win Chance: {trueskill_rating}%")
             print(colorama.Style.RESET_ALL)
         if trueskill_rating <= 40:
-            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)}")
+            bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+            fighter = 'player2'
+            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
         elif 40 < trueskill_rating <= 50:
-            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {25000 * self.bet_multiplier}")
+            bet = 25000 * self.bet_multiplier
+            fighter = 'player1'
+            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         elif 50 < trueskill_rating <= 60:
-            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {25000 * self.bet_multiplier}")
+            bet = 25000 * self.bet_multiplier
+            fighter = 'player2'
+            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
         else:
-            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {int((trueskill_rating * 1000) * self.bet_multiplier)}")
+            bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+            fighter = 'player1'
+            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         print(colorama.Style.RESET_ALL)
         self.last_rating = trueskill_rating
+        return [fighter, bet]
 
     def get_stats(self, fighter, record=False):
         fighter = self.fighters[fighter]
@@ -323,139 +337,289 @@ class Interface:
         #     print("\nPossible Actions:\n 1. Enter WAIFU4u match chat for bet recommendation. \n 2. xxxxx. \n 3. xxxxx.\n")
         #     return
         if "are open for" in response.lower():
-            compendium.provide_recommendation(*self.waifu4u_match_text_interpreter(response))
-            return
-        if response.lower() in ['stats', 'stat', 'get stats']:
-            response = input("What fighter do you want stats on?")
-            try:
-                print(self.compendium.get_stats(response))
-            except KeyError:
-                print('No such fighter exists in database.')
-            return
-        if response.lower() in ['note', 'notes']:
-            response = input("What fighter do you want to add a note to? Write a name or enter 0 for last red fighter or 1 for last blue fighter.")
-            if response == '0' and self.compendium.last_fighter_one:
-                fighter = self.compendium.last_fighter_one
-            elif response == '1' and self.compendium.last_fighter_two:
-                fighter = self.compendium.last_fighter_two
-            else:
-                try:
-                    fighter = self.compendium.fighters[response]
-                except KeyError:
-                    print('No such fighter exists in database (or no previous match history recorded if using a shortcut.)')
-                    return
-            response = input(f"What note would you like to add to {fighter.name}? Enter 0 to clear all notes.")
-            if response == '0':
-                fighter.clear_notes()
-            else:
-                fighter.add_note(response)
-            return
-        if response.lower() in ['match', 'fight', 'vs']:
-            response = input("Input fighter one (RED)")
-            try:
-                fighter1 = self.compendium.fighters[response]
-            except KeyError:
-                print('This fighter does not exist in the database.')
-                return
-            response = input("Input fighter two (BLUE)")
-            try:
-                fighter2 = self.compendium.fighters[response]
-            except KeyError:
-                print('This fighter does not exist in the database.')
-                return
-            tier = input("What tier is this match in? Enter 0 if none.")
-            if tier == '0':
-                tier = False
-            elif tier not in TIER_DICT:
-                print('That tier level does not exist. Options are X, S, A, B, P, U.')
-                return
-            self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
-            return
-        if response.lower() in ['record', 'records']:
-            response = input("What fighter do you want stats and record data on?")
-            try:
-                print(self.compendium.get_stats(response, record=True))
-            except KeyError:
-                print('No such fighter exists in database.')
-            return
-        if response.lower() in ['new fighter', 'input fighter', 'add fighter', 'add']:
-            name = input("What fighter do you want to add?")
-            if name in self.compendium.fighters:
-                print('This fighter already exists.')
-                return
-            tier = input("What tier is this fighter in?")
-            if tier not in TIER_DICT:
-                print('That tier level does not exist. Options are X, S, A, B, P, U.')
-                return
-            try:
-                matches = int(input("Total matches played? Enter 0 if not sure."))
-            except ValueError:
-                print('Invalid input, response must be an integer.')
-                return
-            try:
-                won = int(input("Total matches won? Enter 0 if not sure."))
-            except ValueError:
-                print('Invalid input, response must be an integer.')
-                return
-            if matches != 0 and won != 0:
-                lost = matches - won
-                win_rate = round(won / matches, 2)
-            self.compendium.fighters[name] = Fighter(name, tier)
-            self.compendium.fighters[name].update_tier(tier)
-            if matches != 0 and won != 0:
-                self.compendium.fighters[name].win = won
-                self.compendium.fighters[name].loss = lost
-                self.compendium.fighters[name].win_rate = win_rate
-            return
-        if response.lower() in ['update', 'updates', 'update fighter']:
-            response = input("What fighter do you want to update?")
-            try:
-                fighter = self.compendium.fighters[response]
-            except KeyError:
-                print('No such fighter exists in database.')
-                return
-            response = input("Do you want to update 1. tier, 2. win percentage ?")
-            if response.lower() in ['1', 'tier']:
-                response = input("Enter new tier value")
-                if response in TIER_DICT:
-                    fighter.update_tier(response)
-                else:
-                    print('That tier level does not exist. Options are X, S, A, B, P, U.')
-            if response.lower() in ['2', 'win percentage']:
-                response = input("Enter new win percentage value")
-                try:
-                    response = int(response)
-                except ValueError:
-                    print('Win percentage must be an integer.')
-                    return
-                fighter.win_percentage = response
-            return
-        if response.lower() in ['0', '1', 'red', 'blue']:
-            if response.lower() == 'red':
-                response = '0'
-            elif response.lower() == 'blue':
-                response = '1'
-            compendium.update_with_last_match(response)
-            return
-        if response.lower() in ['multiplier', 'mult', 'bet multiplier']:
-            response = input("What do you want your bet multiplier to be? Input integer between 1-10.")
-            try:
-                self.compendium.bet_multiplier = int(response)
-            except ValueError:
-                print('Bet multiplier must be an integer.')
-                return
-            if int(response) > 10:
-                print('WARNING: Your bet multiplier is too high and will result in very high bets.')
-            return
-        if response.lower() in ['save']:
+            self.get_recommendation_from_chat(response)
+        elif response.lower() in ['stats', 'stat', 'get stats']:
+            self.print_stats()
+        elif response.lower() in ['note', 'notes']:
+            self.add_notes()
+        elif response.lower() in ['match', 'fight', 'vs']:
+            self.input_match()
+        elif response.lower() in ['record', 'records']:
+            self.print_record()
+        elif response.lower() in ['new fighter', 'input fighter', 'add fighter', 'add']:
+            self.add_fighter()
+        elif response.lower() in ['update', 'updates', 'update fighter']:
+            self.update_fighter()
+        elif response.lower() in ['0', '1', 'red', 'blue']:
+            self.update_with_last(response)
+        elif response.lower() in ['multiplier', 'mult', 'bet multiplier']:
+            self.set_multiplier()
+        elif response.lower() in ['save']:
             pickle.dump(compendium, open("save.p", "wb"))
-            return
-        if response.lower() == 'exit' or response == '3':
+        elif response.lower() == 'exit' or response == '3':
             pickle.dump(compendium, open("save.p", "wb"))
             sys.exit()
         else:
             print("\nCommand not recognized, type 'help' for a list of possible commands.\n")
             return
+
+    def get_recommendation_from_chat(self, response):
+        compendium.provide_recommendation(*self.waifu4u_match_text_interpreter(response))
+
+    def print_stats(self):
+        response = input("What fighter do you want stats on?")
+        try:
+            print(self.compendium.get_stats(response))
+        except KeyError:
+            print('No such fighter exists in database.')
+
+    def print_record(self):
+        response = input("What fighter do you want stats and record data on?")
+        try:
+            print(self.compendium.get_stats(response, record=True))
+        except KeyError:
+            print('No such fighter exists in database.')
+
+    def add_notes(self):
+        response = input(
+            "What fighter do you want to add a note to? Write a name or enter 0 for last red fighter or 1 for last blue fighter.")
+        if response == '0' and self.compendium.last_fighter_one:
+            fighter = self.compendium.last_fighter_one
+        elif response == '1' and self.compendium.last_fighter_two:
+            fighter = self.compendium.last_fighter_two
+        else:
+            try:
+                fighter = self.compendium.fighters[response]
+            except KeyError:
+                print(
+                    'No such fighter exists in database (or no previous match history recorded if using a shortcut.)')
+                return
+        response = input(
+            f"What note would you like to add to {fighter.name}? Enter 0 to clear all notes.")
+        if response == '0':
+            fighter.clear_notes()
+        else:
+            fighter.add_note(response)
+
+    def input_match(self):
+        response = input("Input fighter one (RED)")
+        try:
+            fighter1 = self.compendium.fighters[response]
+        except KeyError:
+            print('This fighter does not exist in the database.')
+            return
+        response = input("Input fighter two (BLUE)")
+        try:
+            fighter2 = self.compendium.fighters[response]
+        except KeyError:
+            print('This fighter does not exist in the database.')
+            return
+        tier = input("What tier is this match in? Enter 0 if none.")
+        if tier == '0':
+            tier = False
+        elif tier not in TIER_DICT:
+            print('That tier level does not exist. Options are X, S, A, B, P, U.')
+            return
+        self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
+
+    def add_fighter(self):
+        name = input("What fighter do you want to add?")
+        if name in self.compendium.fighters:
+            print('This fighter already exists.')
+            return
+        tier = input("What tier is this fighter in?")
+        if tier not in TIER_DICT:
+            print('That tier level does not exist. Options are X, S, A, B, P, U.')
+            return
+        try:
+            matches = int(input("Total matches played? Enter 0 if not sure."))
+        except ValueError:
+            print('Invalid input, response must be an integer.')
+            return
+        try:
+            won = int(input("Total matches won? Enter 0 if not sure."))
+        except ValueError:
+            print('Invalid input, response must be an integer.')
+            return
+        if matches != 0 and won != 0:
+            lost = matches - won
+            win_rate = round(won / matches, 2)
+        self.compendium.fighters[name] = Fighter(name, tier)
+        self.compendium.fighters[name].update_tier(tier)
+        if matches != 0 and won != 0:
+            self.compendium.fighters[name].win = won
+            self.compendium.fighters[name].loss = lost
+            self.compendium.fighters[name].win_rate = win_rate
+
+    def update_fighter(self):
+        response = input("What fighter do you want to update?")
+        try:
+            fighter = self.compendium.fighters[response]
+        except KeyError:
+            print('No such fighter exists in database.')
+            return
+        response = input("Do you want to update 1. tier, 2. win percentage ?")
+        if response.lower() in ['1', 'tier']:
+            response = input("Enter new tier value")
+            if response in TIER_DICT:
+                fighter.update_tier(response)
+            else:
+                print('That tier level does not exist. Options are X, S, A, B, P, U.')
+        if response.lower() in ['2', 'win percentage']:
+            response = input("Enter new win percentage value")
+            try:
+                response = int(response)
+            except ValueError:
+                print('Win percentage must be an integer.')
+                return
+            fighter.win_percentage = response
+
+    def set_multiplier(self):
+        response = input("What do you want your bet multiplier to be? Input integer between 1-10.")
+        try:
+            self.compendium.bet_multiplier = int(response)
+        except ValueError:
+            print('Bet multiplier must be an integer.')
+            return
+        if int(response) > 10:
+            print('WARNING: Your bet multiplier is too high and will result in very high bets.')
+
+    def update_with_last(self, response):
+        if response.lower() == 'red':
+            response = '0'
+        elif response.lower() == 'blue':
+            response = '1'
+        compendium.update_with_last_match(response)
+
+    def auto_mode(self):
+        """
+           Base code sourced from: https://github.com/Jacobinski/SaltBot
+           Auto mode.
+        """
+        url_bet = 'http://www.saltybet.com/ajax_place_bet.php'
+
+        # Login to SaltyBet
+        session, request = authenticate.login()
+
+        # Setup website interface
+        site = website.interface(session, request)
+
+        # Create global variables
+        balance_start, balance_end = site.get_balance(), site.get_balance()
+        status, prev_status = "None", "None"
+        duration = 0
+        placed_bet = False
+
+        # Create a match dictionary
+        match = {'player1': '', 'player2': '', 'duration': '', 'p1bet': '',
+                 'p2bet': '', 'myplayer': '', 'mybet': '', 'winner': ''}
+
+        while True:
+            try:
+                # Add a delay to avoid overloading the server
+                time.sleep(10)
+                duration += 10
+
+                # Update status
+                prev_status = status
+                site.update()
+                status = site.get_betting_status()
+                remaining = site.get_remaining()
+                if 'exhibition' in remaining:
+                    match_type = 'E'
+                    time.sleep(30)
+                    duration = 0
+                    continue
+                elif 'tournament' in remaining:
+                    match_type = 'T'
+                    time.sleep(30)
+                    duration = 0
+                    continue
+                else:
+                    match_type = 'MM'
+
+                # Note: The status can be open, locked, 1, 2. The last two
+                # statuses denote player1, player2 victory
+                if prev_status != 'open' and status == 'open':
+                    # End of previous match.
+                    # The placed_bet check is these to ensure that the match had begun
+                    if placed_bet:
+
+                        balance_end = site.get_balance()
+
+                        if balance_end > balance_start:
+                            print('Our bet wins')
+                            match['winner'] = match['myplayer']
+                            if match['player1'] == match['myplayer']:
+                                winner = '0'
+                            else:
+                                winner = '1'
+                        elif balance_end < balance_start:
+                            print('Our bet loses')
+                            if match['myplayer'] == match['player1']:
+                                match['winner'] = match['player2']
+                                winner = '1'
+                            else:
+                                match['winner'] = match['player1']
+                                winner = '0'
+                        else:
+                            print('Start $: ' + str(balance_start)
+                                  + ' End $: ' + str(balance_end))
+                            print('Money remained the same?')
+                            match['winner'] = '???'
+
+                        match['duration'] = duration
+
+                        # Save the match
+                        if match['winner'] != '???':
+                            self.compendium.update_with_last_match(winner)
+
+                        # Add players to table if not already there
+                        # for p in [match['player1'], match['player2']]:
+                        #     if not database.has_player(p, cur):
+                        #         database.add_player(p, conn, cur)
+
+                    # Start of new match
+                    print('\nBetting is now open!')
+                    print('Balance: ' + str(balance_end))
+
+                    match['player1'] = site.get_player1_name()
+                    fighter1 = self.compendium.fighters[match['player1']]
+                    match['player2'] = site.get_player2_name()
+                    fighter2 = self.compendium.fighters[match['player2']]
+                    tier = fighter1.tier
+
+                    # wager = determine_wager(balance_end)
+                    # predicted_winner = determine_player(match['player1'], match['player2'], cur)
+                    predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
+
+                    # Place the bet, refresh the status to determine success
+                    bet = {'selectedplayer': predicted_winner, 'wager': wager}
+                    r = session.post(url_bet, data=bet)
+
+                    assert r.status_code == 200, "Bet failed to be place. Code: %i" \
+                                                 % r.status_code
+
+                    match['myplayer'] = match[predicted_winner]
+                    match['mybet'] = wager
+
+                    placed_bet = True
+
+                    # Player win percentage
+                    print("P1: " + match['player1'] + " P2: " + match['player2'])
+                    print("Bet " + str(wager) + " on " + match['myplayer'])
+
+                elif prev_status == 'open' and status == 'locked':
+                    print('The match begins!')
+                    balance_start = site.get_balance()
+                    duration = 0
+
+                    match['p1bet'] = site.get_player1_wagers()
+                    match['p2bet'] = site.get_player2_wagers()
+
+            except Exception as err:
+                sys.stderr.write('ERROR: {0} on line {1}\n'.format(
+                    str(err), sys.exc_info()[-1].tb_lineno))
 
 
 if __name__ == "__main__":
