@@ -489,3 +489,24 @@ Kendo&kyudo,Gnhkn,1,1.77,F,A,31-08-2021
 Kyle the squirtle,Rascal,0,55.2,F,A,31-08-2021
 Doppo orochi EX3,Kana orikura,0,79.87,F,A,31-08-2021
 Garuda,Save spacemouse!,0,64.76,F,S,31-08-2021
+Accelerator 2,Doraemon EX3,0,61.12,F,S,31-08-2021
+Sigfried doble de alfa,Hoihoi,0,54.33,F,A,31-08-2021
+Fenice,Tatsuki,0,69.66,F,B,31-08-2021
+Gertrud,Kung fu master,1,65.45,F,S,31-08-2021
+G-adelheid,Dead kung fu man EX3,0,88.04,F,S,31-08-2021
+Blitztank-n,Hauzer,1,15.32,F,S,31-08-2021
+Miyoshi karin,Barts,0,76.01,F,A,31-08-2021
+Destroyous,Maggyo IX,1,29.65,F,A,31-08-2021
+Saggot v2,Thouther 2,0,51.86,F,S,31-08-2021
+Clarice_di_lanza,Mattrex,0,75.6,F,S,31-08-2021
+Masta gambit,Zeeky h. bomb,1,34.64,F,S,31-08-2021
+Cvssantamu,Monster marco,0,51.77,F,B,31-08-2021
+Shampoo,Robo-ky mk-2,0,33.53,F,A,31-08-2021
+Yami_miko EX,Asura,0,89.56,F,S,31-08-2021
+Alessi,Franko,0,69.31,F,B,31-08-2021
+Serious mr. karate,Blue colonel,1,10.11,F,S,31-08-2021
+Kyoji kasshu,Diabolic blackheart,1,26.05,F,S,31-08-2021
+Sanada ani,Makoto sawatari,0,55.98,F,A,31-08-2021
+King of heroes EX7,Rugals und panzer,0,60.1,F,X,31-08-2021
+Kurusugawa ayaka,Blitztank-n,0,76.75,F,A,31-08-2021
+Pietro,Neva,1,24.95,F,A,31-08-2021

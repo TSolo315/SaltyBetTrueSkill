@@ -198,6 +198,9 @@ class Interface:
             response = '1'
         self.compendium.update_with_last_match(response, manual=True)
 
+    def dict_zip(self, dict1, dict2):
+        return {k: dict1.get(k, 0) + dict2.get(k, 0) for k in dict1.keys() | dict2.keys()}
+
     def auto_mode(self):
         """
            Base code sourced from: https://github.com/Jacobinski/SaltBot
@@ -298,10 +301,15 @@ class Interface:
                     fighter1 = self.compendium.fighters[match['player1']]
                     match['player2'] = site.get_player2_name()
                     fighter2 = self.compendium.fighters[match['player2']]
+
                     tier = fighter1.tier
+                    if tier != fighter2.tier:
+                        tier_dict = self.dict_zip(fighter1.tier_list, fighter2.tier_list)
+                        tier = max(tier_dict, key=tier_dict.get)
+                        print(f"{tier} has been set as the match tier. Is this correct?")
 
                     predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
-                    
+
                     if '&' in match['player1'] or '&' in match['player2']:  # win rate data broken on these fighters.
                         wager = int(wager / 5)
                     if match_type == "T":

@@ -50,7 +50,7 @@ class interface:
         # Check to see if the match status changed
         new_match = json.loads(self.session.get(URL_JSON).content)
 
-        if (self.match_json != new_match):
+        if self.match_json != new_match:
             soup = BeautifulSoup(self.request.content, 'html.parser')
             self.match_json = new_match
             self.balance = int(soup.find(id="balance").string.replace(',',''))
