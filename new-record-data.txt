@@ -342,3 +342,7 @@ Haku-len,Elisabeth xiii,1,40.08,F,A,30-08-2021
 Wooden_doll,Remilia scarlet,0,40.58,F,A,30-08-2021
 Cvs sagat,Diana kof,1,54.26,F,S,30-08-2021
 Hawk,Shampoo,0,54.14,F,A,30-08-2021
+Gaoh kyougoku hinowanokami,Pocket kefla,0,62.29,F,A,30-08-2021
+Ryu-akuma - dark ryu vbeta 2,Abomination,0,68.35,F,B,30-08-2021
+Ex-malin,Ex adamas,1,7.14,F,B,30-08-2021
+Sanada kojiroh,Kanaka,0,66.52,F,A,30-08-2021

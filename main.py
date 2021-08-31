@@ -304,7 +304,7 @@ class Compendium:
             print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         print(colorama.Style.RESET_ALL)
         self.last_rating = trueskill_rating
-        return [fighter, bet]
+        return [fighter, int(bet / 10)]
 
     def get_stats(self, fighter, record=False):
         fighter = self.fighters[fighter]
@@ -354,8 +354,11 @@ class Interface:
             self.update_with_last(response)
         elif response.lower() in ['multiplier', 'mult', 'bet multiplier']:
             self.set_multiplier()
+        elif response.lower() in ['auto', 'bot']:
+            self.auto_mode()
         elif response.lower() in ['save']:
             pickle.dump(compendium, open("save.p", "wb"))
+            print('Data Saved')
         elif response.lower() == 'exit' or response == '3':
             pickle.dump(compendium, open("save.p", "wb"))
             sys.exit()
@@ -496,10 +499,12 @@ class Interface:
            Base code sourced from: https://github.com/Jacobinski/SaltBot
            Auto mode.
         """
-        url_bet = 'http://www.saltybet.com/ajax_place_bet.php'
+        url_bet = 'https://www.saltybet.com/ajax_place_bet.php'
+        user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0'
 
         # Login to SaltyBet
         session, request = authenticate.login()
+        session.headers.update({'User-Agent': user_agent})
 
         # Setup website interface
         site = website.interface(session, request)
@@ -508,6 +513,7 @@ class Interface:
         balance_start, balance_end = site.get_balance(), site.get_balance()
         status, prev_status = "None", "None"
         duration = 0
+        save_counter = 0
         placed_bet = False
 
         # Create a match dictionary
@@ -519,6 +525,7 @@ class Interface:
                 # Add a delay to avoid overloading the server
                 time.sleep(10)
                 duration += 10
+                save_counter += 1
 
                 # Update status
                 prev_status = status
@@ -531,12 +538,12 @@ class Interface:
                     duration = 0
                     continue
                 elif 'tournament' in remaining:
+                    match_type = 'MM'
+                else:
                     match_type = 'T'
                     time.sleep(30)
                     duration = 0
                     continue
-                else:
-                    match_type = 'MM'
 
                 # Note: The status can be open, locked, 1, 2. The last two
                 # statuses denote player1, player2 victory
@@ -573,6 +580,10 @@ class Interface:
                         # Save the match
                         if match['winner'] != '???':
                             self.compendium.update_with_last_match(winner)
+                            if save_counter > 10:
+                                pickle.dump(compendium, open("save.p", "wb"))
+                                print('Data Saved')
+                                save_counter = 0
 
                         # Add players to table if not already there
                         # for p in [match['player1'], match['player2']]:
@@ -589,12 +600,11 @@ class Interface:
                     fighter2 = self.compendium.fighters[match['player2']]
                     tier = fighter1.tier
 
-                    # wager = determine_wager(balance_end)
-                    # predicted_winner = determine_player(match['player1'], match['player2'], cur)
                     predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
 
+
                     # Place the bet, refresh the status to determine success
-                    bet = {'selectedplayer': predicted_winner, 'wager': wager}
+                    bet = {'selectedplayer': predicted_winner, 'wager': str(wager)}
                     r = session.post(url_bet, data=bet)
 
                     assert r.status_code == 200, "Bet failed to be place. Code: %i" \
@@ -605,7 +615,7 @@ class Interface:
 
                     placed_bet = True
 
-                    # Player win percentage
+                    # Bet Placed
                     print("P1: " + match['player1'] + " P2: " + match['player2'])
                     print("Bet " + str(wager) + " on " + match['myplayer'])
 
