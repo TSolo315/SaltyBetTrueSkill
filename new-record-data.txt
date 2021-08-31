@@ -484,3 +484,8 @@ Sim young gradation,Gigant,0,79.6,F,A,31-08-2021
 Nyarlathotep,Grandmaster miyako,1,48.77,F,A,31-08-2021
 Bowser jr.,Virgilia,1,34.3,F,A,31-08-2021
 Sonya kmb,Sim young gradation,0,54.86,F,A,31-08-2021
+Wonder Woman Reloaded,Ninja nwa,1,59.93,F,A,31-08-2021
+Kendo&kyudo,Gnhkn,1,1.77,F,A,31-08-2021
+Kyle the squirtle,Rascal,0,55.2,F,A,31-08-2021
+Doppo orochi EX3,Kana orikura,0,79.87,F,A,31-08-2021
+Garuda,Save spacemouse!,0,64.76,F,S,31-08-2021
