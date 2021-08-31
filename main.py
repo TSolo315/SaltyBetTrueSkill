@@ -172,7 +172,7 @@ class Compendium:
                 print(stripped_line)
         print(untiered_dict)
 
-    def update_with_last_match(self, winning_player, match_record=False):
+    def update_with_last_match(self, winning_player, match_record=False, manual=False):
         if match_record:
             self.last_fighter_one = self.fighters[match_record[0]]
             self.last_fighter_two = self.fighters[match_record[1]]
@@ -197,7 +197,8 @@ class Compendium:
         else:
             winner = self.last_fighter_two
             loser = self.last_fighter_one
-        print(winner.name + "'s win has been saved!")
+        if manual:
+            print(winner.name + "'s win has been saved!")
         rating1, rating2 = trueskill.rate_1vs1(winner.rating, loser.rating)
         if winning_player == '0':
             self.update_record(match_stats, rating1, 0)
@@ -243,12 +244,16 @@ class Compendium:
                     higher_lower = 'a higher tier -'
                 print(colorama.Fore.RED + f"Warning: {player.name} has been in {higher_lower} {filtered} tier!")
                 print(colorama.Style.RESET_ALL)
-                alternate_tier_percentage = player.tier_list[filtered] / (player.tier_list[filtered] + player.tier_list[tier]) * 100
+                try:
+                    alternate_tier_percentage = player.tier_list[filtered] / (player.tier_list[filtered] + player.tier_list[tier]) * 100
+                except KeyError:
+                    player.update_tier(tier)
+                    alternate_tier_percentage = 95
                 if alternate_tier_percentage > 10:
                     if 'higher' in higher_lower:
-                        tier_adjustment = round(alternate_tier_percentage * .12, 2)
+                        tier_adjustment = round(alternate_tier_percentage * .13, 2)
                     else:
-                        tier_adjustment = round(alternate_tier_percentage * -.12, 2)
+                        tier_adjustment = round(alternate_tier_percentage * -.13, 2)
         return tier_adjustment
 
     def tier_adjust(self, player1, player2, tier):
@@ -256,6 +261,7 @@ class Compendium:
 
     def provide_recommendation(self, fighter1, fighter2, tier=False):
         previous_record = [0, 0]
+        adjusted = False
         try:
             player1 = self.fighters[fighter1]
         except KeyError:
@@ -274,37 +280,54 @@ class Compendium:
         trueskill_rating = round(self.win_probability([player1.rating], [player2.rating]) * 100, 2)
         print(self.get_stats(fighter1))
         print(self.get_stats(fighter2))
-        print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous Match Record: {previous_record}\n{colorama.Fore.CYAN}{fighter1} Win Chance: {trueskill_rating}%")
+        print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous Match Record: {previous_record}\n\n{colorama.Fore.CYAN}{fighter1} Win Chance: {trueskill_rating}%")
         print(colorama.Style.RESET_ALL)
         if tier:
             tier_adjust = self.tier_adjust(player1, player2, tier)
         if sum(tier_adjust) != 0 or sum(previous_record) != 0:
             player_one_record = (previous_record[0] - previous_record[1]) * 100
-            trueskill_rating += .05 * player_one_record
+            trueskill_rating += .08 * player_one_record
             trueskill_rating += tier_adjust[0]
             trueskill_rating -= tier_adjust[1]
             trueskill_rating = round(trueskill_rating, 2)
             print(f"{colorama.Fore.GREEN}{fighter1} Weighted Win Chance: {trueskill_rating}%")
             print(colorama.Style.RESET_ALL)
+            adjusted = True
         if trueskill_rating <= 40:
             bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
             fighter = 'player2'
             print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
         elif 40 < trueskill_rating <= 50:
-            bet = 25000 * self.bet_multiplier
-            fighter = 'player1'
-            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
+            if adjusted:
+                bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+                fighter = 'player2'
+                print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+            else:
+                if trueskill_rating >= 45:
+                    bet = 30000 * self.bet_multiplier
+                else:
+                    bet = 25000 * self.bet_multiplier
+                    fighter = 'player1'
+                print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         elif 50 < trueskill_rating <= 60:
-            bet = 25000 * self.bet_multiplier
-            fighter = 'player2'
-            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+            if adjusted:
+                bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+                fighter = 'player1'
+                print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
+            else:
+                if trueskill_rating <= 55:
+                    bet = 30000 * self.bet_multiplier
+                else:
+                    bet = 25000 * self.bet_multiplier
+                fighter = 'player2'
+                print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
         else:
             bet = int((trueskill_rating * 1000) * self.bet_multiplier)
             fighter = 'player1'
             print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         print(colorama.Style.RESET_ALL)
         self.last_rating = trueskill_rating
-        return [fighter, int(bet / 10)]
+        return [fighter, int(bet / 3)]
 
     def get_stats(self, fighter, record=False):
         fighter = self.fighters[fighter]
@@ -492,7 +515,7 @@ class Interface:
             response = '0'
         elif response.lower() == 'blue':
             response = '1'
-        compendium.update_with_last_match(response)
+        compendium.update_with_last_match(response, manual=True)
 
     def auto_mode(self):
         """
@@ -520,30 +543,27 @@ class Interface:
         match = {'player1': '', 'player2': '', 'duration': '', 'p1bet': '',
                  'p2bet': '', 'myplayer': '', 'mybet': '', 'winner': ''}
 
+        print('The betting bot has been started!')
         while True:
             try:
                 # Add a delay to avoid overloading the server
                 time.sleep(10)
                 duration += 10
-                save_counter += 1
 
                 # Update status
                 prev_status = status
                 site.update()
                 status = site.get_betting_status()
                 remaining = site.get_remaining()
-                if 'exhibition' in remaining:
-                    match_type = 'E'
-                    time.sleep(30)
+                if 'exhibition' in remaining and 'FINAL ROUND' not in remaining:
+                    time.sleep(60)
                     duration = 0
+                    print('Sleeping through exhibitions...')
                     continue
                 elif 'tournament' in remaining:
                     match_type = 'MM'
                 else:
                     match_type = 'T'
-                    time.sleep(30)
-                    duration = 0
-                    continue
 
                 # Note: The status can be open, locked, 1, 2. The last two
                 # statuses denote player1, player2 victory
@@ -553,16 +573,17 @@ class Interface:
                     if placed_bet:
 
                         balance_end = site.get_balance()
+                        save_counter += 1
 
                         if balance_end > balance_start:
-                            print('Our bet wins')
+                            print(f"{colorama.Fore.GREEN}{colorama.Style.BRIGHT}Winner Winner!{colorama.Style.RESET_ALL}")
                             match['winner'] = match['myplayer']
                             if match['player1'] == match['myplayer']:
                                 winner = '0'
                             else:
                                 winner = '1'
                         elif balance_end < balance_start:
-                            print('Our bet loses')
+                            print(f"{colorama.Fore.RED}{colorama.Style.BRIGHT}We lost{colorama.Style.RESET_ALL}")
                             if match['myplayer'] == match['player1']:
                                 match['winner'] = match['player2']
                                 winner = '1'
@@ -586,13 +607,11 @@ class Interface:
                                 save_counter = 0
 
                         # Add players to table if not already there
-                        # for p in [match['player1'], match['player2']]:
-                        #     if not database.has_player(p, cur):
-                        #         database.add_player(p, conn, cur)
+                        # todo
 
                     # Start of new match
                     print('\nBetting is now open!')
-                    print('Balance: ' + str(balance_end))
+                    print(f"\n{colorama.Fore.MAGENTA} Balance: {str(balance_end)}{colorama.Style.RESET_ALL}\n")
 
                     match['player1'] = site.get_player1_name()
                     fighter1 = self.compendium.fighters[match['player1']]
@@ -601,7 +620,8 @@ class Interface:
                     tier = fighter1.tier
 
                     predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
-
+                    if match_type == "T":
+                        wager = site.get_balance()
 
                     # Place the bet, refresh the status to determine success
                     bet = {'selectedplayer': predicted_winner, 'wager': str(wager)}
@@ -615,10 +635,6 @@ class Interface:
 
                     placed_bet = True
 
-                    # Bet Placed
-                    print("P1: " + match['player1'] + " P2: " + match['player2'])
-                    print("Bet " + str(wager) + " on " + match['myplayer'])
-
                 elif prev_status == 'open' and status == 'locked':
                     print('The match begins!')
                     balance_start = site.get_balance()
@@ -626,6 +642,13 @@ class Interface:
 
                     match['p1bet'] = site.get_player1_wagers()
                     match['p2bet'] = site.get_player2_wagers()
+
+                    if int(match['p1bet']) > int(match['p2bet']):
+                        odds = f"{round(int(match['p1bet']) / int(match['p2bet']), 2)}:1"
+                    else:
+                        odds = f"1:{round(int(match['p2bet']) / int(match['p1bet']), 2)}"
+
+                    print(f"{match['player1']} - {match['p1bet']} | {match['player2']} - {match['p2bet']}\nODDS: {odds}")
 
             except Exception as err:
                 sys.stderr.write('ERROR: {0} on line {1}\n'.format(

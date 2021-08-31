@@ -346,3 +346,141 @@ Gaoh kyougoku hinowanokami,Pocket kefla,0,62.29,F,A,30-08-2021
 Ryu-akuma - dark ryu vbeta 2,Abomination,0,68.35,F,B,30-08-2021
 Ex-malin,Ex adamas,1,7.14,F,B,30-08-2021
 Sanada kojiroh,Kanaka,0,66.52,F,A,30-08-2021
+Reika kitakami,Poochy,0,62.74,F,S,30-08-2021
+Mb-01,Sa-tan,1,56.89,F,A,30-08-2021
+Bemular,Tamamushihime,0,36.48,F,S,30-08-2021
+Mery,Hugo simpson 2,0,82.58,F,B,30-08-2021
+Fake kaede,Rosie,0,86.4,F,A,30-08-2021
+Drizzt do'urden,Axel stone pots,0,53.8,F,A,30-08-2021
+Lf2 - louisx,Caramelman no.2,0,69.3,F,A,30-08-2021
+Speck,Rydia EX3,0,40.93,F,A,30-08-2021
+Kid buu z2,Deathsarus,1,54.35,F,B,30-08-2021
+Dantalion_alice,David bell,0,68.08,F,S,30-08-2021
+Rozalin,Gaisei,1,29.06,F,S,30-08-2021
+Ryu EX3,Undeadsoldier,0,48.17,F,S,30-08-2021
+Orochi yamazaki,Kim hoon EX,1,65.74,F,A,30-08-2021
+Dorothy,Hu-ama EX3,0,72.09,F,P,30-08-2021
+Dr. nucleus,Dark phoenix,1,87.48,F,S,30-08-2021
+Stupid little drill tank,Magma-dragoon,0,80.23,F,S,30-08-2021
+Cheep-chomp,Mango sentinel,1,19.98,F,S,30-08-2021
+Bison trooper x,Rokurouta,1,50.19,F,B,30-08-2021
+Kongou,Alvaaron,1,36.76,F,A,30-08-2021
+Guardian,Goryujin,0,62.57,F,A,30-08-2021
+Akuma,Poison ivy,0,57.77,F,B,30-08-2021
+Kim as,Dud,0,12.44,F,S,30-08-2021
+Berserker f/sn,Suija,1,46.32,F,S,30-08-2021
+Uzume,Megu asuhara,1,62.49,F,S,30-08-2021
+Astranalent ex,Shiva,1,21.12,F,S,30-08-2021
+Helmet,Henri angelo,1,41.96,F,A,30-08-2021
+Rajaa riesbyfe,Israfel,0,61.7,F,B,30-08-2021
+Kuro,Cyber akuma mvc,0,84.08,F,B,30-08-2021
+Task force green arrow,Assasincross,0,34.74,F,S,30-08-2021
+Ranmaru,Jibber,1,24.89,F,A,30-08-2021
+Evil zodiac,Nozomu (reimei),1,34.37,F,S,30-08-2021
+Omega rugal 95,Kamitsurugi,0,72.37,F,S,30-08-2021
+Sasuke,Kyo_99xi,0,17.98,F,B,30-08-2021
+Charlotte ex,Weakest rugal,0,30.35,F,A,30-08-2021
+Snakeeyes,Rick simpsons,0,74.04,F,B,30-08-2021
+Irori,Nico nico,0,17.87,F,A,30-08-2021
+Sentinel,C. shrd,1,55.96,F,A,30-08-2021
+Ridley other m,Stronk guy,0,28.45,F,S,30-08-2021
+Envia,Arash,0,73.98,F,X,30-08-2021
+Morilen,Robo rocky,0,77.41,F,B,30-08-2021
+Zero ariel,Vile EX3,1,15.91,F,A,30-08-2021
+Zeus ex,Zeus (disney),0,23.48,F,A,30-08-2021
+Hiryu,Mettaton,0,43.33,F,A,30-08-2021
+Hakurei omega,Ooze-o,1,62.55,F,S,30-08-2021
+Nyarlathotep,Duck king-kofm,1,78.61,F,A,30-08-2021
+Jagi bike,Cammy EX3,1,22.97,F,S,30-08-2021
+Charlotte pots,Irori,1,41.99,F,B,30-08-2021
+Orsted,Neku sakuraba,1,63.83,F,A,30-08-2021
+Curefroor,Nogami_aoi,0,87.1,F,S,31-08-2021
+Trish EX6,Nightmare the jujin lv3,1,7.36,F,S,31-08-2021
+Alter donald,Guts,1,22.58,F,S,31-08-2021
+Goodman,Imit ultraseven,1,39.11,F,A,31-08-2021
+Metalman mvc,Shishio,1,43.4,F,A,31-08-2021
+Undertaker,Koizumi itsuki,0,76.24,F,A,31-08-2021
+Jilche,Abyss EX,1,10.24,F,S,31-08-2021
+Ryogi_exvs,Gyarados,0,62.3,F,S,31-08-2021
+Aurum axe,Saisyu kusanagi,0,75.9,F,S,31-08-2021
+Zantetsu udou,Kimexemaru,0,55.01,F,S,31-08-2021
+Deluxe chipp,Pantherk,1,37.17,F,S,31-08-2021
+Miyoshi karin,Moe yumezora,1,58.08,F,A,31-08-2021
+Lilia,Beryl benito,1,49.91,F,A,31-08-2021
+Jyashinsai,Guile hd,0,31.86,F,S,31-08-2021
+Oira,Joker-p,1,71.51,F,S,31-08-2021
+Arale norimaki,Jin kazama qyc,0,72.06,F,A,31-08-2021
+Resistance,Reptile,1,39.2,F,B,31-08-2021
+Heracross,Alt(hana-ai),1,22.63,F,S,31-08-2021
+Kinu_ex,Nisego chaos,1,60.44,F,S,31-08-2021
+Presea combatir,Eve,1,15.64,F,A,31-08-2021
+Element -a-,H-m-geese,1,90.65,F,S,31-08-2021
+Joe swanson,Soujiro EX3,0,52.78,F,A,31-08-2021
+Yong-taiga,P-silver,1,10.06,F,S,31-08-2021
+Preposterous cirno,Mg_snorlax,0,73.1,F,S,31-08-2021
+Shin gouki EX2,Fridge kirby,0,34.32,F,B,31-08-2021
+Kung fu head,A decent chang,0,55.12,F,S,31-08-2021
+Cable,Duke the robot,0,56.69,F,A,31-08-2021
+Geese 98,Ratix,0,33.32,F,A,31-08-2021
+Gp-02 physalis,Mow yosse,0,75.91,F,X,31-08-2021
+Sf4 ryu,Karnov ex,0,55.94,F,A,31-08-2021
+Mysterious budo,Shana dg,0,47.71,F,P,31-08-2021
+Asuna,Alien metron,1,30.13,F,A,31-08-2021
+Megamami EX2,Hiryu,0,30.7,F,A,31-08-2021
+Goku black ssr,Bloodia EX3,0,64.94,F,S,31-08-2021
+Goku deus extreme,Tsukushi_mio,1,50.12,F,A,31-08-2021
+Nyal,Super metallix,0,40.76,F,X,31-08-2021
+Kyo kusanagi 97,Simonkin2019,0,39.07,F,S,31-08-2021
+Klaus garcia,Pepito EX2,1,76.0,F,A,31-08-2021
+Sanada yukimura_ch,Megu asuhara,0,37.39,F,S,31-08-2021
+Ebe,Rock EX3,1,53.2,F,B,31-08-2021
+Woody,Sceptile,1,42.38,F,B,31-08-2021
+Tomitake jirou,Arima_miyako,1,30.32,F,A,31-08-2021
+Original vega,Archer f/sn,0,49.29,F,A,31-08-2021
+Bao,Polon,1,6.56,F,S,31-08-2021
+Dinosaur,Weakest rugal,1,26.98,F,A,31-08-2021
+Kemular,Natural miku,0,46.11,F,S,31-08-2021
+Cci jhun EX3,Robo-akatsuki,0,59.14,F,A,31-08-2021
+Aty,>.<,1,96.77,F,A,31-08-2021
+Wu-ling,Orochi shermie,1,11.36,F,A,31-08-2021
+King-kofm,Kung fu akira,1,47.42,F,A,31-08-2021
+Cyberbot_atlas,Goku ssb,0,90.49,F,S,31-08-2021
+95ani,Goku ssj dios,0,34.62,F,B,31-08-2021
+Mastr Hand,Hawkeye sd,1,61.96,F,A,31-08-2021
+Willard h. wright,Shin meep140,0,64.33,F,S,31-08-2021
+Fenri-lunaedge,Zz_gundam,1,53.58,F,A,31-08-2021
+Rid hershel,Kraken,1,40.1,F,S,31-08-2021
+Toy,Rin_h,1,42.05,F,A,31-08-2021
+Otane,Bullzeye,0,48.71,F,B,31-08-2021
+Mint ndx,Demitri,0,39.41,F,B,31-08-2021
+Luigi ssbb,Edward trusdale,1,43.23,F,A,31-08-2021
+Mizuchi,Fitzgerald,1,79.86,F,S,31-08-2021
+Sagat svc chaos,Tokinomiya kamui EX3,1,5.55,F,S,31-08-2021
+Bane's a big guy,Vampire hunter hsien-ko,0,55.46,F,S,31-08-2021
+Zain,Mow yosse,0,89.17,F,X,31-08-2021
+Homura sk,Elena_n,0,45.26,F,A,31-08-2021
+Omega rugal cvs,Sahaquiel,0,49.05,F,S,31-08-2021
+Dougster,Mvc2 ciel,0,82.67,F,A,31-08-2021
+Psychociel,Kirin,1,51.68,F,A,31-08-2021
+Shiratama20,Akane inuwaka ex,1,28.97,F,S,31-08-2021
+Gulcasa,Zero Cloud,0,67.23,F,A,31-08-2021
+A-green,Ken X,0,55.11,F,B,31-08-2021
+Heiho,Young geese,0,55.45,F,A,31-08-2021
+Lightning bd,Burner man,0,76.4,F,A,31-08-2021
+Rugal.b,Donkeykongjr EX,1,72.24,F,A,31-08-2021
+Kiyoshi,Pikaman,0,66.77,F,B,31-08-2021
+Sparkster,Greek goku,1,59.64,F,S,31-08-2021
+Yatteyaru-death,Azrael cpex,1,56.7,F,S,31-08-2021
+Deluxe burter,B-cirno,0,78.29,F,S,31-08-2021
+Kanon del geminis,The owner of eden,1,2.67,F,S,31-08-2021
+Miss tron,Barts EX3,0,78.74,F,A,31-08-2021
+Mithra,Kano EX,1,35.35,F,A,31-08-2021
+Otane,Kobun 43,1,40.42,F,B,31-08-2021
+Ran horigein,Yamisaka kureha,1,56.37,F,S,31-08-2021
+Ex rumia,Ssf2x dhalsim,0,34.47,F,S,31-08-2021
+Ushio,The mountain,1,24.03,F,A,31-08-2021
+Weiss guitly gear,Sonya kmb,1,49.86,F,A,31-08-2021
+Sim young gradation,Gigant,0,79.6,F,A,31-08-2021
+Nyarlathotep,Grandmaster miyako,1,48.77,F,A,31-08-2021
+Bowser jr.,Virgilia,1,34.3,F,A,31-08-2021
+Sonya kmb,Sim young gradation,0,54.86,F,A,31-08-2021

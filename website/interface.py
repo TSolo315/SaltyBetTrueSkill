@@ -1,12 +1,8 @@
-'''
-The interface module for SaltBot
-'''
 from bs4 import BeautifulSoup
-import requests
-import time
 import json
 
 URL_JSON = "http://www.saltybet.com/state.json"
+
 
 class interface:
     def __init__(self, session, request):
