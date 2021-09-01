@@ -518,3 +518,69 @@ Bison trooper x,Crescent silvan,1,31.82,F,A,31-08-2021
 Lee,Daigo hotta,1,27.52,F,B,31-08-2021
 Prizm-star,Deluxe tetsu yatogi,0,59.53,F,B,31-08-2021
 Sparq,Kim hoon EX,0,37.2,F,A,31-08-2021
+Ken sf3,Ringo aomori,1,27.87,F,A,31-08-2021
+Diggle,Gouken,0,75.58,F,B,31-08-2021
+Asura taros,Snorlax EX2,1,48.68,F,S,31-08-2021
+Double-a,Maxim kischine,1,51.26,F,A,31-08-2021
+Bao,Faust,1,37.36,F,S,31-08-2021
+Mark sein,Shin kazuma,0,42.35,F,A,31-08-2021
+A ninja,Sync,0,82.97,F,B,31-08-2021
+Mustapha,ShinGouki,0,45.03,F,B,31-08-2021
+Earthquake svc,Missingno.,1,41.84,F,A,31-08-2021
+Pocket jiren,Nonon jakuzure,1,37.2,F,S,31-08-2021
+Zan-b EX,Nu-13,0,53.02,F,A,31-08-2021
+Space warrior,Kyaga-hell,1,64.48,F,S,31-08-2021
+Beautiful shermie qyc,Aisatu_bouya,0,84.81,F,A,31-08-2021
+Roa,Goah the giant,0,78.4,F,B,31-08-2021
+Peeking lord pirate,Byakki,0,55.39,F,B,31-08-2021
+Half orc,Ouyang feng,1,30.82,F,A,31-08-2021
+Mr.big,Jean grey,1,57.12,F,A,31-08-2021
+Hoshikage,Omega svc,1,35.68,F,A,31-08-2021
+Rare god orochi,Kay,1,63.29,F,A,31-08-2021
+Nina,Ryogi_exvs,1,38.24,F,S,31-08-2021
+Cursed bishamon,Kyuketsuki_satsuki,1,44.88,F,A,31-08-2021
+Senator lieberman,Genpaku,0,71.17,F,A,31-08-2021
+Joker EX3,Mado gakusha,0,69.67,F,A,31-08-2021
+Suicider raoh,Jonathan crane,0,87.58,F,S,31-08-2021
+Ultraman agul,Margaretha_solin,1,59.41,F,A,31-08-2021
+Shion-kofm,Ingrid_a,0,89.51,F,A,31-08-2021
+Zombies,Mimizuku_teacher,0,52.81,F,B,31-08-2021
+Mai 2k2,Juda-(nericya),1,46.75,F,A,31-08-2021
+Crazy mukuro,Da zhong tian,1,27.25,F,S,31-08-2021
+Ss6 aisya,Underdog,1,81.66,F,A,31-08-2021
+Shantotto,Valkenhayn r. hellsing,0,64.76,F,B,31-08-2021
+Task force batman,Troll,1,11.2,F,A,31-08-2021
+Misty,Hayato kanzaki,1,21.08,F,S,31-08-2021
+James,Tung fu rue special,0,53.33,F,A,31-08-2021
+Solisr8000,Morgiana EX2,1,74.4,F,A,31-08-2021
+Sketchy yoshi,Ebe,1,18.56,F,B,31-08-2021
+Happosai,Nanaya toki,1,13.24,F,S,31-08-2021
+Rouga-zanma,Hyuuga hinata,1,41.77,F,P,31-08-2021
+New kiwami,Omni-psych chipp,1,74.9,F,S,31-08-2021
+Fangore,Ultraman dyna,1,22.07,F,A,31-08-2021
+Maccho,Robo-ky EX,0,27.28,F,S,31-08-2021
+Utagai_san,Super girl,1,28.37,F,B,31-08-2021
+Kane,Bastion,0,87.88,F,B,31-08-2021
+Death machine mb-59,Robo-mukai,1,20.3,F,A,31-08-2021
+Rina,Sonic machine,1,24.78,F,A,31-08-2021
+Nyu,Jedah dohma,0,78.24,F,A,31-08-2021
+Death force,Number muncher,1,46.6,F,B,31-08-2021
+Nero DMC4,Yang adam,1,32.74,F,A,31-08-2021
+Nimuge president,Makaryudo,1,59.12,F,B,31-08-2021
+Akane tendo,Imouto,1,73.13,F,A,31-08-2021
+Woody woodpecker,Wanda,1,29.73,F,A,31-08-2021
+Yayoi,Nanashi,0,55.35,F,S,31-08-2021
+Dejiko,Shitan uzuki,1,60.23,F,B,31-08-2021
+Dekugame,Hyper omega chaos hiryu,1,33.41,F,S,31-08-2021
+Hugo dc,Maximum maxime,1,30.98,F,S,31-08-2021
+Gallon EX2,Yu narukami,1,64.24,F,S,31-08-2021
+Aeris dies dot com,Sissy ex,1,17.21,F,S,31-08-2021
+Kohaku iqs,Umvc_sentinel,1,88.85,F,S,31-08-2021
+Jobber jose,Johann-fs,1,57.99,F,S,31-08-2021
+Mageko,Bemular,1,19.66,F,S,31-08-2021
+Hyper omega chaos hiryu,Maximum maxime,0,42.98,F,S,31-08-2021
+Yu narukami,Sissy ex,1,11.34,F,S,31-08-2021
+Umvc_sentinel,Zodd,0,49.43,F,S,31-08-2021
+Johann-fs,Bemular,1,42.76,F,S,31-08-2021
+Hyper omega chaos hiryu,Sissy ex,1,22.23,F,S,31-08-2021
+Umvc_sentinel,Bemular,0,28.3,F,S,31-08-2021

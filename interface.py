@@ -244,7 +244,7 @@ class Interface:
                     duration = 0
                     print('Sleeping through exhibitions...')
                     continue
-                elif 'tournament' in remaining:
+                elif 'tournament' in remaining and 'FINAL ROUND' not in remaining:
                     match_type = 'MM'
                 else:
                     match_type = 'T'
@@ -274,7 +274,7 @@ class Interface:
                             else:
                                 match['winner'] = match['player1']
                                 winner = '0'
-                        else:
+                        else:  # if balance stays the same in tournament you lost. Fix it.
                             print('Start $: ' + str(balance_start)
                                   + ' End $: ' + str(balance_end))
                             print('Money remained the same?')
@@ -340,7 +340,7 @@ class Interface:
                     else:
                         odds = f"1:{round(int(match['p2bet']) / int(match['p1bet']), 2)}"
 
-                    print(f"{match['player1']} - {match['p1bet']} | {match['player2']} - {match['p2bet']}\nODDS: {odds}")
+                    print(f"{colorama.Fore.RED}{match['player1']} - {match['p1bet']}{colorama.Fore.WHITE} | {colorama.Fore.RED}{match['player2']} - {match['p2bet']}\nODDS: {odds}{colorama.Style.RESET_ALL}")
 
             except Exception as err:
                 sys.stderr.write('ERROR: {0} on line {1}\n'.format(
