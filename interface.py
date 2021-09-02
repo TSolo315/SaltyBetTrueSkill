@@ -201,19 +201,7 @@ class Interface:
         self.compendium.update_with_last_match(response, manual=True)
 
     def generate_accuracy_stats(self):
-        prediction_dict = {
-            0: [0, 0],
-            1: [0, 0],
-            2: [0, 0],
-            3: [0, 0],
-            4: [0, 0],
-            5: [0, 0],
-            6: [0, 0],
-            7: [0, 0],
-            8: [0, 0],
-            9: [0, 0],
-            10: [0, 0]
-        }
+        prediction_dict = {i: [0, 0] for i in range(21)}
 
         tier_dict = {
             'X': [0, 0],
@@ -230,27 +218,30 @@ class Interface:
                 winner = int(stripped_line[2])
                 tier = stripped_line[5]
                 if fighter_one_win_prediction > 100:
-                    percentile = 10
+                    percentile = 20
                 else:
-                    percentile = int(fighter_one_win_prediction / 10)
+                    percentile = int((fighter_one_win_prediction * 2) / 10)
                 if fighter_one_win_prediction >= 50:
                     predicted_winner = 0
                 else:
                     predicted_winner = 1
                 prediction_dict[percentile][0] += 1
                 tier_dict[tier][0] += 1
-                if percentile < 5 and predicted_winner == 1 and predicted_winner == winner:
+                if percentile < 10 and predicted_winner == 1 and predicted_winner == winner:
                     prediction_dict[percentile][1] += 1
                     tier_dict[tier][1] += 1
-                elif percentile >= 5 and predicted_winner == 0 and predicted_winner == winner:
+                elif percentile >= 10 and predicted_winner == 0 and predicted_winner == winner:
                     prediction_dict[percentile][1] += 1
                     tier_dict[tier][1] += 1
-            for percentile in prediction_dict:
-                if prediction_dict[percentile][0]:
-                    print(f"Percentile: {percentile} - {round((prediction_dict[percentile][1] / prediction_dict[percentile][0]) * 100, 2)}% accuracy.")
+            for percentile in reversed(prediction_dict):
+                if 10 <= percentile < 20 and prediction_dict[percentile][0]:
+                    zipped_lists = zip(prediction_dict[percentile], prediction_dict[abs(percentile-19)])
+                    sum_list = [x + y for (x, y) in zipped_lists]
+                    print(f"Confidence percentile: {(percentile - 10) * 10}-{(percentile - 10) * 10 + 10} {round((sum_list[1] / sum_list[0]) * 100, 2)}% accuracy.")
+            print("\n")
             for tier in tier_dict:
                 if tier_dict[tier][0]:
-                    print(f"\nTier: {tier} - {round((tier_dict[tier][1] / tier_dict[tier][0]) * 100, 2)}% accuracy.")
+                    print(f"Tier: {tier} - {round((tier_dict[tier][1] / tier_dict[tier][0]) * 100, 2)}% accuracy.")
 
     def dict_zip(self, dict1, dict2):
         return {k: dict1.get(k, 0) + dict2.get(k, 0) for k in dict1.keys() | dict2.keys()}

@@ -788,3 +788,40 @@ Chibi naruto,Zeldia,1,24.47,F,B,01-09-2021
 Supernovice,After image,1,51.04,F,B,01-09-2021
 Magneto_cota,Rarity,0,96.28,F,S,01-09-2021
 Kumao +q,Goku ssj3 EX2,1,15.34,F,S,01-09-2021
+Mc hisui,Ash crimson-kofm,1,11.15,F,S,01-09-2021
+Yaruo_aa,Snipe lv2,0,79.36,F,A,01-09-2021
+Aoba EX2,Zako-dan,0,58.19,F,A,01-09-2021
+Miki sayaka,Kung fu master,0,65.98,F,A,01-09-2021
+Gonzales,Magma-dragoon,0,89.53,F,S,01-09-2021
+Kousonsyou,Mizuka tank,0,29.29,F,S,01-09-2021
+Saori - athena,Eiji shirow,0,34.08,F,S,01-09-2021
+Linne z,Judge,1,73.23,F,A,01-09-2021
+Cecilia,Popuko chitosegaoka as,0,65.75,F,S,01-09-2021
+Roll EX,Mami tomoe ai,0,66.15,F,B,01-09-2021
+Rock(mkii),Undeadsoldier,0,49.38,F,S,01-09-2021
+Shadow x,Limbo_bros,1,46.21,F,A,01-09-2021
+Judgment,Rizot,1,58.53,F,B,01-09-2021
+Green arrow,Amakusa,0,68.36,F,B,01-09-2021
+Jean grey,Zoma ga,0,81.58,F,B,01-09-2021
+Komachi,Attack of the sentinels,1,68.04,F,A,01-09-2021
+Maxima EX3,Ermac umk3,0,32.6,F,B,01-09-2021
+Pocket chunli,Tachibana ukyo,1,57.29,F,S,01-09-2021
+Ring-less,Kasai-m,0,71.04,F,X,01-09-2021
+Slightly less unlucky glauber,Antimage,0,23.8,F,B,01-09-2021
+Guile svc chaos,No.6 hibiki,0,44.87,F,S,01-09-2021
+Paprika,Destoroyah_ex,1,12.25,F,S,01-09-2021
+King-kofm,Uesugi kensin EX,0,76.21,F,A,01-09-2021
+Arctic_avenger,Sub-zero,0,59.59,F,B,01-09-2021
+M.a.d,King lion,0,76.21,F,A,01-09-2021
+Jecht EX,Gogeta mvc,1,15.6,F,S,01-09-2021
+Structure list,Roll.exe av,1,35.52,F,S,01-09-2021
+Ex-aid,Sakura ccs-qoh,0,34.41,F,A,01-09-2021
+Gomora,Zenon,0,104.5,F,S,01-09-2021
+!mudman,Yueng soi leng,0,24.52,F,A,01-09-2021
+Battousai,Hugo andore jr. ff2,1,21.58,F,B,01-09-2021
+Rugal CVS,Kangaroo,0,66.64,F,B,01-09-2021
+Robo-mukai,Lambdadelta,0,63.55,F,A,01-09-2021
+Cursehead,Mageko EX,1,36.12,F,S,01-09-2021
+Zhao-xyong,Gigant,0,51.83,F,A,01-09-2021
+Uranus,Godzilla_ex,0,37.85,F,S,01-09-2021
+Goku pce,Stimpy,0,95.17,F,P,01-09-2021
