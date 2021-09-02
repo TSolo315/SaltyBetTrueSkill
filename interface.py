@@ -60,6 +60,8 @@ class Interface:
             self.set_multiplier()
         elif response.lower() in ['auto', 'bot']:
             self.auto_mode()
+        elif response.lower() in ['accuracy', 'report']:
+            self.generate_accuracy_stats()
         elif response.lower() in ['save']:
             pickle.dump(self.compendium, open("save.p", "wb"))
             print('Data Saved')
@@ -198,6 +200,58 @@ class Interface:
             response = '1'
         self.compendium.update_with_last_match(response, manual=True)
 
+    def generate_accuracy_stats(self):
+        prediction_dict = {
+            0: [0, 0],
+            1: [0, 0],
+            2: [0, 0],
+            3: [0, 0],
+            4: [0, 0],
+            5: [0, 0],
+            6: [0, 0],
+            7: [0, 0],
+            8: [0, 0],
+            9: [0, 0],
+            10: [0, 0]
+        }
+
+        tier_dict = {
+            'X': [0, 0],
+            'S': [0, 0],
+            'A': [0, 0],
+            'B': [0, 0],
+            'P': [0, 0],
+            'U': [0, 0],
+        }
+        with open("new-record-data.txt") as file:
+            for line in file:
+                stripped_line = line.strip().split(',')
+                fighter_one_win_prediction = float(stripped_line[3])
+                winner = int(stripped_line[2])
+                tier = stripped_line[5]
+                if fighter_one_win_prediction > 100:
+                    percentile = 10
+                else:
+                    percentile = int(fighter_one_win_prediction / 10)
+                if fighter_one_win_prediction >= 50:
+                    predicted_winner = 0
+                else:
+                    predicted_winner = 1
+                prediction_dict[percentile][0] += 1
+                tier_dict[tier][0] += 1
+                if percentile < 5 and predicted_winner == 1 and predicted_winner == winner:
+                    prediction_dict[percentile][1] += 1
+                    tier_dict[tier][1] += 1
+                elif percentile >= 5 and predicted_winner == 0 and predicted_winner == winner:
+                    prediction_dict[percentile][1] += 1
+                    tier_dict[tier][1] += 1
+            for percentile in prediction_dict:
+                if prediction_dict[percentile][0]:
+                    print(f"Percentile: {percentile} - {round((prediction_dict[percentile][1] / prediction_dict[percentile][0]) * 100, 2)}% accuracy.")
+            for tier in tier_dict:
+                if tier_dict[tier][0]:
+                    print(f"\nTier: {tier} - {round((tier_dict[tier][1] / tier_dict[tier][0]) * 100, 2)}% accuracy.")
+
     def dict_zip(self, dict1, dict2):
         return {k: dict1.get(k, 0) + dict2.get(k, 0) for k in dict1.keys() | dict2.keys()}
 
@@ -244,10 +298,12 @@ class Interface:
                     duration = 0
                     print('Sleeping through exhibitions...')
                     continue
-                elif 'tournament' in remaining and 'FINAL ROUND' not in remaining:
+                elif 'until the next tournament' in remaining or 'Tournament mode will be activated' in remaining:
                     match_type = 'MM'
-                else:
+                elif 'bracket' or 'FINAL ROUND' in remaining:
                     match_type = 'T'
+                else:
+                    print('Unknown Match Type: ' + remaining)
 
                 # Note: The status can be open, locked, 1, 2. The last two
                 # statuses denote player1, player2 victory
@@ -314,6 +370,8 @@ class Interface:
                         wager = int(wager / 5)
                     if match_type == "T":
                         wager = site.get_balance()
+                        if int(wager) > 500000:
+                            wager = 50000
 
                     # Place the bet, refresh the status to determine success
                     bet = {'selectedplayer': predicted_winner, 'wager': str(wager)}
@@ -340,7 +398,7 @@ class Interface:
                     else:
                         odds = f"1:{round(int(match['p2bet']) / int(match['p1bet']), 2)}"
 
-                    print(f"{colorama.Fore.RED}{match['player1']} - {match['p1bet']}{colorama.Fore.WHITE} | {colorama.Fore.RED}{match['player2']} - {match['p2bet']}\nODDS: {odds}{colorama.Style.RESET_ALL}")
+                    print(f"{colorama.Fore.RED}{match['player1']} - {match['p1bet']}{colorama.Style.RESET_ALL} | {colorama.Fore.BLUE}{match['player2']} - {match['p2bet']}\n{colorama.Style.RESET_ALL}ODDS: {odds}")
 
             except Exception as err:
                 sys.stderr.write('ERROR: {0} on line {1}\n'.format(

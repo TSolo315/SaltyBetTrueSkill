@@ -289,7 +289,7 @@ class Compendium:
             print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         print(colorama.Style.RESET_ALL)
         self.last_rating = trueskill_rating
-        return [fighter, int(bet / 2)]
+        return [fighter, int(bet / 4)]
 
     def get_stats(self, fighter, record=False):
         fighter = self.fighters[fighter]
