@@ -213,48 +213,60 @@ class Compendium:
                     alternate_tier_percentage = 95
                 if alternate_tier_percentage > 10:
                     if 'higher' in higher_lower:
-                        tier_adjustment = round(alternate_tier_percentage * .13, 2)
+                        tier_adjustment = round(alternate_tier_percentage * .15, 2)
                     else:
-                        tier_adjustment = round(alternate_tier_percentage * -.13, 2)
+                        tier_adjustment = round(alternate_tier_percentage * -.15, 2)
         return tier_adjustment
 
     def tier_adjust(self, player1, player2, tier):
         return [self.calculate_tier_adjustment(player1, tier), self.calculate_tier_adjustment(player2, tier)]
 
-    def provide_recommendation(self, fighter1, fighter2, tier=False):
-        previous_record = [0, 0]
-        adjusted = False
-        try:
-            player1 = self.fighters[fighter1]
-        except KeyError:
-            print(f"{fighter1} does not exist in database.")  # add to database?
-            return
-        try:
-            player2 = self.fighters[fighter2]
-        except KeyError:
-            print(f"{fighter2} does not exist in database.")
-            return
-        self.last_fighter_one = player1
-        self.last_fighter_two = player2
-        self.last_tier = tier
-        if fighter2 in player1.record:
-            previous_record = player1.record[fighter2]
-        trueskill_rating = round(self.win_probability([player1.rating], [player2.rating]) * 100, 2)
-        print(self.get_stats(fighter1))
-        print(self.get_stats(fighter2))
-        print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous Match Record: {previous_record}\n\n{colorama.Fore.CYAN}{fighter1} Win Chance: {trueskill_rating}%")
+    def get_bet(self, fighter1, fighter2, trueskill_rating, adjusted):
+        if trueskill_rating <= 35:
+            bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+            fighter = 'player2'
+            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+        elif 35 < trueskill_rating <= 45:
+            if adjusted:
+                bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+                fighter = 'player2'
+                print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+            else:
+                if trueskill_rating >= 40:
+                    bet = 30000 * self.bet_multiplier
+                else:
+                    bet = 25000 * self.bet_multiplier
+                fighter = 'player1'
+                print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
+        elif 45 < trueskill_rating <= 55:
+            if trueskill_rating <= 50:
+                bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+                fighter = 'player2'
+                print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+            else:
+                bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+                fighter = 'player1'
+                print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
+        elif 55 < trueskill_rating <= 65:
+            if adjusted:
+                bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+                fighter = 'player1'
+                print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
+            else:
+                if trueskill_rating <= 60:
+                    bet = 30000 * self.bet_multiplier
+                else:
+                    bet = 25000 * self.bet_multiplier
+                fighter = 'player2'
+                print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+        else:
+            bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+            fighter = 'player1'
+            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         print(colorama.Style.RESET_ALL)
-        if tier:
-            tier_adjust = self.tier_adjust(player1, player2, tier)
-        if sum(tier_adjust) != 0 or sum(previous_record) != 0:
-            player_one_record = (previous_record[0] - previous_record[1]) * 100
-            trueskill_rating += .08 * player_one_record
-            trueskill_rating += tier_adjust[0]
-            trueskill_rating -= tier_adjust[1]
-            trueskill_rating = round(trueskill_rating, 2)
-            print(f"{colorama.Fore.GREEN}{fighter1} Weighted Win Chance: {trueskill_rating}%")
-            print(colorama.Style.RESET_ALL)
-            adjusted = True
+        return fighter, bet
+
+    def get_bet_tournament(self, fighter1, fighter2, trueskill_rating, adjusted):
         if trueskill_rating <= 40:
             bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
             fighter = 'player2'
@@ -288,8 +300,48 @@ class Compendium:
             fighter = 'player1'
             print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         print(colorama.Style.RESET_ALL)
+        return fighter, bet
+
+    def provide_recommendation(self, fighter1, fighter2, tier=False, tournament=False):
+        previous_record = [0, 0]
+        adjusted = False
+        try:
+            player1 = self.fighters[fighter1]
+        except KeyError:
+            print(f"{fighter1} does not exist in database.")  # add to database?
+            return
+        try:
+            player2 = self.fighters[fighter2]
+        except KeyError:
+            print(f"{fighter2} does not exist in database.")
+            return
+        self.last_fighter_one = player1
+        self.last_fighter_two = player2
+        self.last_tier = tier
+        if fighter2 in player1.record:
+            previous_record = player1.record[fighter2]
+        trueskill_rating = round(self.win_probability([player1.rating], [player2.rating]) * 100, 2)
+        print(self.get_stats(fighter1))
+        print(self.get_stats(fighter2))
+        print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous Match Record: {previous_record}\n\n{colorama.Fore.CYAN}{fighter1} Win Chance: {trueskill_rating}%")
+        print(colorama.Style.RESET_ALL)
+        if tier:
+            tier_adjust = self.tier_adjust(player1, player2, tier)
+        if sum(tier_adjust) != 0 or sum(previous_record) != 0:
+            player_one_record = (previous_record[0] - previous_record[1]) * 100
+            trueskill_rating += .08 * player_one_record
+            trueskill_rating += tier_adjust[0]
+            trueskill_rating -= tier_adjust[1]
+            trueskill_rating = round(trueskill_rating, 2)
+            print(f"{colorama.Fore.GREEN}{fighter1} Weighted Win Chance: {trueskill_rating}%")
+            print(colorama.Style.RESET_ALL)
+            adjusted = True
+        if tournament:
+            fighter, bet = self.get_bet_tournament(fighter1, fighter2, trueskill_rating, adjusted)
+        else:
+            fighter, bet = self.get_bet(fighter1, fighter2, trueskill_rating, adjusted)
         self.last_rating = trueskill_rating
-        return [fighter, int(bet / 4)]
+        return [fighter, int(bet / 2)]
 
     def get_stats(self, fighter, record=False):
         fighter = self.fighters[fighter]

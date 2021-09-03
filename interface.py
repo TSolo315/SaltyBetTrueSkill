@@ -217,7 +217,7 @@ class Interface:
                 fighter_one_win_prediction = float(stripped_line[3])
                 winner = int(stripped_line[2])
                 tier = stripped_line[5]
-                if fighter_one_win_prediction > 100:
+                if fighter_one_win_prediction > 100 or fighter_one_win_prediction <= 0:
                     percentile = 20
                 else:
                     percentile = int((fighter_one_win_prediction * 2) / 10)
@@ -321,18 +321,28 @@ class Interface:
                             else:
                                 match['winner'] = match['player1']
                                 winner = '0'
-                        else:  # if balance stays the same in tournament you lost. Fix it.
-                            print('Start $: ' + str(balance_start)
-                                  + ' End $: ' + str(balance_end))
-                            print('Money remained the same?')
-                            match['winner'] = '???'
+                        else:
+                            if match_type == "T":
+                                print(
+                                    f"{colorama.Fore.RED}{colorama.Style.BRIGHT}We lost{colorama.Style.RESET_ALL}")
+                                if match['myplayer'] == match['player1']:
+                                    match['winner'] = match['player2']
+                                    winner = '1'
+                                else:
+                                    match['winner'] = match['player1']
+                                    winner = '0'
+                            else:
+                                print('Start $: ' + str(balance_start)
+                                      + ' End $: ' + str(balance_end))
+                                print('Money remained the same?')
+                                match['winner'] = '???'
 
                         match['duration'] = duration
 
                         # Save the match
                         if match['winner'] != '???':
                             self.compendium.update_with_last_match(winner)
-                            if save_counter > 10:
+                            if save_counter > 5:
                                 pickle.dump(self.compendium, open("save.p", "wb"))
                                 print('Data Saved')
                                 save_counter = 0
@@ -355,14 +365,20 @@ class Interface:
                         tier = max(tier_dict, key=tier_dict.get)
                         print(f"{tier} has been set as the match tier. Is this correct?")
 
-                    predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
+                    if match_type == "T":
+                        predicted_winner, wager = self.compendium.provide_recommendation(
+                            fighter1.name, fighter2.name, tier, tournament=True)
+                        wager = site.get_balance()
+                        if int(wager) > 250000:
+                            wager = 60000
+                        if int(wager) > 400000:
+                            wager = 40000
+                    else:
+                        predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
 
                     if '&' in match['player1'] or '&' in match['player2']:  # win rate data broken on these fighters.
                         wager = int(wager / 5)
-                    if match_type == "T":
-                        wager = site.get_balance()
-                        if int(wager) > 500000:
-                            wager = 50000
+
 
                     # Place the bet, refresh the status to determine success
                     bet = {'selectedplayer': predicted_winner, 'wager': str(wager)}
@@ -390,6 +406,10 @@ class Interface:
                         odds = f"1:{round(int(match['p2bet']) / int(match['p1bet']), 2)}"
 
                     print(f"{colorama.Fore.RED}{match['player1']} - {match['p1bet']}{colorama.Style.RESET_ALL} | {colorama.Fore.BLUE}{match['player2']} - {match['p2bet']}\n{colorama.Style.RESET_ALL}ODDS: {odds}")
+
+            except KeyboardInterrupt:
+                print('The betting bot has been stopped.')
+                return
 
             except Exception as err:
                 sys.stderr.write('ERROR: {0} on line {1}\n'.format(
