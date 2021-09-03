@@ -1168,3 +1168,84 @@ Athena x,Erika wagner,1,59.19,F,A,03-09-2021
 Maverick hunter x,Princess toadstool,1,47.18,F,S,03-09-2021
 Mech ralf,Broken,1,61.15,F,S,03-09-2021
 Gyan,Arrange sion,1,51.45,F,A,03-09-2021
+Chou hi EX7,Twin syllin,0,70.37,F,A,03-09-2021
+Shocking shocker,Ace in the hole,1,50.61,F,S,03-09-2021
+Dark baltan,Vertigo,0,38.23,F,A,03-09-2021
+Ichigo EX,Huntress,1,42.78,F,S,03-09-2021
+Ringlerun,Gesrenst,0,72.34,F,A,03-09-2021
+Souji kusanagi,Ratix,0,64.01,F,A,03-09-2021
+Zangoose EX3,Star man,0,89.13,F,B,03-09-2021
+Shadow dio fc,Pandon fe,1,16.6,F,A,03-09-2021
+Johnny gat,Leonhalt domador,1,26.39,F,B,03-09-2021
+Juli & juni,Snes riesz,0,1.08,F,A,03-09-2021
+Tarantulra_dfo,Stupid little drill tank,1,16.35,F,S,03-09-2021
+Szass tam,Lf2 - rudolf,1,14.39,F,B,03-09-2021
+Trinitronity,Kyon,0,56.96,F,P,03-09-2021
+Aoba,Rindou,0,46.44,F,A,03-09-2021
+Jonathan asb,Shigure,0,23.57,F,A,03-09-2021
+Luthild,Gameboy,1,68.13,F,S,03-09-2021
+Shin aomizu,Pon,1,40.84,F,S,03-09-2021
+Midoriko,Masked rider wizard,1,48.66,F,A,03-09-2021
+An ogre,Deluxe chipp,1,50.93,F,A,03-09-2021
+Flawless specter,White rbdm-kof,0,95.94,F,S,03-09-2021
+Lemeza,Temtan,1,76.71,F,S,03-09-2021
+Ciel kagura,Yong-taiga,0,34.4,F,S,03-09-2021
+Vayeate,Mexican typhoon,0,43.96,F,A,03-09-2021
+Beautiful kuando,Quietus-sakuraba neku,0,71.43,F,S,03-09-2021
+Demitri maximoff,Thora kithugawa,0,81.52,F,A,03-09-2021
+Kill bill o-ren_ishii,Bruno bucciarati,1,49.75,F,B,03-09-2021
+Biollente,Nike & kukuri,0,99.8,F,A,03-09-2021
+Mr1 daz bones,Card hero,1,49.38,F,B,03-09-2021
+Final bison,K. round,0,54.44,F,S,03-09-2021
+Rain umk3,Maxima-xi,1,26.27,F,B,03-09-2021
+Yuna,Victor von gerdenheim,0,92.99,F,S,03-09-2021
+Sanada kojiroh,Minmin,0,74.67,F,A,03-09-2021
+Jonathan crane,Joker-p,1,34.23,F,S,03-09-2021
+Kim dong hwan,Rogue,0,52.71,F,B,03-09-2021
+Mictlan,Rucheca,0,60.55,F,S,03-09-2021
+Sula-kofm,Big the cat,0,39.82,F,A,03-09-2021
+Nuclear man,Yoko,0,50.79,F,A,03-09-2021
+Octohead,Alia,1,41.95,F,A,03-09-2021
+Mizuki hayakawa,Heidi,0,87.15,F,A,03-09-2021
+Other candy EX5,Vice xiii,1,22.67,F,A,03-09-2021
+Warakia,Elena_n,0,56.48,F,A,03-09-2021
+Genkai_shihan,Alan,1,94.22,F,A,03-09-2021
+Ukitake,Ironfist chinmi,0,26.51,F,A,03-09-2021
+Sula-kofm,Nuclear man,1,32.97,F,A,03-09-2021
+Alia,Mizuki hayakawa,1,11.79,F,A,03-09-2021
+Vice xiii,Warakia,0,45.07,F,A,03-09-2021
+Alan,Ukitake,1,49.25,F,A,03-09-2021
+Nuclear man,Mizuki hayakawa,1,22.27,F,A,03-09-2021
+Vice xiii,Ukitake,0,85.1,F,A,03-09-2021
+Mizuki hayakawa,Vice xiii,0,61.91,F,A,03-09-2021
+Anaroguma,Emi yusa,1,48.61,F,A,03-09-2021
+Polon,Radish ssj4,1,55.62,F,S,03-09-2021
+Koryu fu man,Black moth,0,67.99,F,S,03-09-2021
+Saionzi sekai,F_gills,1,36.74,F,A,03-09-2021
+Orochi fire chris,Mizoguchi!,0,79.72,F,A,03-09-2021
+Candy vegetto,Fairyschan,1,58.11,F,X,03-09-2021
+Monkeyd.christ,Ryuko,1,2.89,F,X,03-09-2021
+Sppaman,Schlussel,0,65.64,F,A,03-09-2021
+Eremes_guile,Ai EX2,0,64.53,F,A,03-09-2021
+Urien,Unber,1,50.64,F,B,03-09-2021
+3rd alsiel,Jobber jose,1,57.59,F,S,03-09-2021
+Kyle broflovski,Megaman,0,51.93,F,P,03-09-2021
+Sion tatari EX2,Labyrinth,0,96.06,F,S,03-09-2021
+Chiel,Mango sentinel,1,9.56,F,S,03-09-2021
+Kisume EX,Nagaoka shiho,1,75.98,F,A,03-09-2021
+Kohaku iqs,Evil ryu sf3,0,84.45,F,S,03-09-2021
+Kraidgief,Polon,1,33.44,F,S,03-09-2021
+Kurumi,Producer,1,62.58,F,A,03-09-2021
+Shadow geist,Darkness-of-red,1,46.23,F,S,03-09-2021
+Anisama,Gulool ja ja,1,67.55,F,S,03-09-2021
+Richard myer,Udo jin-e,0,38.57,F,B,03-09-2021
+Kim wu ki2,Billy kane ffsp,0,63.62,F,B,03-09-2021
+Trigger,Saki,0,77.65,F,A,03-09-2021
+Sho hayate 0d,Chun-li,0,63.55,F,A,03-09-2021
+Fordy-z,Rentaro satomi EX7,0,93.25,F,A,03-09-2021
+Rentaro satomi EX7,Rouge the bat EX5,1,26.2,F,A,03-09-2021
+Spitfire_m,Mui ex,1,4.1,F,S,03-09-2021
+Sailor saturn,Felicia EX2,0,75.6,F,A,03-09-2021
+Equus,Yuki EX2,1,52.11,F,P,03-09-2021
+Snes riesz,Elle,1,24.17,F,A,03-09-2021
+Krang,Um-krizalid-2k1,0,45.24,F,A,03-09-2021

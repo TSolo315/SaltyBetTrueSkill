@@ -1,6 +1,3 @@
-'''
-The user login module for SaltBot
-'''
 import requests
 import os
 import json
@@ -23,8 +20,18 @@ def login():
     """
     Authenticate SaltBot on the SaltyBet website.
 
-    Login to SaltyBet by using the EMAIL and PASSWORD stored in the .env
+    Login to SaltyBet by using the EMAIL and PASSWORD stored in the auth.json file or .env
     file. Successfully logging in returns session and request objects/
+
+    If using a json file name file auth.json. Place in same directory as this file (authenticate.)
+    .json Format:
+
+    {
+    "ekey": "example@example.com",
+    "pkey": "examplePassword123"
+    }
+
+    Else set env_login_data to True and use env variables:
 
     .env Format:
         EMAIL = "example@example.com"
