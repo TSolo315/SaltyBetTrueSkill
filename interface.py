@@ -37,19 +37,30 @@ class Interface:
     def main_loop(self):
         """Function that runs on startup that allows you to choose which function to run."""
         response = input("What do you want to do?")
-        # if response.lower() == 'help' or response == '':
-        #     print("\nPossible Actions:\n 1. Enter WAIFU4u match chat for bet recommendation. \n 2. xxxxx. \n 3. xxxxx.\n")
-        #     return
+        if response.lower() == 'help' or response == '':
+            print("""\nPossible Actions:\n 1. Enter WAIFU4u match chat for bet recommendation.
+                     \n 2. Enter 'match' to manually input matchup and get recommendation.
+                     \n 3. Enter 'stats' to get the stats of a particular fighter.
+                     \n 4. Enter 'note' to add a custom note to a fighter.
+                     \n 5. Enter 'new fighter' to add a new fighter to the database.
+                     \n 6. Enter 'update' to update a fighters tier or win percentage.
+                     \n 7. Enter 'red' or 'blue' to designate the winner of the last match you received a recommendation for.
+                     \n 8. Enter 'multiplier' to adjust your bet multiplier.
+                     \n 9. Enter 'report' to see a basic report on recommendation accuracy.
+                     \n 10. Enter 'auto' to start the betting bot.
+                     \n 11. Enter 'save' to manually save newly entered data.
+                     \n""")
+            return
         if "are open for" in response.lower():
             self.get_recommendation_from_chat(response)
-        elif response.lower() in ['stats', 'stat', 'get stats']:
-            self.print_stats()
-        elif response.lower() in ['note', 'notes']:
-            self.add_notes()
         elif response.lower() in ['match', 'fight', 'vs']:
             self.input_match()
+        elif response.lower() in ['stats', 'stat', 'get stats']:
+            self.print_stats()
         elif response.lower() in ['record', 'records']:
             self.print_record()
+        elif response.lower() in ['note', 'notes']:
+            self.add_notes()
         elif response.lower() in ['new fighter', 'input fighter', 'add fighter', 'add']:
             self.add_fighter()
         elif response.lower() in ['update', 'updates', 'update fighter']:
@@ -58,10 +69,10 @@ class Interface:
             self.update_with_last(response)
         elif response.lower() in ['multiplier', 'mult', 'bet multiplier']:
             self.set_multiplier()
-        elif response.lower() in ['auto', 'bot']:
-            self.auto_mode()
         elif response.lower() in ['accuracy', 'report']:
             self.generate_accuracy_stats()
+        elif response.lower() in ['auto', 'bot']:
+            self.auto_mode()
         elif response.lower() in ['save']:
             pickle.dump(self.compendium, open("save.p", "wb"))
             print('Data Saved')
@@ -273,6 +284,7 @@ class Interface:
                  'p2bet': '', 'myplayer': '', 'mybet': '', 'winner': ''}
 
         print('The betting bot has been started!')
+        print(f"Your initial balance is: {balance_start}")
         while True:
             try:
                 # Add a delay to avoid overloading the server

@@ -213,9 +213,9 @@ class Compendium:
                     alternate_tier_percentage = 95
                 if alternate_tier_percentage > 10:
                     if 'higher' in higher_lower:
-                        tier_adjustment = round(alternate_tier_percentage * .15, 2)
+                        tier_adjustment = round(alternate_tier_percentage * .17, 2)
                     else:
-                        tier_adjustment = round(alternate_tier_percentage * -.15, 2)
+                        tier_adjustment = round(alternate_tier_percentage * -.17, 2)
         return tier_adjustment
 
     def tier_adjust(self, player1, player2, tier):
@@ -341,7 +341,7 @@ class Compendium:
         else:
             fighter, bet = self.get_bet(fighter1, fighter2, trueskill_rating, adjusted)
         self.last_rating = trueskill_rating
-        return [fighter, int(bet / 2)]
+        return [fighter, int(bet)]
 
     def get_stats(self, fighter, record=False):
         fighter = self.fighters[fighter]
