@@ -1714,3 +1714,132 @@ Shiki Ryougi,Custom hsfa berabow man,1,35.45,F,B,05-09-2021
 Snow,Razor claws,0,24.97,F,B,05-09-2021
 Bonus kun EX2,Genteki dan,0,40.49,F,B,05-09-2021
 Custom hsfa berabow man,Snow,1,74.08,F,B,05-09-2021
+Gonzales s-r,Rin rin,1,65.08,F,S,05-09-2021
+Akatsuki hm,G lancer,0,49.96,F,A,05-09-2021
+Another igniz scarlet,Myzr delta,0,34.24,F,S,05-09-2021
+Master ryu,Hatate_himekaidou,1,28.94,F,B,05-09-2021
+Duo lon xiii,Killer crocodile,0,63.69,F,A,05-09-2021
+Ganondorf mythos,Goofy,1,37.64,F,A,05-09-2021
+Get in the robot you idiot,Nightmare madotsuki,1,43.32,F,S,05-09-2021
+Iori xiii,Hisui aa,0,13.64,F,A,05-09-2021
+Sagume kishin,Bison trooper x,0,84.2,F,A,05-09-2021
+Dinozord EX,Eternal champion,1,48.6,F,S,05-09-2021
+Hanzor,Pokita,0,67.92,F,A,05-09-2021
+Goenitz EX3,Shanoa,0,80.99,F,A,05-09-2021
+Lazy garfield,Boggy b,0,64.68,F,A,05-09-2021
+K.kasumi,Jivatma,0,43.41,F,A,05-09-2021
+Dancing chang,Rare reimu,1,9.21,F,X,05-09-2021
+Sonic mvc,Twitch waifu chan-sd,1,56.09,F,S,05-09-2021
+Terminator orochi,Stardust utsuho,0,24.73,F,S,05-09-2021
+Chan,Asuka cvs,0,77.93,F,B,05-09-2021
+Zoicite,Zelos(you-ki_ai),0,50.86,F,B,05-09-2021
+Bemular,Hyper neo-kamek,1,62.03,F,S,05-09-2021
+Captainamerica EX3,Kazuma the shell bullet,0,103.6,F,S,05-09-2021
+Momo-kirby,Duo lon pp,1,55.92,F,A,05-09-2021
+Orochi akuma,Wei,0,74.58,F,A,05-09-2021
+Prosciutto,Yugi(emanon),0,58.73,F,A,05-09-2021
+Black selena,Rosie,0,74.96,F,A,05-09-2021
+Masked rider kabuto,Mystic gohan,0,78.63,F,B,05-09-2021
+Dr. mashirito,Nobunaga,1,25.83,F,B,05-09-2021
+Sinclair,Mrheart,0,29.37,F,B,05-09-2021
+Azazel,Element -a-,0,32.9,F,S,05-09-2021
+Devil lilia,Smug dudley,0,7.7,F,A,05-09-2021
+Masked rider 555_z,Mint ndx,1,39.4,F,B,05-09-2021
+Mazinger-zero,Tabuu sumin,1,7.52,F,S,05-09-2021
+Trunks EX3,Anaroguma,0,42.26,F,A,05-09-2021
+Maleficent,Destoroyah_ex,1,36.48,F,S,05-09-2021
+Brokken,Pierre,0,45.45,F,A,05-09-2021
+Geno mythos,Forte,1,14.92,F,B,05-09-2021
+Tekkamann-lance,Demigod meep140,1,31.1,F,S,05-09-2021
+Doxue misaka,Zagan,1,24.08,F,A,05-09-2021
+Red skull,Agumond,0,87.54,F,B,05-09-2021
+Dorothy-albright,Maccho,1,71.73,F,S,05-09-2021
+Wong_dong_fei_hung,Evil ryu svc chaos,0,80.76,F,S,05-09-2021
+Yuzuki yukari,Ultraman jack_a,0,71.98,F,A,05-09-2021
+Mokey d. luffy,Yumel,1,21.58,F,B,05-09-2021
+Footee,Roy wilson,0,62.27,F,A,05-09-2021
+Dis astranagant,Hory marlu ex,0,38.12,F,S,05-09-2021
+Videl fight money,Konpaku youkumo,1,40.46,F,S,05-09-2021
+Hatate_himekaidou,Unber,0,69.68,F,B,05-09-2021
+Hellbat schilt,Gatocyu,1,33.38,F,S,05-09-2021
+Goku ssb,Bern and lambda,0,52.38,F,A,05-09-2021
+Luna himeki +q,A-rugal,0,15.1,F,S,05-09-2021
+Yugi(emanon),Phantomsheet,1,52.15,F,A,05-09-2021
+Deathwing,Mecha dragon,1,36.56,F,X,05-09-2021
+Yagumo_ex,Hakurei omega,0,22.35,F,S,05-09-2021
+Rick,Shadow dio,0,29.4,F,A,05-09-2021
+Konoha,Farmer strikes back,1,88.05,F,A,05-09-2021
+Robert945,Ultimate warrior,0,55.82,F,A,05-09-2021
+Alien queen,Lil' chirno,0,41.93,F,S,05-09-2021
+GodzillaEX,Wolverine_cota,0,38.74,F,S,05-09-2021
+Tyranitar,Chizuruxxx,0,30.52,F,S,05-09-2021
+Orin,C.dome,0,68.81,F,A,05-09-2021
+Aoba,Nuclear man,0,64.09,F,A,05-09-2021
+Jotaro mythos,Picurin,0,63.59,F,B,05-09-2021
+Satori komeiji,Maxima 13,1,34.34,F,A,05-09-2021
+Master sakura,Zerozuchi boss,1,38.38,F,S,05-09-2021
+Goeniko,Akari ichijo,0,51.6,F,A,05-09-2021
+Kohaku EX2,Cielo,1,35.36,F,S,05-09-2021
+Mexican griffon,Dash-hell,0,53.16,F,S,05-09-2021
+A_decade-ex,Kyo clone-10 ex,1,46.02,F,S,05-09-2021
+Supermario64,Cir-el,0,45.38,F,S,05-09-2021
+Sho 100% v2.0 by inverse,Aura,1,55.54,F,S,05-09-2021
+Uesugi kensin EX,Ryoko kano EX2,1,60.56,F,A,05-09-2021
+Cc iron clara,Mu 12,0,36.42,F,B,05-09-2021
+Jin chonrei rb2,2nd r.s.p,1,29.48,F,S,05-09-2021
+Kagami EX3,Fake okami,0,36.56,F,S,05-09-2021
+Captain sawada,Kage,0,37.6,F,S,05-09-2021
+Johnny(coh),Largefencer_mysty,1,40.85,F,S,05-09-2021
+Anonym,Yoshitora,0,41.38,F,A,05-09-2021
+Evil ryu svc chaos,Lemeza,0,35.87,F,S,05-09-2021
+Hauzer cfj,Light yagami,1,40.7,F,S,05-09-2021
+Hanzou hattori,Jibber,1,37.56,F,A,05-09-2021
+Daos,X-stranger,1,77.16,F,B,05-09-2021
+R.p.d leon,Pocket Ken,0,70.1,F,B,05-09-2021
+Shin aomizu,S.geist,1,16.09,F,S,05-09-2021
+Mictlan excessive,Barbatos_goetia,1,12.9,F,X,05-09-2021
+Aussie kano,Thunderbolt ross,0,23.21,F,A,05-09-2021
+Slightly more fair baiken,Alter amiba,1,46.0,F,A,05-09-2021
+Robo rock type-2,Mohikan,0,56.04,F,A,05-09-2021
+Zuepia,Uminin,0,66.55,F,S,05-09-2021
+Goku ssj5 EX,Sae kamaguchi,0,16.17,F,B,05-09-2021
+Neo metal sonic,Wing.0,1,57.89,F,A,05-09-2021
+School girl lilith,Euphoria the everlasting,0,81.46,F,S,05-09-2021
+Skullman,Clone zero-kofm,1,50.8,F,S,05-09-2021
+Terumi,Saiyaman,0,58.61,F,A,05-09-2021
+Tear,Kinyo roadshow,0,70.05,F,A,05-09-2021
+Masked rider agito EX3,Li xiangfei,0,47.55,F,B,05-09-2021
+Shiho munakata,Super3 goku,0,68.51,F,S,05-09-2021
+Gambit MVC2,Tsukiyomi kinako EX5,1,53.83,F,A,05-09-2021
+Kaguya houraisan,Yugi(emanon),0,52.76,F,A,05-09-2021
+Baikinman,Dirty fat,1,53.21,F,A,05-09-2021
+Runa araki,Dio S,0,45.3,F,A,05-09-2021
+The kung fu man,Kung fu master,1,84.05,F,A,05-09-2021
+Robo-segalow,Evil thomas,1,13.62,F,A,05-09-2021
+Kanji tatsumi,Another takuma,0,67.24,F,A,05-09-2021
+Iori rotd,Lion(coh),0,54.94,F,A,05-09-2021
+Jean valjean,Lumina,1,30.22,F,A,05-09-2021
+Kaguya houraisan,Dirty fat,1,42.6,F,A,05-09-2021
+Runa araki,Kung fu master,0,52.26,F,A,05-09-2021
+Evil thomas,Kanji tatsumi,1,39.0,F,A,05-09-2021
+Iori rotd,Lumina,1,44.26,F,A,05-09-2021
+Dirty fat,Runa araki,0,56.45,F,A,05-09-2021
+Kanji tatsumi,Lumina,0,57.59,F,A,05-09-2021
+Dirty fat,Kanji tatsumi,1,20.35,F,A,05-09-2021
+Nozomu (reimei),Rosie,0,77.19,F,A,05-09-2021
+Ikaruga satuki,Omega shenron,0,50.39,F,A,05-09-2021
+Mvc2 riesbyfe,Hata no kokoro ulil,0,32.12,F,A,05-09-2021
+Elirin,Ex-kyo,0,78.65,F,A,05-09-2021
+Dora,Spore,1,21.7,F,B,05-09-2021
+The italian stallion,Sephiroth AK,0,45.99,F,A,05-09-2021
+Gambit MVC2,Rude spawn,1,24.22,F,A,05-09-2021
+Chizuruxxx,Black tiger,1,73.24,F,S,05-09-2021
+Talonarten,Cvs terry bogard,0,52.0,F,A,05-09-2021
+Majin Virginia,Thirteen,1,12.4,F,B,05-09-2021
+Roronoa zoro,Spelenker,0,46.0,F,B,05-09-2021
+Toron,Donatello DCAT,1,42.11,F,B,05-09-2021
+Fire sonic,Iggy ex,1,66.11,F,A,05-09-2021
+Nakoruru ex EX3,Destoroyah ex,0,48.64,F,S,05-09-2021
+Sonans,Discount raidou,1,47.08,F,S,05-09-2021
+Kumoi ichirin,Tora-san,1,25.86,F,S,05-09-2021
+Kasen EX,Kira yoshikage,1,53.26,F,A,05-09-2021

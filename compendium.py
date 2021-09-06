@@ -221,6 +221,18 @@ class Compendium:
     def tier_adjust(self, player1, player2, tier):
         return [self.calculate_tier_adjustment(player1, tier), self.calculate_tier_adjustment(player2, tier)]
 
+    def get_bet_simple(self, fighter1, fighter2, trueskill_rating, adjusted):
+        if trueskill_rating <= 50:
+            bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+            fighter = 'player2'
+            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+        else:
+            bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+            fighter = 'player1'
+            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
+        print(colorama.Style.RESET_ALL)
+        return fighter, bet
+
     def get_bet(self, fighter1, fighter2, trueskill_rating, adjusted):
         if trueskill_rating <= 35:
             bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
@@ -339,7 +351,7 @@ class Compendium:
         if tournament:
             fighter, bet = self.get_bet_tournament(fighter1, fighter2, trueskill_rating, adjusted)
         else:
-            fighter, bet = self.get_bet(fighter1, fighter2, trueskill_rating, adjusted)
+            fighter, bet = self.get_bet_simple(fighter1, fighter2, trueskill_rating, adjusted)
         self.last_rating = trueskill_rating
         return [fighter, int(bet)]
 

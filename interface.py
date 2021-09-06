@@ -49,6 +49,7 @@ class Interface:
                      \n 9. Enter 'report' to see a basic report on recommendation accuracy.
                      \n 10. Enter 'auto' to start the betting bot.
                      \n 11. Enter 'save' to manually save newly entered data.
+                     \n 12. Enter 'exit' to save and terminate the program.
                      \n""")
             return
         if "are open for" in response.lower():
@@ -76,7 +77,7 @@ class Interface:
         elif response.lower() in ['save']:
             pickle.dump(self.compendium, open("save.p", "wb"))
             print('Data Saved')
-        elif response.lower() == 'exit' or response == '3':
+        elif response.lower() == 'exit':
             pickle.dump(self.compendium, open("save.p", "wb"))
             sys.exit()
         else:
