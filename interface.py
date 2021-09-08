@@ -213,7 +213,7 @@ class Interface:
         self.compendium.update_with_last_match(response, manual=True)
 
     def generate_accuracy_stats(self):
-        prediction_dict = {i: [0, 0] for i in range(21)}
+        prediction_dict = {i: [0, 0] for i in range(-1, 21)}
 
         tier_dict = {
             'X': [0, 0],
@@ -229,14 +229,17 @@ class Interface:
                 fighter_one_win_prediction = float(stripped_line[3])
                 winner = int(stripped_line[2])
                 tier = stripped_line[5]
-                if fighter_one_win_prediction > 100 or fighter_one_win_prediction <= 0:
-                    percentile = 20
-                else:
-                    percentile = int((fighter_one_win_prediction * 2) / 10)
                 if fighter_one_win_prediction >= 50:
                     predicted_winner = 0
                 else:
                     predicted_winner = 1
+                if fighter_one_win_prediction > 100 or fighter_one_win_prediction <= 0:
+                    if fighter_one_win_prediction <= 0:
+                        percentile = -1
+                    else:
+                        percentile = 20
+                else:
+                    percentile = int((fighter_one_win_prediction * 2) / 10)
                 prediction_dict[percentile][0] += 1
                 tier_dict[tier][0] += 1
                 if percentile < 10 and predicted_winner == 1 and predicted_winner == winner:
@@ -251,6 +254,10 @@ class Interface:
                     sum_list = [x + y for (x, y) in zipped_lists]
                     print(f"Confidence percentile: {(percentile - 10) * 10}-{(percentile - 10) * 10 + 10} {round((sum_list[1] / sum_list[0]) * 100, 2)}% accuracy.")
             print("\n")
+            if prediction_dict[20][0] and prediction_dict[-1][0]:
+                zipped_lists = zip(prediction_dict[-1], prediction_dict[20])
+                sum_list = [x + y for (x, y) in zipped_lists]
+                print(f"'Sure thing' accuracy: {round((sum_list[1] / sum_list[0]) * 100, 2)}% accuracy.\n")
             for tier in tier_dict:
                 if tier_dict[tier][0]:
                     print(f"Tier: {tier} - {round((tier_dict[tier][1] / tier_dict[tier][0]) * 100, 2)}% accuracy.")
@@ -265,6 +272,7 @@ class Interface:
         """
         url_bet = 'https://www.saltybet.com/ajax_place_bet.php'
         user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0'
+        broken_characters = ['&', '<', '>']
 
         # Login to SaltyBet
         session, request = authenticate.login()
@@ -354,7 +362,7 @@ class Interface:
 
                         # Save the match
                         if match['winner'] != '???':
-                            self.compendium.update_with_last_match(winner)
+                            self.compendium.update_with_last_match(winner, odds=odds)
                             if save_counter > 5:
                                 pickle.dump(self.compendium, open("save.p", "wb"))
                                 print('Data Saved')
@@ -389,9 +397,8 @@ class Interface:
                     else:
                         predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
 
-                    if '&' in match['player1'] or '&' in match['player2']:  # win rate data broken on these fighters.
-                        wager = int(wager / 5)
-
+                    if any(ele in match['player1'] or ele in match['player2'] for ele in broken_characters):  # win rate data broken on these fighters.
+                        wager = int(wager / 10)
 
                     # Place the bet, refresh the status to determine success
                     bet = {'selectedplayer': predicted_winner, 'wager': str(wager)}

@@ -134,7 +134,7 @@ class Compendium:
                 print(stripped_line)
         print(untiered_dict)
 
-    def update_with_last_match(self, winning_player, match_record=False, manual=False):
+    def update_with_last_match(self, winning_player, match_record=False, manual=False, odds="F"):
         if match_record:
             self.last_fighter_one = self.fighters[match_record[0]]
             self.last_fighter_two = self.fighters[match_record[1]]
@@ -152,7 +152,7 @@ class Compendium:
                 self.last_fighter_two.tier = tier
         else:
             tier = 'U'
-        match_stats = [self.last_fighter_one.name, self.last_fighter_two.name, winning_player, self.last_rating, "F", tier, date.today().strftime("%d-%m-%Y")]
+        match_stats = [self.last_fighter_one.name, self.last_fighter_two.name, winning_player, self.last_rating, odds, tier, date.today().strftime("%d-%m-%Y")]
         if winning_player == '0':
             winner = self.last_fighter_one
             loser = self.last_fighter_two
@@ -211,7 +211,7 @@ class Compendium:
                 except KeyError:
                     player.update_tier(tier)
                     alternate_tier_percentage = 95
-                if alternate_tier_percentage > 10:
+                if alternate_tier_percentage > 6:
                     if 'higher' in higher_lower:
                         tier_adjustment = round(alternate_tier_percentage * .17, 2)
                     else:
