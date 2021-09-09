@@ -187,7 +187,7 @@ class Compendium:
 
     def calculate_tier_adjustment(self, player, tier):
         tier_adjustment = 0
-        if len(player.tier_list) > 1:
+        if len(player.tier_list) > 1 or tier not in player.tier_list:
             higher_lower = 'a lower tier -'
             filtered = list(filter(lambda t: t != tier, player.tier_list))
             if len(filtered) > 1:
@@ -282,35 +282,35 @@ class Compendium:
         if trueskill_rating <= 40:
             bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
             fighter = 'player2'
-            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+            print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}")
         elif 40 < trueskill_rating <= 50:
             if adjusted:
                 bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
                 fighter = 'player2'
-                print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+                print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}")
             else:
                 if trueskill_rating >= 45:
                     bet = 30000 * self.bet_multiplier
                 else:
                     bet = 25000 * self.bet_multiplier
                 fighter = 'player1'
-                print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
+                print(f"{colorama.Fore.RED}Bet RED - {fighter1}")
         elif 50 < trueskill_rating <= 60:
             if adjusted:
                 bet = int((trueskill_rating * 1000) * self.bet_multiplier)
                 fighter = 'player1'
-                print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
+                print(f"{colorama.Fore.RED}Bet RED - {fighter1}")
             else:
                 if trueskill_rating <= 55:
                     bet = 30000 * self.bet_multiplier
                 else:
                     bet = 25000 * self.bet_multiplier
                 fighter = 'player2'
-                print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
+                print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}")
         else:
             bet = int((trueskill_rating * 1000) * self.bet_multiplier)
             fighter = 'player1'
-            print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
+            print(f"{colorama.Fore.RED}Bet RED - {fighter1}")
         print(colorama.Style.RESET_ALL)
         return fighter, bet
 
