@@ -82,8 +82,13 @@ class Compendium:
 
     def import_data(self):
         untiered_dict = {}
+        records_imported = 0
+        print("Importing record data, this may take a few minutes...")
         with open("record-data.txt") as file:
             for line in file:
+                records_imported += 1
+                if records_imported % 5000 == 0:
+                    print(f"Importing {str(round((records_imported / 530411) * 100, 1))}% complete.")
                 stripped_line = line.strip().split(',')
                 fighter1 = stripped_line[0]
                 fighter2 = stripped_line[1]
@@ -126,13 +131,13 @@ class Compendium:
                 else:
                     self.update_record(stripped_line, rating2, 0)
                     self.update_record(stripped_line, rating1, 1)
-                print(stripped_line)
         with open("new-record-data.txt") as file:
+            print("Old record data imported. Importing new record data...")
             for line in file:
                 stripped_line = line.strip().split(',')
                 self.update_with_last_match(3, stripped_line)
-                print(stripped_line)
         print(untiered_dict)
+        print("All data successfully imported!")
 
     def update_with_last_match(self, winning_player, match_record=False, manual=False, odds="F"):
         if match_record:
@@ -177,7 +182,8 @@ class Compendium:
         self.last_tier = False
         self.last_rating = False
 
-    def win_probability(self, team1, team2):
+    @staticmethod
+    def win_probability(team1, team2):
         delta_mu = sum(r.mu for r in team1) - sum(r.mu for r in team2)
         sum_sigma = sum(r.sigma ** 2 for r in itertools.chain(team1, team2))
         size = len(team1) + len(team2)
@@ -185,7 +191,8 @@ class Compendium:
         ts = trueskill.global_env()
         return ts.cdf(delta_mu / denom)
 
-    def calculate_tier_adjustment(self, player, tier):
+    @staticmethod
+    def calculate_tier_adjustment(player, tier):
         tier_adjustment = 0
         if len(player.tier_list) > 1 or tier not in player.tier_list:
             higher_lower = 'a lower tier -'
@@ -213,9 +220,9 @@ class Compendium:
                     alternate_tier_percentage = 95
                 if alternate_tier_percentage > 6:
                     if 'higher' in higher_lower:
-                        tier_adjustment = round(alternate_tier_percentage * .17, 2)
+                        tier_adjustment = round(alternate_tier_percentage * .18, 2)
                     else:
-                        tier_adjustment = round(alternate_tier_percentage * -.17, 2)
+                        tier_adjustment = round(alternate_tier_percentage * -.18, 2)
         return tier_adjustment
 
     def tier_adjust(self, player1, player2, tier):
@@ -359,4 +366,4 @@ class Compendium:
         fighter = self.fighters[fighter]
         record = fighter.record if record else ""
         notes = "\n".join(fighter.notes) if fighter.notes else ""
-        return f"{fighter.name}: Tier History: {fighter.tier_list}. Win Rate: {str(fighter.win_rate * 100) + '%'}. Rating: {round(fighter.rating.mu, 3)}.\n{record}{notes}"
+        return f"{fighter.name}: Tier History: {fighter.tier_list}. Win Rate: {str(round(fighter.win_rate * 100, 2)) + '%'}. TrueSkill Rating: {round(fighter.rating.mu - 3 * fighter.rating.sigma, 3)}.\n{record}{notes}"

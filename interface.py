@@ -6,6 +6,7 @@ import colorama
 
 import website
 import authenticate
+from fighter import Fighter
 
 TIER_DICT = {
     'X': 0,
@@ -21,18 +22,6 @@ class Interface:
 
     def __init__(self, comp):
         self.compendium = comp
-
-    def waifu4u_match_text_interpreter(self, text):
-        text = text.replace('Bets are OPEN for ', '')
-        string_end = text.find(' vs ')
-        fighter1 = text[0:string_end].strip()
-        text = text.replace(fighter1 + ' vs ', '')
-        string_end = text.find('! (')
-        fighter2 = text[0:string_end].strip()
-        text = text.replace(fighter2 + '! (', '')
-        string_end = text.find(')')
-        tier = text[0:string_end].strip().replace(' Tier', "")
-        return [fighter1, fighter2, tier]
 
     def main_loop(self):
         """Function that runs on startup that allows you to choose which function to run."""
@@ -83,6 +72,19 @@ class Interface:
         else:
             print("\nCommand not recognized, type 'help' for a list of possible commands.\n")
             return
+
+    @staticmethod
+    def waifu4u_match_text_interpreter(text):
+        text = text.replace('Bets are OPEN for ', '')
+        string_end = text.find(' vs ')
+        fighter1 = text[0:string_end].strip()
+        text = text.replace(fighter1 + ' vs ', '')
+        string_end = text.find('! (')
+        fighter2 = text[0:string_end].strip()
+        text = text.replace(fighter2 + '! (', '')
+        string_end = text.find(')')
+        tier = text[0:string_end].strip().replace(' Tier', "")
+        return [fighter1, fighter2, tier]
 
     def get_recommendation_from_chat(self, response):
         self.compendium.provide_recommendation(*self.waifu4u_match_text_interpreter(response))
@@ -212,7 +214,8 @@ class Interface:
             response = '1'
         self.compendium.update_with_last_match(response, manual=True)
 
-    def generate_accuracy_stats(self):
+    @staticmethod
+    def generate_accuracy_stats():
         prediction_dict = {i: [0, 0] for i in range(-1, 21)}
 
         tier_dict = {
@@ -262,7 +265,8 @@ class Interface:
                 if tier_dict[tier][0]:
                     print(f"Tier: {tier} - {round((tier_dict[tier][1] / tier_dict[tier][0]) * 100, 2)}% accuracy.")
 
-    def dict_zip(self, dict1, dict2):
+    @staticmethod
+    def dict_zip(dict1, dict2):
         return {k: dict1.get(k, 0) + dict2.get(k, 0) for k in dict1.keys() | dict2.keys()}
 
     def auto_mode(self):
@@ -400,7 +404,8 @@ class Interface:
                         predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
 
                     if any(ele in match['player1'] or ele in match['player2'] for ele in broken_characters):  # win rate data broken on these fighters.
-                        wager = int(wager / 10)
+                        if wager > 10000:
+                            wager = int(wager / 10)
 
                     # Place the bet, refresh the status to determine success
                     bet = {'selectedplayer': predicted_winner, 'wager': str(wager)}

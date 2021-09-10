@@ -6,7 +6,7 @@ import colorama
 
 from compendium import Compendium
 from interface import Interface
-from fighter import Fighter # necessary to load my pickle file
+
 
 if __name__ == "__main__":
     colorama.init()
