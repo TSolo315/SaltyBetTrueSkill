@@ -30,15 +30,16 @@ class Interface:
             print("""\nPossible Actions:\n 1. Enter WAIFU4u match chat for bet recommendation.
                      \n 2. Enter 'match' to manually input matchup and get recommendation.
                      \n 3. Enter 'stats' to get the stats of a particular fighter.
-                     \n 4. Enter 'note' to add a custom note to a fighter.
-                     \n 5. Enter 'new fighter' to add a new fighter to the database.
-                     \n 6. Enter 'update' to update a fighters tier or win percentage.
-                     \n 7. Enter 'red' or 'blue' to designate the winner of the last match you received a recommendation for.
-                     \n 8. Enter 'multiplier' to adjust your bet multiplier.
-                     \n 9. Enter 'report' to see a basic report on recommendation accuracy.
-                     \n 10. Enter 'auto' to start the betting bot.
-                     \n 11. Enter 'save' to manually save newly entered data.
-                     \n 12. Enter 'exit' to save and terminate the program.
+                     \n 4. Enter 'record' to get the stats and record history of a particular fighter.
+                     \n 5. Enter 'note' to add a custom note to a fighter.
+                     \n 6. Enter 'new fighter' to add a new fighter to the database.
+                     \n 7. Enter 'update' to update a fighter's tier or win percentage.
+                     \n 8. Enter 'red' or 'blue' to designate the winner of the last match you received a recommendation for.
+                     \n 9. Enter 'multiplier' to adjust your bet multiplier.
+                     \n 10. Enter 'report' to see a basic report on recommendation accuracy.
+                     \n 11. Enter 'auto' to start the betting bot.
+                     \n 12. Enter 'save' to manually save newly entered data.
+                     \n 13. Enter 'exit' to save and terminate the program.
                      \n""")
             return
         if "are open for" in response.lower():
@@ -198,14 +199,18 @@ class Interface:
             fighter.win_percentage = response
 
     def set_multiplier(self):
-        response = input("What do you want your bet multiplier to be? Input integer between 1-10.")
+        response = input(f"What do you want your bet multiplier to be? Input an integer between 1-10. Your current multiplier is {str(self.compendium.bet_multiplier)}.")
         try:
-            self.compendium.bet_multiplier = int(response)
+            multiplier = int(response)
         except ValueError:
-            print('Bet multiplier must be an integer.')
+            print('Bet multiplier must be a positive integer.')
             return
-        if int(response) > 10:
-            print('WARNING: Your bet multiplier is too high and will result in very high bets.')
+        if multiplier <= 0:
+            print('Bet multiplier must be a positive integer.')
+            return
+        if multiplier > 10:
+            print('WARNING: Your bet multiplier is too high and will result in very high bets!!!')
+        self.compendium.bet_multiplier = multiplier
 
     def update_with_last(self, response):
         if response.lower() == 'red':
@@ -291,6 +296,7 @@ class Interface:
         duration = 0
         save_counter = 0
         placed_bet = False
+        match_mode = 'none'
 
         # Create a match dictionary
         match = {'player1': '', 'player2': '', 'duration': '', 'p1bet': '',
@@ -310,6 +316,7 @@ class Interface:
                 status = site.get_betting_status()
                 remaining = site.get_remaining()
                 if 'exhibition' in remaining and 'FINAL ROUND' not in remaining:
+                    match_type = 'E'
                     time.sleep(60)
                     duration = 0
                     print('Sleeping through exhibitions...')
@@ -365,7 +372,9 @@ class Interface:
                         match['duration'] = duration
 
                         # Save the match
-                        if match['winner'] != '???':
+                        if match_mode != match_type:
+                            match_mode = match_type
+                        elif match['winner'] != '???':
                             self.compendium.update_with_last_match(winner, odds=odds)
                             if save_counter > 5:
                                 pickle.dump(self.compendium, open("save.p", "wb"))
@@ -395,9 +404,9 @@ class Interface:
                             fighter1.name, fighter2.name, tier, tournament=True)
                         wager = site.get_balance()
                         if int(wager) > 125000:
-                            wager = 50000
+                            wager = 75000
                         if int(wager) > 250000:
-                            wager = 25000
+                            wager = 50000
                         if int(wager) > 400000:
                             wager = 10000
                     else:
