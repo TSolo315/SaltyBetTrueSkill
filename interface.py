@@ -403,12 +403,12 @@ class Interface:
                         predicted_winner, wager = self.compendium.provide_recommendation(
                             fighter1.name, fighter2.name, tier, tournament=True)
                         wager = site.get_balance()
-                        if int(wager) > 125000:
-                            wager = 75000
-                        if int(wager) > 250000:
-                            wager = 50000
-                        if int(wager) > 400000:
+                        if int(wager) >= 400000:
                             wager = 10000
+                        elif int(wager) >= 250000:
+                            wager = 50000
+                        elif int(wager) >= 125000:
+                            wager = 75000
                     else:
                         predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
 

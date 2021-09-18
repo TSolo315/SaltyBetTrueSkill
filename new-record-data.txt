@@ -4436,3 +4436,353 @@ The grandmapocalypse,William birkin,0,61.71,F,S,16-09-2021
 Capsule monster,Kris,0,68.12,1:1.59,S,16-09-2021
 Akaitsuki EX,Homura sk,0,60.56,1.57:1,A,16-09-2021
 Chief he-fonba,Obelix,0,57.02,1.39:1,A,16-09-2021
+Rebecca chambers,Ger,0,22.84,1:2.43,B,16-09-2021
+Prince vegeta,Mr big,0,99.24,5.13:1,P,16-09-2021
+Mitsuji tanimati,Tenshi baiken,1,17.44,1:4.29,A,16-09-2021
+Jill,Jay Flash,0,70.65,4.32:1,B,16-09-2021
+Lucario,Orochi-takashi,1,49.17,1.37:1,A,16-09-2021
+Nayuki the runner,Captain kidd,0,47.85,1:1.41,A,16-09-2021
+Actual zeroko,Abobo,0,55.32,1:1.27,A,16-09-2021
+Abubo,Ravange,0,72.31,3.6:1,A,16-09-2021
+Shingo & momoko,Aisatu_bouya,1,4.95,1.03:1,A,16-09-2021
+Dan 0d,Mio sakamoto,1,83.27,2.54:1,B,16-09-2021
+Hyper omega chaos hiryu,Ray mcdogall,0,69.36,3.21:1,S,16-09-2021
+Jin chonrei,Turf EX3,0,55.29,1.62:1,S,16-09-2021
+Hyouken,Lucy diclonius,0,46.23,1:1.35,S,16-09-2021
+Mrheart,Goku gt,0,80.18,4.16:1,B,16-09-2021
+Syoutokutaisi,Ryu hd,0,59.65,1.89:1,A,16-09-2021
+Nyu,Omanyte EX3,0,57.44,1:4.54,A,16-09-2021
+Daimon EX2,Tyranitar,0,74.64,4.54:1,S,16-09-2021
+Athena X2,Emeralda kasim,0,78.23,3.52:1,A,16-09-2021
+Bowser,Momo-len_ver1.39,1,9.6,1:4.12,S,16-09-2021
+Bad rorschach,Kairu a,0,33.09,1.66:1,A,16-09-2021
+Hammerin' harry,Wan-fu,0,54.23,1:1.02,B,16-09-2021
+Meiling mmd,Mevella,1,51.06,1:1.04,A,16-09-2021
+Axl,Shin akuma svc chaos,1,27.43,1:1.58,S,16-09-2021
+Reika murasame EX,Gaira,1,51.91,2.77:1,B,16-09-2021
+Abareimu,Mani-mani koxa,0,15.49,1:3.57,X,16-09-2021
+Rugal b.,Lee(mugen),0,11.47,1:6.0,S,16-09-2021
+Bristol-d,Hero m,1,34.1,1.07:1,S,16-09-2021
+Android 18,Beast,0,56.77,2.15:1,B,16-09-2021
+Squall JP,Ryo fu,1,18.44,1:6.47,B,16-09-2021
+Alien mefilas,K-bw v2,0,81.27,3.18:1,S,16-09-2021
+Heidern as,Blender,1,37.51,1:1.49,A,16-09-2021
+Ryo EX3,Kobun 43,1,76.94,1.46:1,B,16-09-2021
+Manbou bbb,Aztec falcon,1,53.64,1.02:1,A,16-09-2021
+Igniz 2001,Axl,0,70.97,3.65:1,S,16-09-2021
+Orochi yamazaki,Vixen ex,1,69.92,1.67:1,A,16-09-2021
+Ms. fanservice,Ichi,0,87.04,7.34:1,B,16-09-2021
+Aselia,Nameless-kofm,0,33.94,1:3.45,S,16-09-2021
+Mvc2 iceman,Sayia-f,0,80.1,2.59:1,A,16-09-2021
+Goryujin,Yukarin ex,0,66.83,1.42:1,A,16-09-2021
+Tennma kazusanosuke,Double,0,59.2,1:1.16,S,16-09-2021
+Heidern as,Sakuya (shining blade),0,81.53,3.97:1,A,16-09-2021
+Thunder mask,Weapon master,1,30.31,1:3.09,A,16-09-2021
+Tamara,Black cat,1,60.57,1:1.36,A,16-09-2021
+Felden,Custom shinobi shou,0,57.5,1:1.02,B,16-09-2021
+Goemon sw,S.sinclair EX,1,47.14,1.11:1,S,16-09-2021
+Seiya de pegasus,Most evil ryu,1,22.89,1:1.08,A,16-09-2021
+Fluffy,Shadow EX3,1,36.49,1:1.05,A,16-09-2021
+Zoro roronoa,Deejay sfa,1,13.01,1:2.14,B,16-09-2021
+Seruzad,Unicorn-gundam,1,64.49,1.53:1,A,16-09-2021
+Lotus master,Task force despero,1,44.4,1.1:1,A,16-09-2021
+Minotaur,Giorno giovanna EX9,1,62.55,1.65:1,B,16-09-2021
+Sabu EX3,Buu Hyper Dimension,0,94.93,4.46:1,B,16-09-2021
+Kenoh,Butthead sagat,1,51.59,1:2.17,S,16-09-2021
+Fukumen senshi,Syaraaaa!,0,34.66,1:2.61,A,16-09-2021
+Yue hizoku,Kurokishi,0,72.27,2.3:1,A,16-09-2021
+Myon gitsune,Ana,1,36.89,1:9.38,S,16-09-2021
+Boggy,Komepo,0,72.37,6.41:1,A,16-09-2021
+Precure,K' dempsey,0,50.04,1:1.64,S,16-09-2021
+Killer crocodile,Evangelion,1,55.1,1:4.43,A,16-09-2021
+Birdy,Lee & ryoko,1,95.62,1:1.02,S,16-09-2021
+Byakuya,Tremor,0,64.42,2.97:1,B,16-09-2021
+Erim,Ryuuguu rena,0,37.12,1:1.6,B,16-09-2021
+Urmnaf bort hyuga,Miyako(coh),1,42.48,1:2.13,A,16-09-2021
+Mandoraf-f,Cool,1,45.85,1.02:1,A,16-09-2021
+Ayumu kasuga EX,Rin,0,41.68,1:2.37,A,16-09-2021
+K' 13,Daigo ken,0,85.32,1.16:1,A,16-09-2021
+Another takuma,Ikaruga satuki,1,56.93,1.04:1,A,16-09-2021
+Haiji,Wreck-it ralph EX3,1,60.59,1.59:1,B,16-09-2021
+Krizalid-kofm-kbr,Youko,0,75.12,4.05:1,S,16-09-2021
+Soma cruz,Mizuki rashoujin,0,42.9,1:1.34,S,16-09-2021
+Master hand,Shishin,0,64.84,3.37:1,A,16-09-2021
+Seravy,Killer whale,1,59.15,1:4.45,S,16-09-2021
+Alien baltan,Kucheat,0,61.18,1.06:1,S,16-09-2021
+Powergirl,Black widow,1,46.54,1.23:1,B,16-09-2021
+Kawakaze,John constantine,0,50.42,1.02:1,S,16-09-2021
+Bad box art megaman,Chain combo yuyuko,0,79.85,2.28:1,A,16-09-2021
+Ff1 terry bogard,Mitsuji tanimati,1,71.04,3.43:1,A,16-09-2021
+Burning futo,Yeorin lee,0,73.77,2.44:1,S,16-09-2021
+Iori richtofen,G lancer,0,65.38,1.83:1,A,16-09-2021
+Toyotomi hideyoshi,Juggy,0,63.15,1.22:1,A,17-09-2021
+Mc hisui,Deluxe burter,1,24.38,1:3.58,S,17-09-2021
+Ju do man,Juri han qyc,0,29.12,1:1.82,A,17-09-2021
+Saber,Alvein,0,13.05,1:2.58,B,17-09-2021
+Hyo amano,Kishimax,0,87.37,1:1.1,A,17-09-2021
+Alchemy man,King EX3,0,52.44,1:1.36,A,17-09-2021
+Kamen rider scissors,Hwa jai xiii,0,73.64,1:1.24,B,17-09-2021
+Billy karn,Creeper,0,87.6,19.3:1,A,17-09-2021
+Ultraman 1st,Gigapowier loves dark ruler,0,18.25,1:4.16,S,17-09-2021
+Lilith,Kagami ex,0,43.41,1.55:1,A,17-09-2021
+Shadow knight,Doduo,0,64.26,1.32:1,B,17-09-2021
+Azusa hinomori,Satsujinki EX3,0,54.57,1:1.5,S,17-09-2021
+Trigger,Monk EX3,0,73.07,3.51:1,A,17-09-2021
+Ness,Mamiya EX,0,66.98,1.75:1,A,17-09-2021
+Ahya,Makoto mizoguchi,0,71.7,2.7:1,A,17-09-2021
+Alia,Z-akuma EX,1,21.1,1:5.32,A,17-09-2021
+Aussie kano,T. kawk,0,33.04,1:2.74,A,17-09-2021
+Blair dame n,Gouki-kofm,1,60.52,1.2:1,A,17-09-2021
+Octohead,Asterix EX9,1,30.42,1:2.01,A,17-09-2021
+The grim reaper,Wolfgang k altstein,1,34.96,1:1.08,B,17-09-2021
+Uzume,Labyrinth,0,48.97,1:1.02,S,17-09-2021
+General-malin,Darun mister,1,72.98,3.01:1,A,17-09-2021
+Ruby rose,Regin,1,13.75,1:4.27,S,17-09-2021
+Asuka EX2,Kyoudou senna,1,23.8,1:2.87,A,17-09-2021
+Menat,Gill sf3,0,40.29,1:1.5,S,17-09-2021
+Dr.gero EX3,Takumi hattori,0,74.96,1.21:1,A,17-09-2021
+Bang,Mr.mannequin,0,77.44,2.33:1,A,17-09-2021
+Ultraman dyna_a,Lilith aensland,0,52.87,1.9:1,B,17-09-2021
+Renna,Nanoha tsukikage,0,81.55,1.94:1,A,17-09-2021
+Stg hero man,Ikusan,1,21.86,1:2.06,S,17-09-2021
+Masako(emanon),Avdul,1,43.9,1:1.42,B,17-09-2021
+G_cyclone,Edit,0,11.89,1:6.46,A,17-09-2021
+Tenshi hinanai,Doxue misaka,0,43.8,1:1.26,A,17-09-2021
+Billy karn,Ikaruga satuki,0,78.9,4.47:1,A,17-09-2021
+Dinozord EX,Raoh sai,0,48.29,3.04:1,S,17-09-2021
+Rei chibi,Cyber-peacock,0,78.13,2.93:1,S,17-09-2021
+Ralf 2k2,Shadowroo (pf 3),0,44.88,1.04:1,B,17-09-2021
+Mephiles the dark,T ninja,1,67.95,3.5:1,B,17-09-2021
+Trs,Hol horse & boingo,0,98.85,1:1.62,A,17-09-2021
+Awakened-clark,Wendy,0,87.34,11.38:1,S,17-09-2021
+Master morrigan,Lucia fernandez,0,69.67,1.84:1,S,17-09-2021
+Geese EX2,Kid dracula,0,80.31,3.1:1,B,17-09-2021
+Donovan,Kanji tatsumi,1,31.97,1:2.13,A,17-09-2021
+Whispy woods,Black rouga,0,56.77,1.51:1,S,17-09-2021
+Prosciutto,Starfy,0,73.21,3.02:1,A,17-09-2021
+Victor von gerdenheim,Sensei karate kenji,0,53.48,1:1.13,S,17-09-2021
+G_raging,Sieger,1,79.76,2.18:1,A,17-09-2021
+Geese howard EX2,Sagat f22,0,49.62,1.86:1,A,17-09-2021
+Ringo aomori,Umvc_suika,0,57.51,1.47:1,A,17-09-2021
+Zangiefs',Shin EX,0,60.26,2.16:1,S,17-09-2021
+Sion_wrestling,Jagyuta EX2,1,29.61,1:2.7,A,17-09-2021
+Wendy,Stake,1,12.04,1:13.92,S,17-09-2021
+Sanae kochiya,Mizuchi xiii,1,56.21,1.63:1,S,17-09-2021
+Wild iori,Tenko,0,77.64,5.32:1,S,17-09-2021
+Kasumi 98,Nagamine nozomi,0,24.03,1:2.0,A,17-09-2021
+Ingrid,Alien baltan 6th,1,29.5,1:2.28,A,17-09-2021
+Silhouette,Gato z2,0,55.69,1.99:1,A,17-09-2021
+Hi_guma,Ted broiler,1,24.27,1:4.31,S,17-09-2021
+Arrange_misuzu,G-impact,0,63.23,1.18:1,S,17-09-2021
+Kumi,Death dhl,1,29.04,1:2.18,X,17-09-2021
+Alter wind,Eleking,0,88.27,2.36:1,S,17-09-2021
+Yawara,Rerakusa,0,61.27,2.87:1,A,17-09-2021
+Angela sd,Yun,1,28.63,1:2.89,S,17-09-2021
+More Evil Ryu,Feilin,1,59.48,1.96:1,A,17-09-2021
+Einsatz,Johnny(ac),1,-4.12,1:19.9,S,17-09-2021
+Taki EX3,Duna,0,56.24,2.16:1,A,17-09-2021
+Dusk komachi,Rarity,0,93.0,8.78:1,S,17-09-2021
+Cyborg_t-8p,Xaphan,0,51.91,1:1.78,A,17-09-2021
+Ar-chan,Ja-koh,1,49.56,1:1.59,A,17-09-2021
+Kimala the bouncer,Haohmaru-kofm,1,31.35,1:4.01,A,17-09-2021
+Jonathan joestar,Anna frozen,0,73.49,2.28:1,S,17-09-2021
+Kagami,Kawaiman,0,64.44,3.49:1,S,17-09-2021
+Wolverine 71113 i,Snes riesz,0,86.17,5.94:1,A,17-09-2021
+Alvan EX,Krizalid N,1,39.9,1.06:1,B,17-09-2021
+Kyaga-hell,Mvc2 cable,1,42.83,1:1.66,S,17-09-2021
+Heracross,Wolverine_cota,1,3.16,1:4.07,S,17-09-2021
+Myzr delta,Scopedog-rsc,1,50.73,1.27:1,S,17-09-2021
+Snk zangief,Aulbath,1,17.36,1:5.1,S,17-09-2021
+Ingram prisken,Odenya saki,1,43.98,1.13:1,S,17-09-2021
+Konpaku youkumo,Omega rugal cvs,0,87.63,2.82:1,S,17-09-2021
+Ken svc chaos,Fyra noll,1,40.4,1:3.44,S,17-09-2021
+Quick silver,Kakine tetoku,0,79.19,8.56:1,S,17-09-2021
+Mvc2 cable,Wolverine_cota,0,35.94,1:1.45,S,17-09-2021
+Scopedog-rsc,Aulbath,0,67.13,1.77:1,S,17-09-2021
+Odenya saki,Konpaku youkumo,1,8.66,1:8.77,S,17-09-2021
+Fyra noll,Quick silver,1,32.73,1:6.08,S,17-09-2021
+Mvc2 cable,Scopedog-rsc,1,42.77,1:2.19,S,17-09-2021
+Konpaku youkumo,Quick silver,1,61.47,1:1.26,S,17-09-2021
+Sportacus,Fefnir,1,21.23,1:3.62,B,17-09-2021
+Space zero,Ex iori xiii,1,43.58,1:2.98,S,17-09-2021
+F.killerbee,Ukitake,1,74.59,2.97:1,A,17-09-2021
+Kungfumithra,Gun shin guan yu,0,64.77,3.55:1,A,17-09-2021
+D4 alice margatroid,Relius clover,1,13.63,1:2.65,S,17-09-2021
+Mr_shihan_ky,Azami,0,31.0,1:1.3,A,17-09-2021
+Shirai kuroko dbfc,Hugo_musclebomber,0,51.98,1.16:1,S,17-09-2021
+Mr. broly,Demigod meep140,0,84.16,12.06:1,S,17-09-2021
+Manute,Eve silvan,1,23.45,1:5.1,S,17-09-2021
+Chartette,Shiroma,0,75.64,2.09:1,B,17-09-2021
+Matou kariya,Rockman_exe,1,22.21,1:1.85,S,17-09-2021
+Dan of steel,Mina 02um,0,43.75,1.47:1,A,17-09-2021
+Menat,Kawakaze,1,32.19,1:2.13,S,17-09-2021
+Iron fist,Kosanjou,0,73.83,3.5:1,A,17-09-2021
+Serena corsair,R-mai,0,63.32,1.18:1,A,17-09-2021
+Mizuchi,Gaogaigar: the king of braves,0,71.93,1:1.26,S,17-09-2021
+Gekka suika,Ako tamaki,0,34.27,1:1.31,A,17-09-2021
+Cless ndx,Misaka sisters,0,58.46,1:1.39,S,17-09-2021
+Hol horse & boingo,Alan,0,4.75,1.9:1,A,17-09-2021
+Classic wagyan,Terry rbs,0,61.88,3.23:1,P,17-09-2021
+A-agito,Millia,1,70.05,1.03:1,S,17-09-2021
+Hugo andore jr.,Lilith aensland,1,69.08,2.33:1,B,17-09-2021
+Jhons lee,Proofed up matt,0,72.94,1.83:1,B,17-09-2021
+Pannacotta fugo,Rick strowd EX3,1,40.25,1:1.85,A,17-09-2021
+GodzillaEX,New kiwami,1,62.59,7.33:1,S,17-09-2021
+Dd yin yin,Lynia,0,24.43,1:2.53,A,17-09-2021
+Jago ki2,Kungfumithra,1,39.02,1:1.81,A,17-09-2021
+Godzilla2014,Very gregariously,0,72.38,1.74:1,B,17-09-2021
+Onslaught 2,Trapsatoko,0,70.72,2.77:1,S,17-09-2021
+Terumi,Ingrid,0,73.93,2.56:1,A,17-09-2021
+Sheana,Carol stanzack,0,96.0,9.02:1,A,17-09-2021
+Aura,Thau machine,1,14.11,1:3.04,S,17-09-2021
+Daniel,Violent Ken,0,78.63,1.61:1,P,17-09-2021
+Jedah dohma,Chameleo arm,0,18.59,1:3.41,A,17-09-2021
+Rinrin,Super-japanese,0,56.34,1.45:1,B,17-09-2021
+Ishida uryu,Jubilee,1,56.71,1.72:1,B,17-09-2021
+Otonashi,Wily,0,35.12,1:1.13,B,17-09-2021
+Joe higashi EX3,Goku ssj5 absalon,0,77.4,3.64:1,A,17-09-2021
+Ultraman 1st,Mahvel sean,1,-0.11,1:5.07,S,17-09-2021
+Kudo,Enoch,1,73.76,1:1.14,A,17-09-2021
+Shin akuma dd,Raoh sai,1,21.85,1:5.11,S,17-09-2021
+Hata no kokoro ulil,Haohmaru,1,61.69,1.31:1,A,17-09-2021
+Moriah the thief,Chrysalis EX,1,47.59,1:1.81,A,17-09-2021
+Musashi,Diglett,0,33.9,1:1.69,B,17-09-2021
+Cyclops_cota,Aya hasebe,0,68.17,4.34:1,S,17-09-2021
+Big the cat,Creeper,0,54.16,32.07:1,A,17-09-2021
+Rin_h,Abel ssf4,0,75.67,1.07:1,A,17-09-2021
+Axe pq,A-shiki,1,20.44,1:3.19,A,17-09-2021
+Spera,God rugal-kofm,0,82.66,5.22:1,S,17-09-2021
+Megarborg,Agni-enja,1,4.57,1:5.88,X,17-09-2021
+Hatsune miku mmd l,No.6 akatsuki,0,51.5,1:1.34,A,17-09-2021
+Tao jun EX,Trish una,0,38.02,1:1.88,A,17-09-2021
+Fear mace rosenkranz,The creepy clock,0,48.72,1.56:1,S,17-09-2021
+Gundamexia,Kimelemaru EX3,0,84.12,4.64:1,P,17-09-2021
+Lazy garfield,Tusk ki2,0,68.02,5.22:1,A,17-09-2021
+Kid buu z2,Archer,1,57.74,2.28:1,A,17-09-2021
+Vega mvc2,Dynamo,0,87.99,3.28:1,S,17-09-2021
+Zero tifa,Bizarro,0,65.88,3.16:1,B,17-09-2021
+Rosemary applefield,A-ko,1,10.61,1:3.45,A,17-09-2021
+Sundown-kid,Lf2 - julian,1,57.72,1.36:1,A,17-09-2021
+Rozalin,Kurumi mirumati,1,57.91,1.88:1,S,17-09-2021
+Ryu XIII,Iea,0,70.04,1.74:1,B,17-09-2021
+Koryu,Shin akuma svc chaos,0,38.54,1:2.79,S,17-09-2021
+Eve silvan,Chinese doge,0,55.51,2.03:1,S,17-09-2021
+Cajun gambit EX7,Domino bertha,0,50.08,1:1.04,S,17-09-2021
+Daisy EX3,Kalen,1,42.82,1:5.85,A,17-09-2021
+Yami_miko EX,D4 roll,0,73.35,1.53:1,S,17-09-2021
+Scorpion EX4,Dark nation,1,63.61,2.78:1,B,17-09-2021
+Allen o'neill,A_flowey,0,2.68,1:7.24,X,17-09-2021
+Flan-b,Stake,1,61.09,1.0:1,S,17-09-2021
+Misuzu EX,Ren idagawa,1,20.79,1:2.44,B,17-09-2021
+Erimaki,Kawashima-san,0,39.22,1.01:1,A,17-09-2021
+Mado gakusha,Mario smb1 b,1,13.78,1:5.51,A,17-09-2021
+Mexican typhoon,Tapper,1,62.27,1.34:1,A,17-09-2021
+Debonea,Ken sf3,0,77.76,2.68:1,A,17-09-2021
+Frosty ninja,Ryo sakazaki special,0,64.35,1.39:1,A,17-09-2021
+Mystic gohan EX5,Mvc2 dan,1,52.82,1:1.55,B,17-09-2021
+Azusa,Fiona mayfield,1,41.02,1.14:1,A,17-09-2021
+Elisabeth xiii,Gold lightan,1,60.11,1.63:1,A,17-09-2021
+Zero ariel,Foxy-kofm,1,16.25,1:2.54,A,17-09-2021
+Agito_of_the_dark,Bowlman,0,18.59,1:1.41,B,17-09-2021
+Baiken(ac),Deluxe ai,0,68.17,5.01:1,S,17-09-2021
+Dom,Lemeza,0,29.8,1:2.21,S,17-09-2021
+Ryuhaku todoh,Tetromino,1,20.51,1:2.68,A,17-09-2021
+Moe yumezora,Altered Amiba,1,75.32,2.98:1,A,17-09-2021
+Maccho,Kenzo,0,30.58,1:1.82,S,17-09-2021
+Louise f.b.valliere,Kyo cvs2,0,63.95,2.99:1,S,17-09-2021
+Sf4 ryu,Gavora,1,75.26,2.89:1,A,17-09-2021
+Eve,Kanna kamui,0,62.59,2.95:1,A,17-09-2021
+Dragon claw EX3,Tyrant EX,1,27.68,1:1.22,S,17-09-2021
+Azteca,Senga jaguar,0,95.95,17.51:1,S,17-09-2021
+Leo EX2,Lilly kane,0,44.51,1.09:1,A,17-09-2021
+Shingo 98,Golgo13,0,75.59,3.7:1,B,17-09-2021
+G-phoenix,Kagami ex,1,41.84,1:1.05,A,17-09-2021
+Omega rugal 98,Lihua,0,48.19,1.38:1,S,17-09-2021
+Alyssa ex,Mahvel elena,0,28.98,1:3.35,S,17-09-2021
+Ayu&misuzu&mizuka,Kongara,0,2.17,1:1.48,S,17-09-2021
+Tokinomiya kamui EX3,Akane inuwaka ex,1,60.55,3.66:1,S,17-09-2021
+Michael jackson,Simon Belmondo,0,94.18,4.61:1,B,17-09-2021
+Stronger_rugal,Tomuni x jinmen,1,55.88,1:1.51,X,17-09-2021
+Bloody lancer,Supreme gogeta v1.5,0,84.58,2.01:1,X,17-09-2021
+Yue EX3,Protectos,0,65.63,1.03:1,X,17-09-2021
+Melt koa,Ryu & ken,0,99.8,4.99:1,X,17-09-2021
+Genocide rugal,Silvy-m,0,40.07,3.35:1,X,17-09-2021
+Goku ssb kaio-ken x10,Pasuu no jidensya,1,31.65,1:1.2,X,17-09-2021
+C.kyo blood,A-zepia,1,39.53,1:2.56,X,17-09-2021
+Supreme cell,Giron,0,85.59,1.09:1,X,17-09-2021
+Stronger_rugal,Bloody lancer,1,29.31,1:6.78,X,17-09-2021
+Yue EX3,Melt koa,1,14.96,1:8.72,X,17-09-2021
+Genocide rugal,Pasuu no jidensya,1,34.61,1:1.03,X,17-09-2021
+A-zepia,Supreme cell,0,45.46,1:2.08,X,17-09-2021
+Bloody lancer,Melt koa,1,47.11,2.36:1,X,17-09-2021
+Pasuu no jidensya,A-zepia,1,43.0,2.05:1,X,17-09-2021
+Accelerator 2,Air man ga taosenai,1,41.43,2.85:1,A,17-09-2021
+Kung fu m.bison,Cyborg_t-8p,1,42.81,1:1.33,A,17-09-2021
+Lomias,Wong_dong_fei_hung,1,12.37,1:1.29,S,17-09-2021
+Super-Mario,Curadoros,1,83.29,2.69:1,B,17-09-2021
+Kawashima-san EX3,Jyubei yagyu,1,57.81,1.3:1,A,17-09-2021
+Orochi akuma,Babyd!,0,47.19,1.06:1,A,17-09-2021
+Sumo sw,King kong,1,37.23,1:1.47,S,17-09-2021
+Terry EX3,Yukkuri hibiki,1,21.3,1:2.26,A,17-09-2021
+Aqua mp,Get in the robot you idiot,1,54.29,1.12:1,S,17-09-2021
+Dantalion_alice,Arcbeetle,0,89.72,14.91:1,S,17-09-2021
+Armor lord,Cure aqua,1,21.06,1.2:1,A,17-09-2021
+Diyaa man,Hunk,1,5.77,1:1.63,A,17-09-2021
+Gato ex,Lina 2,1,44.29,1:1.95,A,17-09-2021
+Oboromaru,Yuusuke,1,86.21,4.83:1,A,17-09-2021
+Meiya_striker,Sans EX7,0,60.09,1.1:1,S,17-09-2021
+Pepsi man EX4,Morilen,1,29.42,1:2.77,B,17-09-2021
+Hamtaro,Le policier,1,19.58,1:2.73,A,17-09-2021
+Yuri di aaaaaa ex,Jabu,0,91.0,8.16:1,B,17-09-2021
+Magic nanaya+ huunsaiki,Yui emelia,0,60.55,4.28:1,A,17-09-2021
+Mega tails,Starfy,0,73.27,2.09:1,A,17-09-2021
+Koizumi itsuki,Noel vermillion,1,18.04,1:4.94,A,17-09-2021
+Max eagle,Kao,0,38.53,1:2.55,B,17-09-2021
+Dhalsims,Daimon,1,21.18,1:6.05,S,17-09-2021
+Samwell han,Kraft,0,90.11,4.33:1,A,17-09-2021
+The savage pumpkin,Shanghai_ai,1,55.43,1:1.65,S,17-09-2021
+Ruby rose,Heracross,0,48.36,2.18:1,S,17-09-2021
+Psycho Cammy,Lunasa prismriver,0,71.31,2.25:1,B,17-09-2021
+Dongdong,Kfm_k,1,32.09,1:2.14,S,17-09-2021
+Made multi,Gliformoth EX3,1,29.55,1:1.02,A,18-09-2021
+Master juzo,Dark ash-drg,1,44.0,1:1.15,S,18-09-2021
+Goku ssj5 absalon,Iggy ex,1,43.39,1:3.59,A,18-09-2021
+Ultraman agul,Zekamasi,1,47.13,1:2.66,A,18-09-2021
+Fang,Psychociel,1,52.45,1:1.1,A,18-09-2021
+Shiki tohno iqs,Teoc reisen,1,25.14,1:1.85,S,18-09-2021
+Sabotage,Rugal rotd,0,42.55,1:3.53,B,18-09-2021
+Swamp thing,Perfectakishimai,1,38.58,1:4.88,S,18-09-2021
+Panda genma,Labyrinth,0,41.53,1.37:1,S,18-09-2021
+Hsien-ko,B.swordsman,1,36.26,1:1.81,A,18-09-2021
+Clown,Simple,0,49.0,1:1.07,B,18-09-2021
+Master krauser,Evil ryu sf3,1,34.11,1:2.47,S,18-09-2021
+Chameleo arm,Zarugafu ex,0,64.88,2.49:1,A,18-09-2021
+Fa-,Sounanda,0,69.94,6.16:1,A,18-09-2021
+Dan,Dr. ray stantz,0,61.15,1.89:1,B,18-09-2021
+Mizuki EX2,Cyborg_d-9f,0,69.47,1.69:1,A,18-09-2021
+Akaitsuki,Evangelion,0,80.99,1.74:1,A,18-09-2021
+Gertrud,Zeppeli ex,0,41.89,1:1.53,A,18-09-2021
+Sae kamaguchi,Yurika kirishima,0,58.39,1.34:1,B,18-09-2021
+Sento kun,Ruckus,0,42.22,1.04:1,B,18-09-2021
+Ironfist ryu,Missingno.,0,55.42,1.12:1,A,18-09-2021
+Orochi k',Mango's fox,1,50.15,1:1.07,A,18-09-2021
+Medicine melancholy,The master,0,96.59,3.06:1,A,18-09-2021
+Musiking,Jun(a),0,52.67,3.68:1,B,18-09-2021
+Lilica_felchenerow,Daimon EX2,0,58.63,1:1.1,S,18-09-2021
+Roast_uncle,Shang tsung,1,40.87,1:1.01,A,18-09-2021
+Ultron,Masked rider 2nd,1,33.84,1:1.95,A,18-09-2021
+Snipe lv2,Rolento f. schugerg,1,63.05,3.1:1,A,18-09-2021
+Kohaku iqs,Subaru mikage,0,94.3,30.68:1,S,18-09-2021
+Salamand-e,Msn-04 sazabi,1,32.62,1:1.98,X,18-09-2021
+Pheus_mor,Kiriko ns,1,47.47,1.63:1,S,18-09-2021
+Naruhodokun,Mewtwo-y,1,89.08,3.07:1,S,18-09-2021
+Kid buu z2,Ryo,1,49.91,2.25:1,B,18-09-2021
+Anaroguma,Yet another rugal,0,51.94,1:1.08,A,18-09-2021
+Juggernaut mvc2,Extreme bardock,0,57.65,1.58:1,A,18-09-2021
+Dig dug,Burnie,0,58.66,1.78:1,A,18-09-2021
+The territorial mammoth,Straight cougar,0,61.31,1.28:1,A,18-09-2021
+Skull reaper,Pickle,1,19.6,1:4.0,A,18-09-2021
+Dark baltan,Tvc alex,1,32.39,1:3.05,A,18-09-2021
+Leo FM,Lisa rogan,1,46.7,1:1.76,B,18-09-2021
+Masked rider hibiki(emanon),Asellus EX,1,15.8,1:3.05,B,18-09-2021
+Cvs axel,Master taekuk,1,13.29,1:6.06,B,18-09-2021

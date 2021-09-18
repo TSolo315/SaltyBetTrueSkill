@@ -230,11 +230,11 @@ class Compendium:
 
     def get_bet_simple(self, fighter1, fighter2, trueskill_rating, adjusted):
         if trueskill_rating <= 50:
-            bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+            bet = int((((50 - trueskill_rating) + 50) * 500) * self.bet_multiplier)
             fighter = 'player2'
             print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
         else:
-            bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+            bet = int((trueskill_rating * 500) * self.bet_multiplier)
             fighter = 'player1'
             print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         print(colorama.Style.RESET_ALL)
@@ -242,40 +242,40 @@ class Compendium:
 
     def get_bet(self, fighter1, fighter2, trueskill_rating, adjusted):
         if trueskill_rating <= 35:
-            bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+            bet = int((((50 - trueskill_rating) + 50) * 500) * self.bet_multiplier)
             fighter = 'player2'
             print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
         elif 35 < trueskill_rating <= 45:
             if adjusted:
-                bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+                bet = int((((50 - trueskill_rating) + 50) * 500) * self.bet_multiplier)
                 fighter = 'player2'
                 print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
             else:
                 if trueskill_rating >= 40:
-                    bet = 30000 * self.bet_multiplier
+                    bet = 15000 * self.bet_multiplier
                 else:
-                    bet = 25000 * self.bet_multiplier
+                    bet = 12500 * self.bet_multiplier
                 fighter = 'player1'
                 print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         elif 45 < trueskill_rating <= 55:
             if trueskill_rating <= 50:
-                bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+                bet = int((((50 - trueskill_rating) + 50) * 500) * self.bet_multiplier)
                 fighter = 'player2'
                 print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
             else:
-                bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+                bet = int((trueskill_rating * 500) * self.bet_multiplier)
                 fighter = 'player1'
                 print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
         elif 55 < trueskill_rating <= 65:
             if adjusted:
-                bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+                bet = int((trueskill_rating * 500) * self.bet_multiplier)
                 fighter = 'player1'
                 print(f"{colorama.Fore.RED}Bet RED - {fighter1}: {bet}")
             else:
                 if trueskill_rating <= 60:
-                    bet = 30000 * self.bet_multiplier
+                    bet = 15000 * self.bet_multiplier
                 else:
-                    bet = 25000 * self.bet_multiplier
+                    bet = 12500 * self.bet_multiplier
                 fighter = 'player2'
                 print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}: {bet}")
         else:
@@ -287,35 +287,35 @@ class Compendium:
 
     def get_bet_tournament(self, fighter1, fighter2, trueskill_rating, adjusted):
         if trueskill_rating <= 40:
-            bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+            bet = int((((50 - trueskill_rating) + 50) * 500) * self.bet_multiplier)
             fighter = 'player2'
             print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}")
         elif 40 < trueskill_rating <= 50:
             if adjusted:
-                bet = int((((50 - trueskill_rating) + 50) * 1000) * self.bet_multiplier)
+                bet = int((((50 - trueskill_rating) + 50) * 500) * self.bet_multiplier)
                 fighter = 'player2'
                 print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}")
             else:
                 if trueskill_rating >= 45:
-                    bet = 30000 * self.bet_multiplier
+                    bet = 15000 * self.bet_multiplier
                 else:
-                    bet = 25000 * self.bet_multiplier
+                    bet = 12500 * self.bet_multiplier
                 fighter = 'player1'
                 print(f"{colorama.Fore.RED}Bet RED - {fighter1}")
         elif 50 < trueskill_rating <= 60:
             if adjusted:
-                bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+                bet = int((trueskill_rating * 500) * self.bet_multiplier)
                 fighter = 'player1'
                 print(f"{colorama.Fore.RED}Bet RED - {fighter1}")
             else:
                 if trueskill_rating <= 55:
-                    bet = 30000 * self.bet_multiplier
+                    bet = 15000 * self.bet_multiplier
                 else:
-                    bet = 25000 * self.bet_multiplier
+                    bet = 12500 * self.bet_multiplier
                 fighter = 'player2'
                 print(f"{colorama.Fore.BLUE}Bet BLUE - {fighter2}")
         else:
-            bet = int((trueskill_rating * 1000) * self.bet_multiplier)
+            bet = int((trueskill_rating * 500) * self.bet_multiplier)
             fighter = 'player1'
             print(f"{colorama.Fore.RED}Bet RED - {fighter1}")
         print(colorama.Style.RESET_ALL)
