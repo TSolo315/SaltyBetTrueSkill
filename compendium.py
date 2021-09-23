@@ -348,7 +348,7 @@ class Compendium:
             tier_adjust = self.tier_adjust(player1, player2, tier)
         if sum(tier_adjust) != 0 or sum(previous_record) != 0:
             player_one_record = (previous_record[0] - previous_record[1]) * 100
-            trueskill_rating += .08 * player_one_record
+            trueskill_rating += .1 * player_one_record
             trueskill_rating += tier_adjust[0]
             trueskill_rating -= tier_adjust[1]
             trueskill_rating = round(trueskill_rating, 2)

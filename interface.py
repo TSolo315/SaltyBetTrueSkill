@@ -234,6 +234,8 @@ class Interface:
         with open("new-record-data.txt") as file:
             for line in file:
                 stripped_line = line.strip().split(',')
+                if any(ele in stripped_line[0] or ele in stripped_line[1] for ele in ['&', '<', '>']):
+                    continue
                 fighter_one_win_prediction = float(stripped_line[3])
                 winner = int(stripped_line[2])
                 tier = stripped_line[5]
