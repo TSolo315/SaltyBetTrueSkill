@@ -136,7 +136,6 @@ class Compendium:
             for line in file:
                 stripped_line = line.strip().split(',')
                 self.update_with_last_match(3, stripped_line)
-        print(untiered_dict)
         print("All data successfully imported!")
 
     def update_with_last_match(self, winning_player, match_record=False, manual=False, odds="F"):
