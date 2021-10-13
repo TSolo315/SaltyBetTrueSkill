@@ -276,7 +276,7 @@ class Interface:
     def dict_zip(dict1, dict2):
         return {k: dict1.get(k, 0) + dict2.get(k, 0) for k in dict1.keys() | dict2.keys()}
 
-    def auto_mode(self):
+    def auto_mode(self, json_output=False):
         """
            Base code sourced from: https://github.com/Jacobinski/SaltBot
            Auto mode.
@@ -403,7 +403,7 @@ class Interface:
 
                     if match_type == "T":
                         predicted_winner, wager = self.compendium.provide_recommendation(
-                            fighter1.name, fighter2.name, tier, tournament=True)
+                            fighter1.name, fighter2.name, tier, tournament=True, output_json=json_output)
                         wager = site.get_balance()
                         if int(wager) >= 400000:
                             wager = 10000
@@ -412,7 +412,7 @@ class Interface:
                         elif int(wager) >= 125000:
                             wager = 75000
                     else:
-                        predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier)
+                        predicted_winner, wager = self.compendium.provide_recommendation(fighter1.name, fighter2.name, tier, output_json=json_output)
 
                     if any(ele in match['player1'] or ele in match['player2'] for ele in broken_characters):  # win rate data broken on these fighters.
                         if wager > 10000:

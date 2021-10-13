@@ -1,5 +1,6 @@
 import itertools
 import math
+import json
 from datetime import date
 
 import trueskill
@@ -320,7 +321,7 @@ class Compendium:
         print(colorama.Style.RESET_ALL)
         return fighter, bet
 
-    def provide_recommendation(self, fighter1, fighter2, tier=False, tournament=False):
+    def provide_recommendation(self, fighter1, fighter2, tier=False, tournament=False, output_json=False):
         previous_record = [0, 0]
         adjusted = False
         try:
@@ -339,8 +340,10 @@ class Compendium:
         if fighter2 in player1.record:
             previous_record = player1.record[fighter2]
         trueskill_rating = round(self.win_probability([player1.rating], [player2.rating]) * 100, 2)
-        print(self.get_stats(fighter1))
-        print(self.get_stats(fighter2))
+        fighter1_stats = self.get_stats(fighter1)
+        fighter2_stats = self.get_stats(fighter2)
+        print(fighter1_stats)
+        print(fighter2_stats)
         print(f"{colorama.Fore.YELLOW}{colorama.Style.BRIGHT}Previous Match Record: {previous_record}\n\n{colorama.Fore.CYAN}{fighter1} Win Chance: {trueskill_rating}%")
         print(colorama.Style.RESET_ALL)
         if tier:
@@ -358,6 +361,17 @@ class Compendium:
             fighter, bet = self.get_bet_tournament(fighter1, fighter2, trueskill_rating, adjusted)
         else:
             fighter, bet = self.get_bet_simple(fighter1, fighter2, trueskill_rating, adjusted)
+        if output_json:
+            json_dict = {
+                "fighter1": fighter1_stats,
+                "fighter2": fighter2_stats,
+                "record": previous_record,
+                "win percentage": trueskill_rating,
+                "chosen fighter": fighter,
+                "bet amount": bet
+            }
+            with open("matchStats.json", "w+") as jsonFile:
+                json.dump(json_dict, jsonFile)
         self.last_rating = trueskill_rating
         return [fighter, int(bet)]
 
