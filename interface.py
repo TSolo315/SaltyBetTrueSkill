@@ -37,9 +37,10 @@ class Interface:
                      \n 8. Enter 'red' or 'blue' to designate the winner of the last match you received a recommendation for.
                      \n 9. Enter 'multiplier' to adjust your bet multiplier.
                      \n 10. Enter 'report' to see a basic report on recommendation accuracy.
-                     \n 11. Enter 'auto' to start the betting bot.
-                     \n 12. Enter 'save' to manually save newly entered data.
-                     \n 13. Enter 'exit' to save and terminate the program.
+                     \n 11. Enter 'ranking' to generate a fighter ranking list file.
+                     \n 12. Enter 'auto' to start the betting bot.
+                     \n 13. Enter 'save' to manually save newly entered data.
+                     \n 14. Enter 'exit' to save and terminate the program.
                      \n""")
             return
         if "are open for" in response.lower():
@@ -62,6 +63,8 @@ class Interface:
             self.set_multiplier()
         elif response.lower() in ['accuracy', 'report']:
             self.generate_accuracy_stats()
+        elif response.lower() in ['ranking', 'ranked']:
+            self.generate_ranking_list()
         elif response.lower() in ['auto', 'bot']:
             self.auto_mode()
         elif response.lower() in ['save']:
@@ -271,6 +274,14 @@ class Interface:
             for tier in tier_dict:
                 if tier_dict[tier][0]:
                     print(f"Tier: {tier} - {round((tier_dict[tier][1] / tier_dict[tier][0]) * 100, 2)}% accuracy.")
+
+    def generate_ranking_list(self):
+        ranked_list = sorted(self.compendium.fighters, key=lambda e: (TIER_DICT[self.compendium.fighters[e].tier] * -1, round(self.compendium.fighters[e].rating.mu - 3 * self.compendium.fighters[e].rating.sigma, 3)), reverse=True)
+        with open("rankedList.txt", "w+") as rankingFile:
+            for entry in ranked_list:
+                fighter = self.compendium.fighters[entry]
+                rankingFile.write(f"{fighter.tier}: {fighter.name} | Ranking: {round(fighter.rating.mu - 3 * fighter.rating.sigma, 3)} | Win Rate: {int(fighter.win_rate * 100)}% \n")
+        print('Ranking list file generated!')
 
     @staticmethod
     def dict_zip(dict1, dict2):
